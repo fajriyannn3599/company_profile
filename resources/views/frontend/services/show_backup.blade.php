@@ -17,12 +17,12 @@
                 <li class="text-blue-200">{{ $service->title }}</li>
             </ol>
         </nav>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ $service->title }}</h1>
                 <p class="text-xl opacity-90 leading-relaxed">{{ $service->short_description }}</p>
-                
+
                 @if($service->is_featured)
                     <div class="mt-6">
                         <span class="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
@@ -32,7 +32,7 @@
                     </div>
                 @endif
             </div>
-            
+
             <div class="text-center">
                 @if($service->icon)
                     <div class="text-8xl mb-6 text-blue-200">
@@ -61,7 +61,7 @@
                                     $title = trim($parts[0]);
                                     $content = trim($parts[1] ?? '');
                                 @endphp
-                                
+
                                 @if(str_starts_with($title, '-') || str_starts_with($content, '-'))
                                     <!-- List Section -->
                                     <h3 class="text-2xl font-semibold text-gray-900 mb-4 mt-8">{{ trim($title, '- ') }}</h3>
@@ -88,21 +88,21 @@
                     @endif
                 </div>
             </div>
-            
+
             <!-- Sidebar -->
             <div class="space-y-8">
                 <!-- Contact Card -->
                 <div class="bg-blue-50 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Butuh Konsultasi?</h3>
                     <p class="text-gray-600 mb-6">Diskusikan kebutuhan proyek Anda dengan tim ahli kami</p>
-                    
+
                     <div class="space-y-4">
                         <a href="{{ route('contact') }}" class="block bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors">
                             Konsultasi Gratis
                         </a>
-                        
+
                         @if(setting('contact_whatsapp'))
-                            <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', setting('contact_whatsapp')) }}" 
+                            <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', setting('contact_whatsapp')) }}"
                                target="_blank"
                                class="block bg-green-600 hover:bg-green-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors">
                                 <i class="fab fa-whatsapp mr-2"></i>
@@ -111,7 +111,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <!-- Service Features -->
                 <div class="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Keunggulan Layanan</h3>
@@ -138,7 +138,7 @@
                         </li>
                     </ul>
                 </div>
-                
+
                 <!-- Quick Links -->
                 <div class="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Layanan Lainnya</h3>
@@ -162,7 +162,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Layanan Terkait</h2>
             <p class="text-xl text-gray-600">Layanan lain yang mungkin Anda butuhkan</p>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @foreach($relatedServices as $relatedService)
                 <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow p-6">
@@ -173,10 +173,10 @@
                     @elseif($relatedService->image)
                         <img src="{{ asset($relatedService->image) }}" alt="{{ $relatedService->title }}" class="w-16 h-16 mb-4 rounded">
                     @endif
-                    
+
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ $relatedService->title }}</h3>
                     <p class="text-gray-600 mb-4">{{ $relatedService->short_description }}</p>
-                    
+
                     <a href="{{ route('services.show', $relatedService->slug) }}" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
                         Pelajari Lebih Lanjut
                         <i class="fas fa-arrow-right ml-2"></i>
@@ -189,13 +189,13 @@
 @endif
 
 <!-- CTA Section -->
-<section class="py-20 bg-blue-900 text-white">
+<!-- <section class="py-20 bg-blue-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Tertarik dengan Layanan Ini?</h2>
         <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
             Mari diskusikan bagaimana {{ $service->title }} dapat membantu mengembangkan bisnis Anda
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('contact') }}" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
                 Dapatkan Penawaran
@@ -205,5 +205,5 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
 @endsection

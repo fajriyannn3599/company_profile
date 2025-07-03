@@ -7,7 +7,7 @@
 <!-- Service Hero Section -->
 <section class="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
     <div class="absolute inset-0 bg-black opacity-50"></div>
-    
+
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Breadcrumb -->
         <nav class="text-white mb-8">
@@ -19,12 +19,12 @@
                 <li class="text-blue-200">{{ $service->title }}</li>
             </ol>
         </nav>
-        
+
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
             <div>
                 <h1 class="text-4xl md:text-5xl font-bold mb-6">{{ $service->title }}</h1>
                 <p class="text-xl opacity-90 leading-relaxed">{{ $service->short_description }}</p>
-                
+
                 @if($service->is_featured)
                     <div class="mt-6">
                         <span class="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
@@ -34,7 +34,7 @@
                     </div>
                 @endif
             </div>
-            
+
             <div class="text-center">
                 @if($service->icon)
                     <div class="text-8xl mb-6 text-blue-200">
@@ -63,7 +63,7 @@
                                     $title = trim($parts[0]);
                                     $content = trim($parts[1] ?? '');
                                 @endphp
-                                
+
                                 @if(str_starts_with($title, '-') || str_starts_with($content, '-'))
                                     <!-- List Section -->
                                     <div class="my-6">
@@ -94,21 +94,21 @@
                     @endif
                 </div>
             </div>
-            
+
             <!-- Sidebar -->
             <div class="space-y-8">
                 <!-- Contact Card -->
                 <div class="bg-blue-50 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Butuh Konsultasi?</h3>
                     <p class="text-gray-600 mb-6">Diskusikan kebutuhan proyek Anda dengan tim ahli kami</p>
-                    
+
                     <div class="space-y-4">
                         <a href="{{ route('contact') }}" class="block bg-blue-600 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors">
                             Konsultasi Gratis
                         </a>
-                        
+
                         @if(setting('contact_whatsapp'))
-                            <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', setting('contact_whatsapp')) }}" 
+                            <a href="https://wa.me/{{ str_replace(['+', ' ', '-'], '', setting('contact_whatsapp')) }}"
                                target="_blank"
                                class="block bg-green-600 hover:bg-green-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors">
                                 <i class="fab fa-whatsapp mr-2"></i>
@@ -117,7 +117,7 @@
                         @endif
                     </div>
                 </div>
-                
+
                 <!-- Service Features -->
                 <div class="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Keunggulan Layanan</h3>
@@ -167,13 +167,13 @@
 @endif
 
 <!-- CTA Section -->
-<section class="py-20 bg-blue-900 text-white">
+<!-- <section class="py-20 bg-blue-900 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Memulai Proyek Anda?</h2>
         <p class="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
             Konsultasikan kebutuhan {{ $service->title }} Anda dengan tim expert kami dan dapatkan solusi terbaik
         </p>
-        
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('contact') }}" class="bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
                 Dapatkan Penawaran
@@ -183,5 +183,5 @@
             </a>
         </div>
     </div>
-</section>
+</section> -->
 @endsection
