@@ -243,7 +243,7 @@
                         Beranda
                     </a>
                     <a href="{{ route('about') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('about') ? 'text-blue-600' : '' }}">
-                        Tentang Kami
+                        Profile
                     </a>                    <a href="{{ route('services.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}">
                         Produk
                     </a>
@@ -276,21 +276,18 @@
                         Beranda
                     </a>
                     <a href="{{ route('about') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('about') ? 'text-blue-600' : '' }}">
-                        Tentang Kami
+                        Profile
                     </a>                    <a href="{{ route('services.index') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}">
-                        Layanan
+                        Produk
                     </a>
                     <a href="{{ route('projects.index') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('projects*') ? 'text-blue-600' : '' }}">
-                        Portofolio
+                        Laporan Keuangan
                     </a>
                     <a href="{{ route('articles.index') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}">
                         Artikel
                     </a>
-                    <a href="{{ route('careers.index') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('careers*') ? 'text-blue-600' : '' }}">
-                        Karier
-                    </a>
                     <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}">
-                        Kontak
+                        Hubungi Kami
                     </a>
                 </div>
             </div>
@@ -325,16 +322,6 @@
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         @endif
-                        @if(setting('twitter_url'))
-                            <a href="{{ setting('twitter_url') }}" class="text-gray-300 hover:text-white transition-colors">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        @endif
-                        @if(setting('linkedin_url'))
-                            <a href="{{ setting('linkedin_url') }}" class="text-gray-300 hover:text-white transition-colors">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                        @endif
                         @if(setting('instagram_url'))
                             <a href="{{ setting('instagram_url') }}" class="text-gray-300 hover:text-white transition-colors">
                                 <i class="fab fa-instagram"></i>
@@ -350,7 +337,6 @@
                         <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors">Tentang Kami</a></li>
                         <li><a href="{{ route('services.index') }}" class="text-gray-300 hover:text-white transition-colors">Layanan</a></li>
                         <li><a href="{{ route('projects.index') }}" class="text-gray-300 hover:text-white transition-colors">Portofolio</a></li>
-                        <li><a href="{{ route('careers.index') }}" class="text-gray-300 hover:text-white transition-colors">Karier</a></li>
                     </ul>
                 </div>
 

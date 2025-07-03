@@ -842,15 +842,15 @@
                         <div class="text-xs">Tahun</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold">100+</div>
+                        <div class="text-2xl font-bold">300+</div>
                         <div class="text-xs">Klien</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold">200+</div>
+                        <div class="text-2xl font-bold">100+</div>
                         <div class="text-xs">Proyek</div>
                     </div>
                     <div class="text-center">
-                        <div class="text-2xl font-bold">99%</div>
+                        <div class="text-2xl font-bold">90%</div>
                         <div class="text-xs">Puas</div>
                     </div>
                 </div>

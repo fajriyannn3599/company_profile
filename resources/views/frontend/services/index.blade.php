@@ -1,8 +1,8 @@
 @extends('layouts.frontend')
 
 @push('seo')
-    <x-seo-head 
-        page-identifier="services" 
+    <x-seo-head
+        page-identifier="services"
         :title="page_title('services', 'Layanan Kami - ' . setting('site_name'))"
         :description="page_description('services', 'Jelajahi berbagai layanan profesional yang kami tawarkan untuk mengembangkan bisnis Anda dengan teknologi terdepan.')" />
 @endpush
@@ -12,14 +12,14 @@
     .service-grid-animation {
         animation: fadeInUp 0.6s ease-out;
     }
-    
+
     .service-grid-animation:nth-child(1) { animation-delay: 0.1s; }
     .service-grid-animation:nth-child(2) { animation-delay: 0.2s; }
     .service-grid-animation:nth-child(3) { animation-delay: 0.3s; }
     .service-grid-animation:nth-child(4) { animation-delay: 0.4s; }
     .service-grid-animation:nth-child(5) { animation-delay: 0.5s; }
     .service-grid-animation:nth-child(6) { animation-delay: 0.6s; }
-    
+
     @keyframes fadeInUp {
         from {
             opacity: 0;
@@ -30,16 +30,16 @@
             transform: translateY(0);
         }
     }
-    
+
     .floating-element {
         animation: float 6s ease-in-out infinite;
     }
-    
+
     @keyframes float {
         0%, 100% { transform: translateY(0px); }
         50% { transform: translateY(-20px); }
     }
-    
+
     .gradient-background {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
@@ -48,7 +48,7 @@
 
 @section('content')
 <!-- Page Header -->
-<x-hero 
+<x-hero
     page-identifier="services"
     fallback-title="Layanan Kami"
     fallback-subtitle="Solusi teknologi terdepan untuk mengembangkan bisnis Anda" />
@@ -58,7 +58,7 @@
     <!-- Background Decorations -->
     <div class="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element"></div>
     <div class="absolute bottom-20 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 floating-element" style="animation-delay: -3s;"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         @if($services->count() > 0)
             <!-- Section Header -->
@@ -74,7 +74,7 @@
                 </p>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mt-8"></div>
             </div>
-            
+
             <!-- Services Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 @foreach($services as $index => $service)
@@ -83,7 +83,7 @@
                     </div>
                 @endforeach
             </div>
-            
+
             <!-- Pagination -->
             @if($services->hasPages())
                 <div class="flex justify-center">
@@ -106,7 +106,7 @@
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                     Kami sedang mempersiapkan informasi layanan terbaru untuk memberikan solusi teknologi terbaik bagi Anda.
                 </p>
-                <a href="{{ route('contact') }}" 
+                <a href="{{ route('contact') }}"
                    class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
@@ -123,11 +123,11 @@
     <!-- Gradient Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900"></div>
     <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.15) 1px, transparent 0); background-size: 60px 60px;"></div>
-    
+
     <!-- Floating Elements -->
     <div class="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl floating-element"></div>
     <div class="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-xl floating-element" style="animation-delay: -3s;"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-white">
         <div class="text-center mb-16">
             <span class="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
@@ -161,7 +161,7 @@
                     <h3 class="text-xl font-bold mb-4 text-center">Tim Berpengalaman</h3>
                     <p class="opacity-90 text-center leading-relaxed">Didukung oleh tim profesional dengan pengalaman bertahun-tahun di industri teknologi</p>
                 </div>
-                
+
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
                     <div class="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-bolt text-white text-2xl"></i>
@@ -169,7 +169,7 @@
                     <h3 class="text-xl font-bold mb-4 text-center">Teknologi Terdepan</h3>
                     <p class="opacity-90 text-center leading-relaxed">Menggunakan teknologi dan tools terbaru untuk menghasilkan solusi yang optimal dan inovatif</p>
                 </div>
-                
+
                 <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:bg-white/15 transition-all duration-300 group">
                     <div class="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                         <i class="fas fa-headset text-white text-2xl"></i>
@@ -190,7 +190,7 @@
     <!-- Background Decorations -->
     <div class="absolute top-10 right-10 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 floating-element"></div>
     <div class="absolute bottom-10 left-10 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 floating-element" style="animation-delay: -2s;"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div class="text-center mb-16">
             <span class="inline-block px-4 py-2 bg-white/80 text-blue-600 rounded-full text-sm font-semibold mb-4 shadow-md backdrop-blur-sm">
@@ -204,7 +204,7 @@
             </p>
             <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mt-8"></div>
         </div>
-        
+
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <!-- Step 1 -->
             <div class="relative group">
@@ -231,7 +231,7 @@
                     </svg>
                 </div>
             </div>
-            
+
             <!-- Step 2 -->
             <div class="relative group">
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 transform hover:-translate-y-2">
@@ -257,7 +257,7 @@
                     </svg>
                 </div>
             </div>
-            
+
             <!-- Step 3 -->
             <div class="relative group">
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 transform hover:-translate-y-2">
@@ -283,7 +283,7 @@
                     </svg>
                 </div>
             </div>
-            
+
             <!-- Step 4 -->
             <div class="relative group">
                 <div class="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 p-8 border border-gray-100 transform hover:-translate-y-2">
@@ -314,11 +314,11 @@
     <div class="absolute inset-0 opacity-20">
         <div class="absolute inset-0" style="background-image: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.2) 2px, transparent 0), radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.1) 1px, transparent 0); background-size: 100px 100px, 50px 50px;"></div>
     </div>
-    
+
     <!-- Floating Elements -->
-    <div class="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl floating-element"></div>
+    <!-- <div class="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl floating-element"></div>
     <div class="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-xl floating-element" style="animation-delay: -3s;"></div>
-    
+
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white relative">
         <div class="max-w-4xl mx-auto">
             <span class="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-6 backdrop-blur-sm">
@@ -328,16 +328,16 @@
             <p class="text-xl mb-10 opacity-90 leading-relaxed">
                 Konsultasikan kebutuhan teknologi Anda dengan tim ahli kami dan dapatkan solusi terbaik untuk mengembangkan bisnis Anda ke level yang lebih tinggi
             </p>
-            
+
             <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                <a href="{{ route('contact') }}" 
+                <a href="{{ route('contact') }}"
                    class="inline-flex items-center bg-white text-blue-900 hover:bg-gray-100 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
                     </svg>
                     Konsultasi Gratis
                 </a>
-                <a href="{{ route('projects.index') }}" 
+                <a href="{{ route('projects.index') }}"
                    class="inline-flex items-center border-2 border-white text-white hover:bg-white hover:text-blue-900 px-8 py-4 rounded-xl text-lg font-bold transition-all duration-300 transform hover:scale-105">
                     <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
@@ -345,7 +345,7 @@
                     Lihat Portfolio
                 </a>
             </div>
-            
+
             @if(setting('contact_phone') || setting('contact_email'))
                 <div class="flex flex-col sm:flex-row gap-8 justify-center text-lg">
                     @if(setting('contact_phone'))
@@ -372,5 +372,5 @@
             @endif
         </div>
     </div>
-</section>
+</section> -->
 @endsection
