@@ -66,7 +66,7 @@
                     </div>
 
                     <!-- Feature highlights -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                   <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                         <div class="flex items-center">
                             <div
                                 class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
@@ -107,7 +107,7 @@
                                 <div class="text-gray-600 text-sm">Dukungan penuh</div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('about') }}"
