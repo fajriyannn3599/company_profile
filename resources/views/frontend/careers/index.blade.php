@@ -11,9 +11,9 @@
 
 @section('content')
     <!-- Hero Section -->
-    <x-hero page-identifier="careers" fallback-title="Karier di {{ setting('company_name') }}"
+     <x-hero page-identifier="careers" fallback-title="Karier di {{ setting('company_name') }}"
         fallback-subtitle="Bergabunglah dengan tim yang passionate, inovatif, dan berkomitmen untuk menciptakan masa depan yang lebih baik" />
-    <div class="bg-white rounded-2xl shadow-lg p-6 max-w-2xl mx-auto mt-8">
+    <!--<div class="bg-white rounded-2xl shadow-lg p-6 max-w-2xl mx-auto mt-8">
         <form method="GET" action="{{ route('careers.index') }}" class="flex flex-col sm:flex-row gap-4">
             <div class="flex-1">
                 <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari posisi..."
@@ -44,12 +44,12 @@
                 Cari
             </button>
         </form>
-    </div>  
+    </div>   -->
 
     <!-- Why Join Us -->
-    <section class="py-16">
+    <!-- <section class="py-4">
         <div class="container mx-auto px-4">
-            <div class="max-w-6xl mx-auto">
+              <div class="space-y-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
                         Mengapa Bergabung dengan Kami?
@@ -140,14 +140,14 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Job Listings -->
-    <section class="py-16 bg-gray-50">
+     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="flex items-center justify-between mb-8">
-                    <div>
+                    <!--<div>
                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Posisi Terbuka</h2>
                         @if (request('search') || request('location') || request('type'))
                             <p class="text-gray-600">
@@ -165,7 +165,7 @@
                         @else
                             <p class="text-gray-600">{{ $jobs->total() }} posisi tersedia</p>
                         @endif
-                    </div>
+                    </div> -->
 
                     @if (request()->hasAny(['search', 'location', 'type']))
                         <a href="{{ route('careers.index') }}" class="text-blue-600 hover:text-blue-800 font-medium">
@@ -199,51 +199,51 @@
 
                                         <div class="flex flex-wrap items-center gap-6 text-sm text-gray-600">
                                             <div class="flex items-center gap-2">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                <!--<svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                                                 </svg>
-                                                <span>{{ $job->location }}</span>
+                                                <span>{{ $job->location }}</span>-->
                                             </div>
 
                                             @if ($job->salary_range)
                                                 <div class="flex items-center gap-2">
-                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                    <!--<svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                         viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
                                                             d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
                                                     </svg>
-                                                    <span>{{ $job->salary_range }}</span>
+                                                    <span>{{ $job->salary_range }}</span>-->
                                                 </div>
                                             @endif
 
                                             <div class="flex items-center gap-2">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                <!-- <svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                                 </svg>
-                                                <span>Deadline: {{ $job->deadline->format('d M Y') }}</span>
+                                                <span>Deadline: {{ $job->deadline->format('d M Y') }}</span>-->
                                             </div>
                                         </div>
                                         <!-- Requirements Preview -->
                                         @if ($job->requirements && is_array($job->requirements) && count($job->requirements) > 0)
                                             <div class="mt-4">
                                                 <div class="flex flex-wrap gap-2">
-                                                    @foreach (array_slice($job->requirements, 0, 3) as $requirement)
+                                                    <!-- @foreach (array_slice($job->requirements, 0, 3) as $requirement)
                                                         <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded text-sm">
                                                             {{ trim($requirement) }}
                                                         </span>
-                                                    @endforeach
-                                                    @if (count($job->requirements) > 3)
+                                                    @endforeach -->
+                                                    <!--@if (count($job->requirements) > 3)
                                                         <span class="text-gray-500 text-sm">
                                                             +{{ count($job->requirements) - 3 }} lainnya
                                                         </span>
-                                                    @endif
+                                                    @endif-->
                                                 </div>
                                             </div>
                                         @endif
@@ -254,10 +254,10 @@
                                             class="bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors text-center">
                                             Lihat Detail
                                         </a>
-                                        <a href="{{ route('careers.apply', $job->slug) }}"
+                                        <!--<a href="{{ route('careers.apply', $job->slug) }}"
                                             class="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-xl font-medium hover:bg-blue-600 hover:text-white transition-colors text-center">
                                             Lamar Sekarang
-                                        </a>
+                                        </a>-->
                                     </div>
                                 </div>
                             </div>
@@ -295,7 +295,7 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+    <!--<section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -316,5 +316,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
 @endsection

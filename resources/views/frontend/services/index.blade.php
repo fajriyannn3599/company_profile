@@ -178,9 +178,9 @@
                     <p class="opacity-90 text-center leading-relaxed">Dukungan teknis dan maintenance berkelanjutan untuk menjamin kelancaran sistem</p>
                 </div>
             @endforelse
-        </div>
+        <!-- </div>
                 <p class="opacity-90 text-center leading-relaxed">Membangun hubungan kemitraan jangka panjang yang saling menguntungkan</p>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>

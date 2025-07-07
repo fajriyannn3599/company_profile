@@ -5,7 +5,7 @@
 
 @section('content')
     <!-- Job Header -->
-    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
+     <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-16">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <nav class="mb-8">
@@ -18,19 +18,19 @@
                     </ol>
                 </nav>
 
-                <div class="flex items-center gap-4 mb-6">
+               <!-- <div class="flex items-center gap-4 mb-6">
                     <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
                         {{ ucfirst(str_replace('-', ' ', $job->type)) }}
                     </span>
                     <span class="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">
                         {{ $job->is_active ? 'Aktif' : 'Tidak Aktif' }}
                     </span>
-                </div>
+                </div> -->
 
                 <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     {{ $job->title }}
                 </h1>
-
+<!--
                 <div class="flex flex-wrap items-center gap-6 text-gray-600 mb-8">
                     <div class="flex items-center gap-2">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -67,10 +67,10 @@
                         </svg>
                         <span>Diposting {{ $job->created_at->diffForHumans() }}</span>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Quick Apply Button -->
-                <div class="flex flex-col sm:flex-row gap-4">
+                <!-- <div class="flex flex-col sm:flex-row gap-4">
                     <a href="{{ route('careers.apply', $job->slug) }}"
                         class="bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors text-center">
                         Lamar Posisi Ini
@@ -83,7 +83,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Job Content -->
     <section class="py-16">
@@ -98,8 +98,15 @@
                             <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
                                 {!! nl2br(e($job->description)) !!}
                             </div>
-                        </div> <!-- Job Requirements -->
-                        @if ($job->requirements && is_array($job->requirements) && count($job->requirements) > 0)
+                            <div class="mt-8 pt-8 border-t border-gray-200">
+                                <a href="{{ route('careers.apply', $job->slug) }}"
+                                    class="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors text-center block">
+                                    Klik Untuk Download
+                                </a>
+                            </div>
+                        </div>
+                        <!-- Job Requirements -->
+                        <!-- @if ($job->requirements && is_array($job->requirements) && count($job->requirements) > 0)
                             <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
                                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Persyaratan</h2>
                                 <div class="space-y-3">
@@ -110,9 +117,10 @@
                                         </div>
                                     @endforeach
                                 </div>
-                            </div>
-                        @endif <!-- Job Responsibilities -->
-                        @if ($job->responsibilities && is_array($job->responsibilities) && count($job->responsibilities) > 0)
+                            </div> -->
+                        @endif
+                        <!-- Job Responsibilities -->
+                        <!-- @if ($job->responsibilities && is_array($job->responsibilities) && count($job->responsibilities) > 0)
                             <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
                                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Tanggung Jawab</h2>
                                 <div class="space-y-3">
@@ -123,9 +131,10 @@
                                         </div>
                                     @endforeach
                                 </div>
-                            </div>
-                        @endif <!-- Job Benefits -->
-                        @if ($job->benefits && is_array($job->benefits) && count($job->benefits) > 0)
+                            </div> -->
+                        @endif
+                        <!-- Job Benefits -->
+                        <!-- @if ($job->benefits && is_array($job->benefits) && count($job->benefits) > 0)
                             <div class="bg-white rounded-2xl shadow-lg p-8">
                                 <h2 class="text-2xl font-bold text-gray-900 mb-6">Benefit & Fasilitas</h2>
                                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -145,12 +154,12 @@
                                 </div>
                             </div>
                         @endif
-                    </div>
+                    </div> -->
 
                     <!-- Sidebar -->
                     <div class="lg:col-span-1">
                         <!-- Quick Info -->
-                        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8 sticky top-8">
+                        <!-- <div class="fixed bottom-0 left-0 bg-white rounded-2xl shadow-lg p-8 mb-8 sticky top-8">
                             <h3 class="text-xl font-bold text-gray-900 mb-6">Informasi Posisi</h3>
 
                             <div class="space-y-4">
@@ -183,19 +192,14 @@
                                         class="px-3 py-1 rounded-full text-sm font-medium {{ $job->is_active ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800' }}">
                                         {{ $job->is_active ? 'Aktif' : 'Tidak Aktif' }}
                                     </span>
-                                </div>
+                                </div> -->
                             </div>
 
-                            <div class="mt-8 pt-8 border-t border-gray-200">
-                                <a href="{{ route('careers.apply', $job->slug) }}"
-                                    class="w-full bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors text-center block">
-                                    Lamar Sekarang
-                                </a>
-                            </div>
+
                         </div>
 
                         <!-- Share -->
-                        <div class="bg-white rounded-2xl shadow-lg p-8">
+                        <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
                             <h3 class="text-xl font-bold text-gray-900 mb-6">Bagikan Posisi</h3>
                             <p class="text-gray-600 mb-6">Bantu teman Anda menemukan peluang karier yang bagus</p>
 
@@ -238,10 +242,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- Related Jobs -->
-    @if ($relatedJobs->count() > 0)
+    <!-- @if ($relatedJobs->count() > 0)
         <section class="py-16 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
@@ -300,10 +304,10 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif -->
 
     <!-- CTA Section -->
-    <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
+    <!-- <section class="py-16 bg-gradient-to-r from-blue-600 to-indigo-700">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -324,5 +328,5 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 @endsection

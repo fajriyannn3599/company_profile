@@ -149,11 +149,11 @@
     </section>
 
     <!-- Services Section -->
-    @if ($featuredServices->count() > 0)
+    <!--@if ($featuredServices->count() > 0)
         <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">-->
                 <!-- Section Header -->
-                <div class="text-center mb-16">
+                ,<!--<div class="text-center mb-16">
                     <div
                         class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-6">
                         <i class="fas fa-cogs mr-2"></i>
@@ -164,21 +164,21 @@
                         Kami menyediakan berbagai layanan teknologi profesional yang dirancang khusus untuk memenuhi
                         kebutuhan dan mengakselerasi pertumbuhan bisnis Anda
                     </p>
-                </div>                <!-- Services Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div>-->                <!-- Services Grid -->
+                <!--<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($featuredServices as $index => $service)
                         <div
                             class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 hover:-translate-y-2">
 
-                            @if($service->image)
+                            @if($service->image)-->
                                 <!-- Service Image (Full Width) -->
-                                <div class="relative h-48 overflow-hidden">
+                                <!--<div class="relative h-48 overflow-hidden">
                                     <img src="{{ asset('storage/' . $service->image) }}"
                                          alt="{{ $service->title }}"
                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-
+                                -->
                                     <!-- Overlay with Icon -->
-                                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                                    <!--<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
                                         <div class="absolute bottom-4 left-4">
                                             <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                                                 <div class="text-white text-xl">
@@ -190,10 +190,10 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
                                     <!-- Price Range Badge (if available) -->
-                                    @if($service->price_range)
+                                    <!--@if($service->price_range)
                                         <div class="absolute top-4 right-4">
                                             <span class="inline-flex items-center px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
                                                 {{ $service->price_range }}
@@ -201,23 +201,23 @@
                                         </div>
                                     @endif
                                 </div>
-                            @else
+                            @else -->
                                 <!-- Service Icon & Gradient Background (fallback) -->
-                                <div class="relative h-24 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                <!--<div class="relative h-24 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                                     <div class="text-white text-3xl">
                                         @if ($service->icon)
                                             <i class="{{ $service->icon }}"></i>
                                         @else
                                             <i class="fas fa-cog"></i>
                                         @endif
-                                    </div>
+                                    </div>-->
 
                                     <!-- Decorative Elements -->
-                                    <div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-8 -translate-y-8"></div>
+                                    <!--<div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-8 -translate-y-8"></div>
                                     <div class="absolute bottom-0 left-0 w-20 h-20 bg-white opacity-10 rounded-full transform -translate-x-4 translate-y-4"></div>
-
+                                    -->
                                     <!-- Price Range Badge -->
-                                    @if($service->price_range)
+                                    <!--@if($service->price_range)
                                         <div class="absolute top-4 right-4">
                                             <span class="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
                                                 {{ $service->price_range }}
@@ -225,19 +225,19 @@
                                         </div>
                                     @endif
                                 </div>
-                            @endif
+                            @endif -->
 
                             <!-- Service Content -->
-                            <div class="p-8">
+                            <!--<div class="p-8">
                                 <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                                     {{ $service->title }}
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed mb-6">
                                     {{ $service->short_description }}
-                                </p>
+                                </p>-->
 
                                 <!-- Service Features -->
-                                @if ($service->description)
+                                <!--@if ($service->description)
                                     <div class="space-y-2 mb-6">
                                         @php
                                             $features = explode("\n", strip_tags($service->description));
@@ -253,24 +253,24 @@
                                             @endif
                                         @endforeach
                                     </div>
-                                @endif
+                                @endif -->
 
                                 <!-- CTA Button -->
-                                <a href="{{ route('services.show', $service->slug) }}"
+                                <!--<a href="{{ route('services.show', $service->slug) }}"
                                     class="inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform group-hover:scale-105">
                                     Pelajari Lebih Lanjut
                                     <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                                 </a>
-                            </div>
+                            </div> -->
 
                             <!-- Hover Effect Overlay -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                            <!--<div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
                         </div>
                     @endforeach
-                </div>
+                </div>-->
 
                 <!-- View All Button -->
-                <div class="text-center mt-16">
+                <!--<div class="text-center mt-16">
                     <a href="{{ route('services.index') }}"
                         class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
                         <i class="fas fa-th-large mr-3"></i>
@@ -280,7 +280,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    @endif-->
 
     <!-- Projects Section -->
     @if ($featuredProjects->count() > 0)

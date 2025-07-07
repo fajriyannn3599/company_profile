@@ -24,7 +24,7 @@
                         </svg>
                         <span class="text-gray-900 font-medium">{{ $team->name }}</span>
                     </nav>
-                </div>  
+                </div>
             </div>
         </div>
 
@@ -72,24 +72,24 @@
                                     <div class="flex items-center space-x-4 text-sm text-blue-100">
                                         @if ($team->email)
                                             <div class="flex items-center space-x-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                <!--<svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
                                                     </path>
                                                 </svg>
-                                                <span>{{ $team->email }}</span>
+                                                <span>{{ $team->email }}</span>-->
                                             </div>
                                         @endif
                                         @if ($team->phone)
                                             <div class="flex items-center space-x-1">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor"
+                                                <!--<svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z">
                                                     </path>
                                                 </svg>
-                                                <span>{{ $team->phone }}</span>
+                                                <span>{{ $team->phone }}</span>-->
                                             </div>
                                         @endif
                                     </div>
@@ -126,7 +126,7 @@
                                     @endif
 
                                     <!-- Contact Information -->
-                                    <div>
+                                    <!--<div>
                                         <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
                                             <div
                                                 class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center mr-3">
@@ -180,8 +180,9 @@
                                                 </div>
                                             @endif
                                         </div>
-                                    </div> <!-- Social Links -->
-                                    @if (
+                                    </div>-->
+                                    <!-- Social Links -->
+                                    <!--@if (
                                         $team->social_links &&
                                             (is_array($team->social_links)
                                                 ? count($team->social_links) > 0
@@ -250,12 +251,12 @@
                                         </div>
                                     @endif
                                 </div>
-                            </div>
+                            </div>-->
 
                             <!-- Sidebar -->
-                            <div class="space-y-6">
+                            <!--<div class="space-y-6">-->
                                 <!-- Status Card -->
-                                <div class="bg-gray-50 rounded-xl p-6">
+                                <!--<div class="bg-gray-50 rounded-xl p-6">
                                     <h4 class="font-semibold text-gray-900 mb-4">Status</h4>
                                     <div class="space-y-3">
                                         <div class="flex items-center justify-between">
@@ -276,10 +277,10 @@
                                                 class="text-gray-900 font-medium">{{ $team->created_at ? $team->created_at->format('M Y') : 'N/A' }}</span>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <!-- Quick Actions -->
-                                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
+                                <!--<div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6">
                                     <h4 class="font-semibold text-gray-900 mb-4">Kontak Cepat</h4>
                                     <div class="space-y-3">
                                         @if ($team->email)
@@ -311,7 +312,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Other Team Members -->
                 @if ($otherTeamMembers && $otherTeamMembers->count() > 0)

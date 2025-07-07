@@ -20,7 +20,7 @@
                 </ol>
             </nav>
 
-            <div class="bg-white rounded-2xl p-2 shadow-lg inline-block mb-6">
+            <!-- <div class="bg-white rounded-2xl p-2 shadow-lg inline-block mb-6">
                 <span class="bg-blue-100 text-blue-800 px-4 py-2 rounded-xl text-sm font-medium">
                     📝 Form Lamaran
                 </span>
@@ -29,7 +29,7 @@
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                 Lamar Posisi
             </h1>
-            
+
             <div class="bg-white rounded-2xl shadow-lg p-6 max-w-lg mx-auto">
                 <h2 class="text-2xl font-bold text-gray-900 mb-2">{{ $job->title }}</h2>
                 <div class="flex items-center justify-center gap-4 text-sm text-gray-600">
@@ -42,10 +42,10 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Application Form -->
-<section class="py-16">
+<!-- <section class="py-16">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
             @if(session('success'))
@@ -60,20 +60,20 @@
             @endif
 
             <form method="POST" action="{{ route('careers.apply.store', $job->slug) }}" enctype="multipart/form-data" class="space-y-8">
-                @csrf
+                @csrf -->
 
                 <!-- Personal Information -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Informasi Pribadi</h3>
-                    
+
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
                                 Nama Lengkap <span class="text-red-500">*</span>
                             </label>
-                            <input type="text" 
-                                   id="name" 
-                                   name="name" 
+                            <input type="text"
+                                   id="name"
+                                   name="name"
                                    value="{{ old('name') }}"
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('name') border-red-500 @enderror">
@@ -86,9 +86,9 @@
                             <label for="email" class="block text-sm font-medium text-gray-700 mb-2">
                                 Email <span class="text-red-500">*</span>
                             </label>
-                            <input type="email" 
-                                   id="email" 
-                                   name="email" 
+                            <input type="email"
+                                   id="email"
+                                   name="email"
                                    value="{{ old('email') }}"
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('email') border-red-500 @enderror">
@@ -101,9 +101,9 @@
                             <label for="phone" class="block text-sm font-medium text-gray-700 mb-2">
                                 Nomor Telepon <span class="text-red-500">*</span>
                             </label>
-                            <input type="tel" 
-                                   id="phone" 
-                                   name="phone" 
+                            <input type="tel"
+                                   id="phone"
+                                   name="phone"
                                    value="{{ old('phone') }}"
                                    required
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('phone') border-red-500 @enderror">
@@ -116,9 +116,9 @@
                             <label for="portfolio_url" class="block text-sm font-medium text-gray-700 mb-2">
                                 Portfolio URL (Opsional)
                             </label>
-                            <input type="url" 
-                                   id="portfolio_url" 
-                                   name="portfolio_url" 
+                            <input type="url"
+                                   id="portfolio_url"
+                                   name="portfolio_url"
                                    value="{{ old('portfolio_url') }}"
                                    placeholder="https://..."
                                    class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('portfolio_url') border-red-500 @enderror">
@@ -127,21 +127,21 @@
                             @enderror
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Documents -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Dokumen</h3>
-                    
+
                     <div class="space-y-6">
                         <div>
                             <label for="resume" class="block text-sm font-medium text-gray-700 mb-2">
                                 CV/Resume <span class="text-red-500">*</span>
                             </label>
                             <div class="mt-2">
-                                <input type="file" 
-                                       id="resume" 
-                                       name="resume" 
+                                <input type="file"
+                                       id="resume"
+                                       name="resume"
                                        accept=".pdf,.doc,.docx"
                                        required
                                        class="block w-full text-sm text-gray-500 file:mr-4 file:py-3 file:px-4 file:rounded-xl file:border-0 file:text-sm file:font-medium file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 @error('resume') border-red-500 @enderror">
@@ -152,19 +152,19 @@
                             @enderror
                         </div>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Cover Letter -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
                     <h3 class="text-2xl font-bold text-gray-900 mb-6">Cover Letter</h3>
-                    
+
                     <div>
                         <label for="cover_letter" class="block text-sm font-medium text-gray-700 mb-2">
                             Cover Letter <span class="text-red-500">*</span>
                         </label>
-                        <textarea id="cover_letter" 
-                                  name="cover_letter" 
-                                  rows="8" 
+                        <textarea id="cover_letter"
+                                  name="cover_letter"
+                                  rows="8"
                                   required
                                   placeholder="Ceritakan tentang diri Anda, pengalaman, dan mengapa Anda tertarik dengan posisi ini..."
                                   class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('cover_letter') border-red-500 @enderror">{{ old('cover_letter') }}</textarea>
@@ -172,32 +172,32 @@
                         <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Agreement -->
-                <div class="bg-white rounded-2xl shadow-lg p-8">
+                <!-- <div class="bg-white rounded-2xl shadow-lg p-8">
                     <div class="flex items-start gap-3">
-                        <input type="checkbox" 
-                               id="agreement" 
+                        <input type="checkbox"
+                               id="agreement"
                                name="agreement"
                                required
                                class="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
                         <label for="agreement" class="text-sm text-gray-700">
-                            Saya menyetujui bahwa informasi yang saya berikan adalah benar dan akurat. 
-                            Saya juga memahami bahwa {{ setting('company_name') }} akan menggunakan 
-                            informasi ini untuk proses seleksi dan dapat menghubungi saya terkait 
+                            Saya menyetujui bahwa informasi yang saya berikan adalah benar dan akurat.
+                            Saya juga memahami bahwa {{ setting('company_name') }} akan menggunakan
+                            informasi ini untuk proses seleksi dan dapat menghubungi saya terkait
                             aplikasi lamaran ini. <span class="text-red-500">*</span>
                         </label>
                     </div>
-                </div>
+                </div> -->
 
                 <!-- Submit Button -->
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button type="submit" 
+                <!-- <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button type="submit"
                             class="bg-blue-600 text-white px-8 py-4 rounded-xl font-medium hover:bg-blue-700 transition-colors">
                         Kirim Lamaran
                     </button>
-                    <a href="{{ route('careers.show', $job->slug) }}" 
+                    <a href="{{ route('careers.show', $job->slug) }}"
                        class="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-xl font-medium hover:bg-gray-50 transition-colors text-center">
                         Kembali ke Detail Posisi
                     </a>
@@ -205,10 +205,10 @@
             </form>
         </div>
     </div>
-</section>
+</section> -->
 
 <!-- Tips Section -->
-<section class="py-16 bg-gray-50">
+<!-- <section class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
         <div class="max-w-4xl mx-auto">
             <div class="text-center mb-12">
@@ -267,5 +267,5 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 @endsection

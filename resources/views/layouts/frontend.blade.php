@@ -247,11 +247,14 @@
                     </a>                    <a href="{{ route('services.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}">
                         Produk
                     </a>
-                    <a href="{{ route('projects.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('projects*') ? 'text-blue-600' : '' }}">
+                    <!--<a href="{{ route('projects.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('projects*') ? 'text-blue-600' : '' }}">
                         Laporan Keuangan
-                    </a>
+                    </a> -->
                     <a href="{{ route('articles.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}">
                         Berita
+                    </a>
+                    <a href="{{ route('careers.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('careers*') ? 'text-blue-600' : '' }}">
+                        Laporan Keuangan
                     </a>
                     </a>
                     <a href="{{ route('contact') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}">
@@ -284,7 +287,7 @@
                         Laporan Keuangan
                     </a>
                     <a href="{{ route('articles.index') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}">
-                        Artikel
+                        Berita
                     </a>
                     <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-blue-600 px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}">
                         Hubungi Kami
@@ -335,8 +338,8 @@
                     <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="{{ route('about') }}" class="text-gray-300 hover:text-white transition-colors">Tentang Kami</a></li>
-                        <li><a href="{{ route('services.index') }}" class="text-gray-300 hover:text-white transition-colors">Layanan</a></li>
-                        <li><a href="{{ route('projects.index') }}" class="text-gray-300 hover:text-white transition-colors">Portofolio</a></li>
+                        <li><a href="{{ route('services.index') }}" class="text-gray-300 hover:text-white transition-colors">Produk</a></li>
+                        <li><a href="{{ route('careers.index') }}" class="text-gray-300 hover:text-white transition-colors">Laporan Keuangan</a></li>
                     </ul>
                 </div>
 
