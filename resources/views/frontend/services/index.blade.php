@@ -64,7 +64,7 @@
             <!-- Section Header -->
             <div class="text-center mb-16">
                 <span class="inline-block px-4 py-2 bg-white/80 text-blue-600 rounded-full text-sm font-semibold mb-4 shadow-md backdrop-blur-sm">
-                    🚀 Layanan Profesional
+                    🚀 Produk Profesional
                 </span>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     Solusi <span class="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Teknologi</span> Terdepan
@@ -102,7 +102,7 @@
                         </svg>
                     </div>
                 </div>
-                <h3 class="text-3xl font-bold text-gray-900 mb-4">Layanan Sedang Dipersiapkan</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-4">Produk Sedang Dipersiapkan</h3>
                 <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
                     Kami sedang mempersiapkan informasi layanan terbaru untuk memberikan solusi teknologi terbaik bagi Anda.
                 </p>
@@ -135,7 +135,7 @@
             </span>
             <h2 class="text-4xl md:text-5xl font-bold mb-6">Mengapa Memilih Kami?</h2>
             <p class="text-xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-                Keunggulan dan komitmen kami dalam memberikan layanan teknologi terbaik untuk kesuksesan bisnis Anda
+                Keunggulan dan komitmen kami dalam memberikan produk teknologi terbaik untuk kesuksesan bisnis Anda
             </p>
             <div class="w-24 h-1 bg-white/40 rounded-full mx-auto mt-8"></div>
         </div>

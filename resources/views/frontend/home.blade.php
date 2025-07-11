@@ -1,38 +1,44 @@
 @extends('layouts.frontend')
 
 @push('seo')
-    <x-seo-head page-identifier="home" :title="page_title('home', setting('site_name', 'Company Profile'))" :description="page_description('home', setting('meta_description', 'Professional company profile website'))" />
+    <x-seo-head page-identifier="home" :title="page_title('home', setting('site_name', 'Company Profile'))"
+        :description="page_description('home', setting('meta_description', 'Professional company profile website'))" />
 @endpush
 
 @section('content')
     <!-- Hero Section -->
-    <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')" :fallback-subtitle="setting(
-        'hero_subtitle',
-        'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-    )" />    <!-- Stats Counter Section -->
+    <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
+        :fallback-subtitle="setting(
+                    'hero_subtitle',
+                    'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                )" /> <!-- Stats Counter Section -->
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="text-center group">
-                    <div class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="text-4xl md:text-5xl font-bold text-blue-600 mb-2 group-hover:scale-110 transition-transform duration-300">
                         {{ $featuredServices->count() > 0 ? $featuredServices->count() * 2 : 6 }}+
                     </div>
                     <div class="text-gray-600 font-medium">Layanan Profesional</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="text-4xl md:text-5xl font-bold text-green-600 mb-2 group-hover:scale-110 transition-transform duration-300">
                         {{ $featuredProjects->count() > 0 ? $featuredProjects->count() * 8 : 50 }}+
                     </div>
                     <div class="text-gray-600 font-medium">Proyek Selesai</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="text-4xl md:text-5xl font-bold text-purple-600 mb-2 group-hover:scale-110 transition-transform duration-300">
                         {{ $testimonials->count() > 0 ? $testimonials->count() * 10 : 30 }}+
                     </div>
                     <div class="text-gray-600 font-medium">Klien Puas</div>
                 </div>
                 <div class="text-center group">
-                    <div class="text-4xl md:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform duration-300">
+                    <div
+                        class="text-4xl md:text-5xl font-bold text-orange-600 mb-2 group-hover:scale-110 transition-transform duration-300">
                         8+
                     </div>
                     <div class="text-gray-600 font-medium">Tahun Pengalaman</div>
@@ -56,58 +62,58 @@
                     </h2>
                     <div class="text-gray-600 text-lg leading-relaxed mb-8 space-y-4">
                         {!! nl2br(
-                            e(
-                                setting(
-                                    'about_description',
-                                    'Kami adalah perusahaan teknologi yang berdedikasi untuk memberikan solusi digital terbaik. Dengan pengalaman bertahun-tahun dan tim profesional yang berpengalaman, kami siap membantu mengembangkan bisnis Anda ke level yang lebih tinggi dengan teknologi terdepan dan strategi yang tepat sasaran.',
-                                ),
-                            ),
-                        ) !!}
+        e(
+            setting(
+                'about_description',
+                'Kami adalah perusahaan teknologi yang berdedikasi untuk memberikan solusi digital terbaik. Dengan pengalaman bertahun-tahun dan tim profesional yang berpengalaman, kami siap membantu mengembangkan bisnis Anda ke level yang lebih tinggi dengan teknologi terdepan dan strategi yang tepat sasaran.',
+            ),
+        ),
+    ) !!}
                     </div>
 
                     <!-- Feature highlights -->
-                   <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-                        <div class="flex items-center">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-check text-blue-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-gray-900">Tim Profesional</div>
-                                <div class="text-gray-600 text-sm">Expert berpengalaman</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-clock text-green-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-gray-900">Tepat Waktu</div>
-                                <div class="text-gray-600 text-sm">Delivery sesuai jadwal</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-shield-alt text-purple-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-gray-900">Berkualitas</div>
-                                <div class="text-gray-600 text-sm">Standard tinggi</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center">
-                            <div
-                                class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
-                                <i class="fas fa-headset text-orange-600 text-lg"></i>
-                            </div>
-                            <div>
-                                <div class="font-semibold text-gray-900">Support 24/7</div>
-                                <div class="text-gray-600 text-sm">Dukungan penuh</div>
-                            </div>
-                        </div>
-                    </div> -->
+                    <!-- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                                    <div class="flex items-center">
+                                        <div
+                                            class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-check text-blue-600 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Tim Profesional</div>
+                                            <div class="text-gray-600 text-sm">Expert berpengalaman</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="flex-shrink-0 w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-clock text-green-600 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Tepat Waktu</div>
+                                            <div class="text-gray-600 text-sm">Delivery sesuai jadwal</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="flex-shrink-0 w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-shield-alt text-purple-600 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Berkualitas</div>
+                                            <div class="text-gray-600 text-sm">Standard tinggi</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center">
+                                        <div
+                                            class="flex-shrink-0 w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mr-4">
+                                            <i class="fas fa-headset text-orange-600 text-lg"></i>
+                                        </div>
+                                        <div>
+                                            <div class="font-semibold text-gray-900">Support 24/7</div>
+                                            <div class="text-gray-600 text-sm">Dukungan penuh</div>
+                                        </div>
+                                    </div>
+                                </div> -->
 
                     <div class="flex flex-col sm:flex-row gap-4">
                         <a href="{{ route('about') }}"
@@ -125,7 +131,7 @@
                 <div class="order-1 lg:order-2 relative">
                     <div class="relative">
                         @if (setting('about_image'))
-                            <img src="{{ asset('storage/'.setting('about_image')) }}" alt="About Us"
+                            <img src="{{ asset('storage/' . setting('about_image')) }}" alt="About Us"
                                 class="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-500">
                         @else
                             <div
@@ -149,11 +155,11 @@
     </section>
 
     <!-- Services Section -->
-    <!--@if ($featuredServices->count() > 0)
+    @if ($featuredServices->count() > 0)
         <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">-->
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
-                ,<!--<div class="text-center mb-16">
+                <div class="text-center mb-16">
                     <div
                         class="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold mb-6">
                         <i class="fas fa-cogs mr-2"></i>
@@ -164,80 +170,85 @@
                         Kami menyediakan berbagai layanan teknologi profesional yang dirancang khusus untuk memenuhi
                         kebutuhan dan mengakselerasi pertumbuhan bisnis Anda
                     </p>
-                </div>-->                <!-- Services Grid -->
-                <!--<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                </div> <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($featuredServices as $index => $service)
-                        <div
-                            class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 hover:-translate-y-2">
+                            <div
+                                class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-blue-200 hover:-translate-y-2">
 
-                            @if($service->image)-->
-                                <!-- Service Image (Full Width) -->
-                                <!--<div class="relative h-48 overflow-hidden">
-                                    <img src="{{ asset('storage/' . $service->image) }}"
-                                         alt="{{ $service->title }}"
-                                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                -->
-                                    <!-- Overlay with Icon -->
-                                    <!--<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-                                        <div class="absolute bottom-4 left-4">
-                                            <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
-                                                <div class="text-white text-xl">
-                                                    @if ($service->icon)
-                                                        <i class="{{ $service->icon }}"></i>
-                                                    @else
-                                                        <i class="fas fa-cog"></i>
-                                                    @endif
+                                @if($service->image)
+                                        <!-- Service Image (Full Width) -->
+                                        <div class="relative h-48 overflow-hidden">
+                                            <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}"
+                                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                        </div>
+                                        <!-- Overlay with Icon -->
+                                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
+                                            <div class="absolute bottom-4 left-4">
+                                                <div class="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                                    <div class="text-white text-xl">
+                                                        @if ($service->icon)
+                                                            <i class="{{ $service->icon }}"></i>
+                                                        @else
+                                                            <i class="fas fa-cog"></i>
+                                                        @endif
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div> -->
 
-                                    <!-- Price Range Badge (if available) -->
-                                    <!--@if($service->price_range)
-                                        <div class="absolute top-4 right-4">
-                                            <span class="inline-flex items-center px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
-                                                {{ $service->price_range }}
-                                            </span>
-                                        </div>
-                                    @endif
-                                </div>
-                            @else -->
+                                        <!-- Price Range Badge (if available) -->
+                                        @if($service->price_range)
+                                            <div class="absolute top-4 right-4">
+                                                <span
+                                                    class="inline-flex items-center px-3 py-1 bg-blue-600/90 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
+                                                    {{ $service->price_range }}
+                                                </span>
+                                            </div>
+                                        @endif
+                                    </div>
+                                @else
                                 <!-- Service Icon & Gradient Background (fallback) -->
-                                <!--<div class="relative h-24 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                <div class="relative h-24 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
                                     <div class="text-white text-3xl">
                                         @if ($service->icon)
                                             <i class="{{ $service->icon }}"></i>
                                         @else
                                             <i class="fas fa-cog"></i>
                                         @endif
-                                    </div>-->
+                                    </div>
 
                                     <!-- Decorative Elements -->
-                                    <!--<div class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-8 -translate-y-8"></div>
-                                    <div class="absolute bottom-0 left-0 w-20 h-20 bg-white opacity-10 rounded-full transform -translate-x-4 translate-y-4"></div>
-                                    -->
+                                    <div
+                                        class="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full transform translate-x-8 -translate-y-8">
+                                    </div>
+                                    <div
+                                        class="absolute bottom-0 left-0 w-20 h-20 bg-white opacity-10 rounded-full transform -translate-x-4 translate-y-4">
+                                    </div>
+
                                     <!-- Price Range Badge -->
-                                    <!--@if($service->price_range)
+                                    @if($service->price_range)
                                         <div class="absolute top-4 right-4">
-                                            <span class="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
+                                            <span
+                                                class="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm text-white text-sm font-semibold rounded-full">
                                                 {{ $service->price_range }}
                                             </span>
                                         </div>
                                     @endif
                                 </div>
-                            @endif -->
+                            @endif
 
                             <!-- Service Content -->
-                            <!--<div class="p-8">
+                            <div class="p-8">
                                 <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors">
                                     {{ $service->title }}
                                 </h3>
                                 <p class="text-gray-600 leading-relaxed mb-6">
                                     {{ $service->short_description }}
-                                </p>-->
+                                </p>
 
                                 <!-- Service Features -->
-                                <!--@if ($service->description)
+                                @if ($service->description)
                                     <div class="space-y-2 mb-6">
                                         @php
                                             $features = explode("\n", strip_tags($service->description));
@@ -253,150 +264,152 @@
                                             @endif
                                         @endforeach
                                     </div>
-                                @endif -->
+                                @endif
 
                                 <!-- CTA Button -->
-                                <!--<a href="{{ route('services.show', $service->slug) }}"
+                                <a href="{{ route('services.show', $service->slug) }}"
                                     class="inline-flex items-center justify-center w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform group-hover:scale-105">
                                     Pelajari Lebih Lanjut
                                     <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
                                 </a>
-                            </div> -->
+                            </div>
 
                             <!-- Hover Effect Overlay -->
-                            <!--<div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
+                            <div
+                                class="absolute inset-0 bg-gradient-to-br from-blue-600 to-purple-600 opacity-0 group-hover:opacity-5 transition-opacity duration-500">
+                            </div>
                         </div>
                     @endforeach
-                </div>-->
-
-                <!-- View All Button -->
-                <!--<div class="text-center mt-16">
-                    <a href="{{ route('services.index') }}"
-                        class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
-                        <i class="fas fa-th-large mr-3"></i>
-                        Lihat Semua Layanan
-                        <i class="fas fa-arrow-right ml-3"></i>
-                    </a>
-                </div>
             </div>
-        </section>
-    @endif-->
 
-    <!-- Projects Section -->
-    @if ($featuredProjects->count() > 0)
-        <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <div
-                        class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold mb-6">
-                        <i class="fas fa-folder-open mr-2"></i>
-                        Portfolio Kami
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Proyek Terbaik</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                        Lihat showcase project-project unggulan yang telah kami selesaikan dengan tingkat kepuasan klien
-                        yang tinggi dan hasil yang memukau
-                    </p>
-                </div>
-
-                <!-- Projects Grid -->
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    @foreach ($featuredProjects as $index => $project)
-                        <div
-                            class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2">
-                            <!-- Project Image -->
-                            <div class="relative h-56 overflow-hidden">
-                                @if ($project->featured_image)
-                                    <img src="{{ asset('storage/'.$project->featured_image) }}" alt="{{ $project->title }}"
-                                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                @else
-                                    <div
-                                        class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
-                                        <i class="fas fa-image text-6xl text-gray-400"></i>
-                                    </div>
-                                @endif
-
-                                <!-- Overlay -->
-                                <div
-                                    class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                </div>
-
-                                <!-- Category Badge -->
-                                <div class="absolute top-4 left-4">
-                                    <span
-                                        class="inline-flex items-center px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-sm font-semibold rounded-full">
-                                        @if ($project->category)
-                                            {{ $project->category->name }}
-                                        @else
-                                            Project
-                                        @endif
-                                    </span>
-                                </div>
-
-                                <!-- View Project Button (appears on hover) -->
-                                <div
-                                    class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
-                                    <a href="{{ route('projects.show', $project->slug) }}"
-                                        class="bg-white text-gray-900 px-6 py-2 rounded-lg font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300 hover:bg-blue-50">
-                                        <i class="fas fa-eye mr-2"></i>
-                                        Lihat Detail
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Project Content -->
-                            <div class="p-6">
-                                <h3
-                                    class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                                    {{ $project->title }}
-                                </h3>
-                                <p class="text-gray-600 leading-relaxed mb-4">
-                                    {{ Str::limit($project->short_description, 100) }}
-                                </p>
-
-                                <!-- Project Details -->
-                                <div class="flex items-center justify-between">
-                                    <div class="flex items-center space-x-4 text-sm text-gray-500">
-                                        @if ($project->project_url)
-                                            <div class="flex items-center">
-                                                <i class="fas fa-globe mr-1"></i>
-                                                <span>Live Site</span>
-                                            </div>
-                                        @endif
-                                        <div class="flex items-center">
-                                            <i class="fas fa-calendar mr-1"></i>
-                                            <span>{{ $project->created_at->format('Y') }}</span>
-                                        </div>
-                                    </div>
-
-                                    <a href="{{ route('projects.show', $project->slug) }}"
-                                        class="text-blue-600 hover:text-blue-700 font-semibold transition-colors">
-                                        <i class="fas fa-arrow-right"></i>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <!-- Decorative gradient border -->
-                            <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                style="mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;">
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-
-                <!-- View All Button -->
-                <div class="text-center mt-16">
-                    <a href="{{ route('projects.index') }}"
-                        class="inline-flex items-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
-                        <i class="fas fa-folder-open mr-3"></i>
-                        Lihat Semua Proyek
-                        <i class="fas fa-arrow-right ml-3"></i>
-                    </a>
-                </div>
+            <!-- View All Button -->
+            <div class="text-center mt-16">
+                <a href="{{ route('services.index') }}"
+                    class="inline-flex items-center bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
+                    <i class="fas fa-th-large mr-3"></i>
+                    Lihat Semua Layanan
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
             </div>
         </section>
     @endif
+
+    <!-- Projects Section -->
+    <!--@if ($featuredProjects->count() > 0)
+                <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"> -->
+    <!-- Section Header -->
+    <!-- <div class="text-center mb-16">
+                            <div
+                                class="inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-semibold mb-6">
+                                <i class="fas fa-folder-open mr-2"></i>
+                                Portfolio Kami
+                            </div>
+                            <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">Proyek Terbaik</h2>
+                            <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+                                Lihat showcase project-project unggulan yang telah kami selesaikan dengan tingkat kepuasan klien
+                                yang tinggi dan hasil yang memukau
+                            </p>
+                        </div> -->
+
+    <!-- Projects Grid -->
+    <!-- <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            @foreach ($featuredProjects as $index => $project)
+                                <div
+                                    class="group relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden hover:-translate-y-2">
+                        -->
+    <!-- Project Image -->
+    <!-- <div class="relative h-56 overflow-hidden">
+                                        @if ($project->featured_image)
+                                            <img src="{{ asset('storage/' . $project->featured_image) }}" alt="{{ $project->title }}"
+                                                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                                        @else
+                                            <div
+                                                class="w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                                                <i class="fas fa-image text-6xl text-gray-400"></i>
+                                            </div>
+                                        @endif -->
+
+    <!-- Overlay -->
+    <!-- <div
+                                            class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                        </div> -->
+
+    <!-- Category Badge -->
+    <!-- <div class="absolute top-4 left-4">
+                                            <span
+                                                class="inline-flex items-center px-3 py-1 bg-white/90 backdrop-blur-sm text-blue-600 text-sm font-semibold rounded-full">
+                                                @if ($project->category)
+                                                    {{ $project->category->name }}
+                                                @else
+                                                    Project
+                                                @endif
+                                            </span>
+                                        </div> -->
+
+    <!-- View Project Button (appears on hover) -->
+    <!-- <div
+                                            class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                            <a href="{{ route('projects.show', $project->slug) }}"
+                                                class="bg-white text-gray-900 px-6 py-2 rounded-lg font-semibold transform scale-95 group-hover:scale-100 transition-transform duration-300 hover:bg-blue-50">
+                                                <i class="fas fa-eye mr-2"></i>
+                                                Lihat Detail
+                                            </a>
+                                        </div>
+                                    </div> -->
+
+    <!-- Project Content -->
+    <!-- <div class="p-6">
+                                        <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                                            {{ $project->title }}
+                                        </h3>
+                                        <p class="text-gray-600 leading-relaxed mb-4">
+                                            {{ Str::limit($project->short_description, 100) }}
+                                        </p> -->
+
+    <!-- Project Details -->
+    <!-- <div class="flex items-center justify-between">
+                                            <div class="flex items-center space-x-4 text-sm text-gray-500">
+                                                @if ($project->project_url)
+                                                    <div class="flex items-center">
+                                                        <i class="fas fa-globe mr-1"></i>
+                                                        <span>Live Site</span>
+                                                    </div>
+                                                @endif
+                                                <div class="flex items-center">
+                                                    <i class="fas fa-calendar mr-1"></i>
+                                                    <span>{{ $project->created_at->format('Y') }}</span>
+                                                </div>
+                                            </div> 
+
+                                            <a href="{{ route('projects.show', $project->slug) }}"
+                                                class="text-blue-600 hover:text-blue-700 font-semibold transition-colors">
+                                                <i class="fas fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div> -->
+
+    <!-- Decorative gradient border -->
+    <!-- <div class="absolute inset-0 rounded-2xl border-2 border-transparent bg-gradient-to-br from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                                        style="mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); mask-composite: exclude;">
+                                    </div>
+                                </div>
+                            @endforeach
+                        </div> -->
+
+    <!-- View All Button -->
+    <!-- <div class="text-center mt-16">
+                            <a href="{{ route('projects.index') }}"
+                                class="inline-flex items-center bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
+                                <i class="fas fa-folder-open mr-3"></i>
+                                Lihat Semua Proyek
+                                <i class="fas fa-arrow-right ml-3"></i>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            @endif -->
 
     <!-- Testimonials Section -->
     @if ($testimonials->count() > 0)
@@ -454,8 +467,7 @@
                                     <!-- Client Avatar -->
                                     <div class="relative">
                                         @if ($testimonial->avatar)
-                                            <img src="{{ asset($testimonial->avatar) }}"
-                                                alt="{{ $testimonial->client_name }}"
+                                            <img src="{{ asset($testimonial->avatar) }}" alt="{{ $testimonial->client_name }}"
                                                 class="w-12 h-12 rounded-full object-cover border-2 border-white shadow-md">
                                         @else
                                             <div
@@ -519,7 +531,8 @@
                         </div>
                     </div>
                 </div>
-            </div>        </section>
+            </div>
+        </section>
     @endif
 
     <!-- Why Choose Us Section -->
@@ -528,7 +541,8 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
                 <div class="text-center mb-16">
-                    <div class="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-6">
+                    <div
+                        class="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-800 rounded-full text-sm font-semibold mb-6">
                         <i class="fas fa-star mr-2"></i>
                         Keunggulan Kami
                     </div>
@@ -541,10 +555,12 @@
                 <!-- Why Choose Us Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     @foreach ($whyChooseUs as $index => $reason)
-                        <div class="group relative bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-orange-200 hover:-translate-y-2 p-8">
+                        <div
+                            class="group relative bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-gray-100 hover:border-orange-200 hover:-translate-y-2 p-8">
                             <!-- Icon -->
                             <div class="mb-6">
-                                <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <div
+                                    class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                                     <div class="text-white text-2xl">
                                         @if ($reason->icon)
                                             <i class="{{ $reason->icon }}"></i>
@@ -566,8 +582,12 @@
                             </div>
 
                             <!-- Decorative Elements -->
-                            <div class="absolute -top-6 -right-6 w-24 h-24 bg-orange-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                            <div class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-orange-200 to-red-200 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
+                            <div
+                                class="absolute -top-6 -right-6 w-24 h-24 bg-orange-100 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            </div>
+                            <div
+                                class="absolute -bottom-6 -left-6 w-32 h-32 bg-gradient-to-br from-orange-200 to-red-200 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-500">
+                            </div>
                         </div>
                     @endforeach
                 </div>
@@ -575,7 +595,7 @@
                 <!-- CTA Button -->
                 <div class="text-center mt-16">
                     <a href="{{ route('contact') }}"
-                       class="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
+                        class="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105">
                         <i class="fas fa-handshake mr-3"></i>
                         Mari Berkolaborasi
                         <i class="fas fa-arrow-right ml-3"></i>
@@ -673,12 +693,10 @@
                                 <div class="flex items-center justify-between">
                                     <div class="flex items-center">
                                         @if ($article->author && $article->author->avatar)
-                                            <img src="{{ asset($article->author->avatar) }}"
-                                                alt="{{ $article->author->name }}"
+                                            <img src="{{ asset($article->author->avatar) }}" alt="{{ $article->author->name }}"
                                                 class="w-8 h-8 rounded-full object-cover mr-3">
                                         @else
-                                            <div
-                                                class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
+                                            <div class="w-8 h-8 bg-purple-100 rounded-full flex items-center justify-center mr-3">
                                                 <i class="fas fa-user text-purple-600 text-sm"></i>
                                             </div>
                                         @endif
@@ -818,8 +836,7 @@
                             @if (setting('contact_whatsapp'))
                                 <a href="https://wa.me/{{ setting('contact_whatsapp') }}" target="_blank"
                                     class="group flex items-center justify-center bg-green-500/20 hover:bg-green-500/30 backdrop-blur-sm px-6 py-3 rounded-lg transition-all duration-300 hover:scale-105">
-                                    <div
-                                        class="w-12 h-12 bg-green-500/30 rounded-full flex items-center justify-center mr-4">
+                                    <div class="w-12 h-12 bg-green-500/30 rounded-full flex items-center justify-center mr-4">
                                         <i class="fab fa-whatsapp text-xl"></i>
                                     </div>
                                     <div class="text-left">

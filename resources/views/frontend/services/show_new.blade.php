@@ -14,7 +14,7 @@
             <ol class="flex items-center space-x-2 text-sm">
                 <li><a href="{{ route('home') }}" class="hover:text-blue-200">Beranda</a></li>
                 <li><span class="mx-2">/</span></li>
-                <li><a href="{{ route('services.index') }}" class="hover:text-blue-200">Layanan</a></li>
+                <li><a href="{{ route('services.index') }}" class="hover:text-blue-200">Produk</a></li>
                 <li><span class="mx-2">/</span></li>
                 <li class="text-blue-200">{{ $service->title }}</li>
             </ol>
@@ -29,7 +29,7 @@
                     <div class="mt-6">
                         <span class="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
                             <i class="fas fa-star mr-1"></i>
-                            Layanan Unggulan
+                            Produk Unggulan
                         </span>
                     </div>
                 @endif
@@ -120,7 +120,7 @@
 
                 <!-- Service Features -->
                 <div class="bg-white border border-gray-200 rounded-xl p-6">
-                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Keunggulan Layanan</h3>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Keunggulan Produk</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-3"></i>
