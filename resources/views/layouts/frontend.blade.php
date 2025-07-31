@@ -421,7 +421,7 @@
                                 class="text-gray-300 hover:text-white transition-colors">Produk</a></li>
                         <li><a href="{{ route('hubungi-kami') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Hubungi Kami</a></li>
-                        <li><a href="{{ route('careers.index') }}"
+                        <li><a href="{{ route('financial-reports.index') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Laporan Keuangan</a></li>
                         <li><a href="{{ route('contact') }}"
                                 class="text-gray-300 hover:text-white transition-colors">Pengajuan</a></li>
