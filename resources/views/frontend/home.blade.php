@@ -123,9 +123,9 @@
                                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
                                     rel="stylesheet">
                                 <div class="flex items-center text-xs text-gray-500 mb-1"
-                                    sty;e="font-family: 'Poppins', sans-serif;">
+                                    style="font-family: 'Poppins', sans-serif;">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    <span>{{ $article->published_at->format('d M Y') }}</span>
+                                    <span>{{ optional($article->published_at)->format('d M Y') }}</span>
                                     <span class="mx-1">•</span>
                                     <i class="fas fa-eye mr-1"></i>
                                     <span>{{ $article->views ?? rand(50, 1000) }}</span>

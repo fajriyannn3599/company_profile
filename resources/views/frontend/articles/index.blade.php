@@ -89,7 +89,7 @@
                                     </span>
                                     <span class="text-sm text-gray-500"
                                         style="font-family: 'Poppins', sans-serif;">
-                                        {{ optional($featuredArticle->published_at)->format('d M Y') }}
+                                        {{ $featuredArticle->published_at->format('d M Y') }}
                                     </span>
                                 </div>
 
