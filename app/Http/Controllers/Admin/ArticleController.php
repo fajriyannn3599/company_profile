@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 
 class ArticleController extends Controller
 {
@@ -56,7 +58,14 @@ class ArticleController extends Controller
 
         if ($request->hasFile('featured_image')) {
             $validated['featured_image'] = $request->file('featured_image')->store('articles', 'public');
+
+            // Salin file ke public/storage agar bisa diakses publik
+            File::copy(
+                storage_path('app/public/' . $validated['featured_image']),
+                public_path('storage/' . $validated['featured_image'])
+            );
         }
+
 
         Article::create($validated);
 
@@ -101,12 +110,25 @@ class ArticleController extends Controller
         $validated['is_published'] = $request->has('is_published');
 
         if ($request->hasFile('featured_image')) {
-            // Delete old image
+            // Hapus gambar lama dari storage dan public
             if ($article->featured_image) {
                 Storage::disk('public')->delete($article->featured_image);
+
+                $oldPublicPath = public_path('storage/' . $article->featured_image);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
+
             $validated['featured_image'] = $request->file('featured_image')->store('articles', 'public');
+
+            // Salin file baru ke public/storage
+            File::copy(
+                storage_path('app/public/' . $validated['featured_image']),
+                public_path('storage/' . $validated['featured_image'])
+            );
         }
+
 
         $article->update($validated);
 

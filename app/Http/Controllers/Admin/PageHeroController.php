@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\PageHero;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PageHeroController extends Controller
 {
@@ -45,12 +46,19 @@ class PageHeroController extends Controller
         // Handle background image upload
         if ($request->hasFile('background_image')) {
             $data['background_image'] = $request->file('background_image')->store('heroes', 'public');
+
+            // Salin file ke public/storage agar dapat diakses publik
+            File::copy(
+                storage_path('app/public/' . $data['background_image']),
+                public_path('storage/' . $data['background_image'])
+            );
         }
+
 
         PageHero::create($data);
 
         return redirect()->route('admin.page-hero.index')
-                        ->with('success', 'Page Hero berhasil ditambahkan.');
+            ->with('success', 'Page Hero berhasil ditambahkan.');
     }
 
     public function show(PageHero $pageHero)
@@ -87,17 +95,30 @@ class PageHeroController extends Controller
 
         // Handle background image upload
         if ($request->hasFile('background_image')) {
-            // Delete old image
+            // Hapus gambar lama dari storage dan public (jika ada)
             if ($pageHero->background_image) {
                 Storage::disk('public')->delete($pageHero->background_image);
+
+                $oldPublicPath = public_path('storage/' . $pageHero->background_image);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
+
             $data['background_image'] = $request->file('background_image')->store('heroes', 'public');
+
+            // Salin gambar baru ke public/storage
+            File::copy(
+                storage_path('app/public/' . $data['background_image']),
+                public_path('storage/' . $data['background_image'])
+            );
         }
+
 
         $pageHero->update($data);
 
         return redirect()->route('admin.page-hero.index')
-                        ->with('success', 'Page Hero berhasil diperbarui.');
+            ->with('success', 'Page Hero berhasil diperbarui.');
     }
 
     public function destroy(PageHero $pageHero)
@@ -110,7 +131,7 @@ class PageHeroController extends Controller
         $pageHero->delete();
 
         return redirect()->route('admin.page-hero.index')
-                        ->with('success', 'Page Hero berhasil dihapus.');
+            ->with('success', 'Page Hero berhasil dihapus.');
     }
 
     public function globalSettings()

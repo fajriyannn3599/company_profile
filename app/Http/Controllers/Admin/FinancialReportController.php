@@ -6,6 +6,7 @@ use App\Models\FinancialReport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
 
 class FinancialReportController extends Controller
 {
@@ -37,15 +38,19 @@ class FinancialReportController extends Controller
             'file' => 'required|mimes:pdf|max:2048',
         ]);
 
-        // Simpan file PDF
-        // $filePath = $request->file('file')->store('financial-reports', 'public');
+
 
         $originalName = $request->file('file')->getClientOriginalName();
         $filePath = $request->file('file')->storeAs('financial-reports', $originalName, 'public');
 
-        // $originalName = $request->file('file')->getClientOriginalName();
-        // $timestampedName = time() . '_' . $originalName;
-        // $filePath = $request->file('file')->storeAs('financial-reports', $timestampedName, 'public');
+        // Salin ke public/storage agar bisa diakses publik
+        File::copy(
+            storage_path('app/public/' . $filePath),
+            public_path('storage/' . $filePath)
+        );
+
+
+
 
 
         FinancialReport::create([
@@ -97,6 +102,13 @@ class FinancialReportController extends Controller
             }
 
             $data['file_path'] = $request->file('file')->store('financial-reports', 'public');
+
+            // Salin ke public/storage agar bisa diakses publik
+            File::copy(
+                storage_path('app/public/' . $data['file_path']),
+                public_path('storage/' . $data['file_path'])
+            );
+
         }
 
         $financialReport->update($data);

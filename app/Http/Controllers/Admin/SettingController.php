@@ -6,17 +6,18 @@ use App\Http\Controllers\Controller;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class SettingController extends Controller
-{ 
+{
     public function index()
     {
         $settings = Setting::orderBy('group')->orderBy('key')->paginate(15);
         $groups = Setting::distinct()->pluck('group');
-        
+
         return view('admin.settings.index', compact('settings', 'groups'));
     }
-  
+
     public function create()
     {
         abort(403, 'Menambah setting tidak diizinkan. Setting sudah dikonfigurasi secara fix.');
@@ -53,13 +54,13 @@ class SettingController extends Controller
     {
         // Dynamic validation based on setting type
         $rules = [];
-        
+
         if ($setting->type === 'image') {
-            $rules['value'] = $request->hasFile('value') 
+            $rules['value'] = $request->hasFile('value')
                 ? 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
                 : 'nullable|string';
         } elseif ($setting->type === 'file') {
-            $rules['value'] = $request->hasFile('value') 
+            $rules['value'] = $request->hasFile('value')
                 ? 'required|file|max:10240' // 10MB max
                 : 'nullable|string';
         } elseif ($setting->type === 'boolean') {
@@ -74,8 +75,20 @@ class SettingController extends Controller
             // Delete old image
             if ($setting->value && Storage::disk('public')->exists($setting->value)) {
                 Storage::disk('public')->delete($setting->value);
+
+                $oldPublicPath = public_path('storage/' . $setting->value);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
+
             $validated['value'] = $request->file('value')->store('settings', 'public');
+
+            // Salin ke public/storage
+            File::copy(
+                storage_path('app/public/' . $validated['value']),
+                public_path('storage/' . $validated['value'])
+            );
         } elseif ($setting->type === 'file' && $request->hasFile('value')) {
             // Delete old file
             if ($setting->value && Storage::disk('public')->exists($setting->value)) {

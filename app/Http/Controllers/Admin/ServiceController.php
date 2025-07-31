@@ -8,6 +8,8 @@ use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\File;
+
 
 class ServiceController extends Controller
 {
@@ -64,7 +66,14 @@ class ServiceController extends Controller
 
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('services', 'public');
+
+            // Copy ke public/storage agar dapat diakses publik
+            File::copy(
+                storage_path('app/public/' . $validated['image']),
+                public_path('storage/' . $validated['image'])
+            );
         }
+
 
         $validated['is_featured'] = $request->has('is_featured');
         $validated['is_active'] = $request->has('is_active');
@@ -122,12 +131,24 @@ class ServiceController extends Controller
         }
 
         if ($request->hasFile('image')) {
-            // Delete old image
+            // Delete old image from both storage and public path
             if ($service->image) {
                 Storage::disk('public')->delete($service->image);
+                $oldPublicPath = public_path('storage/' . $service->image);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
+
             $validated['image'] = $request->file('image')->store('services', 'public');
+
+            // Copy ke public/storage agar dapat diakses
+            File::copy(
+                storage_path('app/public/' . $validated['image']),
+                public_path('storage/' . $validated['image'])
+            );
         }
+
 
         $validated['is_featured'] = $request->has('is_featured');
         $validated['is_active'] = $request->has('is_active');
