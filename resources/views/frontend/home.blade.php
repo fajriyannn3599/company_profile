@@ -11,9 +11,9 @@
     <!-- Hero Section -->
     <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
         :fallback-subtitle="setting(
-                                                                                                                                                                        'hero_subtitle',
-                                                                                                                                                                        'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-                                                                                                                                                                    )" />
+                                                                                                                                                                            'hero_subtitle',
+                                                                                                                                                                            'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                                                                                                                                                                        )" />
 
 
 
@@ -157,18 +157,19 @@
     @endif
 
     <!-- Section Pengajuan -->
-     <!-- Why Choose Us Section -->
-    @if ($whyChooseUs->count() > 0)
+    <!-- Why Choose Us Section -->
+    
         <section class="py-20 bg-white">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <!-- Section Header -->
                 <div class="text-center mb-16">
-                    <div
-                        class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6" style="font-family: 'Poppins', sans-serif;">
+                    <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6"
+                        style="font-family: 'Poppins', sans-serif;">
                         <i class="fas fa-star mr-2"></i>
                         Pengajuan biaya
                     </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Ajukan Pembiayaan Anda</h2>
+                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                        Ajukan Pembiayaan Anda</h2>
                     <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
                         style="font-family: 'Poppins', sans-serif;">
                         Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
@@ -187,7 +188,7 @@
                 </div>
             </div>
         </section>
-    @endif
+    
     <!-- Service Categories Section -->
     @if ($service_categories->count() > 0)
         <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
