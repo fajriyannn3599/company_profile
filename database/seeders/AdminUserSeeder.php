@@ -24,6 +24,15 @@ class AdminUserSeeder extends Seeder
             ]
         );
 
+        User::firstOrCreate(
+            ['email' => 'admin@gmail.com'],
+            [
+                'name' => 'Administrator',
+                'password' => Hash::make('arsasejahtera10'),
+                'email_verified_at' => now(),
+            ]
+        );
+
         // You can add more admin users here if needed
         User::firstOrCreate(
             ['email' => 'admin@companyprofile.com'],
