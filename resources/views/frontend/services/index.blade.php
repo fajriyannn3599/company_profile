@@ -224,14 +224,14 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                             </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-4">Layanan Tidak Ditemukan</h3>
+                            <h3 class="text-xl font-bold text-gray-900 mb-4">Produk Tidak Ditemukan</h3>
                             <p class="text-gray-600 mb-6">
-                                Maaf, tidak ada layanan yang sesuai dengan pencarian Anda.
+                                Maaf, tidak ada produk yang sesuai dengan pencarian Anda.
                                 Coba gunakan kata kunci yang berbeda.
                             </p>
                             <a href="{{ route('services.index') }}"
                                 class="inline-flex items-center bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors">
-                                Lihat Semua Layanan
+                                Lihat Semua Produk
                             </a>
                         </div>
                     </div>
