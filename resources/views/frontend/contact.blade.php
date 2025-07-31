@@ -169,7 +169,7 @@
                             </div>
 
                             <button type="submit"
-                                class="w-full bg-red-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
+                                class="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <i class="fas fa-paper-plane mr-2"></i>
                                 Submit Form Pengajuan Pembiayaan

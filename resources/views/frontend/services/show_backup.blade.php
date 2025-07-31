@@ -177,7 +177,7 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ $relatedService->title }}</h3>
                     <p class="text-gray-600 mb-4">{{ $relatedService->short_description }}</p>
 
-                    <a href="{{ route('services.show', $relatedService->slug) }}" class="inline-flex items-center text-blue-600 hover:text-blue-700 font-semibold">
+                    <a href="{{ route('services.show', $relatedService->slug) }}" class="inline-flex items-center text-red-600 hover:text-red-700 font-semibold">
                         Pelajari Lebih Lanjut
                         <i class="fas fa-arrow-right ml-2"></i>
                     </a>

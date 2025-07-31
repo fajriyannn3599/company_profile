@@ -155,8 +155,8 @@
                         </div>
 
                         <div class="flex items-center space-x-3">
-                            <div class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center">
-                                <i class="fas fa-solid fa-bolt text-purple-600 text-xl"></i>
+                            <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-solid fa-bolt text-red-600 text-xl"></i>
                             </div>
                             <div>
                                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -388,7 +388,7 @@
                                 @endif
                                 <div class="text-center">
                                     <a href="{{ route('team.detail', $team->id) }}"
-                                        class="inline-flex items-center bg-gradient-to-r from-red-500 to-yellow-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:from-blue-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                        class="inline-flex items-center bg-gradient-to-r from-red-500 to-yellow-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:from-yellow-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                         style="font-family: 'Poppins', sans-serif;">
                                         <i class="fas fa-info-circle mr-2"></i>Lihat Detail
                                     </a>

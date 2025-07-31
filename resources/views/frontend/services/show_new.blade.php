@@ -172,7 +172,7 @@
                     <h3 class="text-xl font-semibold text-gray-900 mb-3">{{ $relatedService->title }}</h3>
                     <p class="text-gray-600 mb-4 leading-relaxed">{{ $relatedService->short_description }}</p>
 
-                    <a href="{{ route('services.show', $relatedService->slug) }}" class="text-blue-600 hover:text-blue-700 font-semibold">
+                    <a href="{{ route('services.show', $relatedService->slug) }}" class="text-red-600 hover:text-red-700 font-semibold">
                         Pelajari Lebih Lanjut →
                     </a>
                 </div>

@@ -14,15 +14,15 @@
             <div class="container px-6 py-8">
                 <div class="max-w-4xl mx-auto ">
                     <nav class="flex items-center space-x-2 text-sm text-gray-600">
-                        <a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors">Home</a>
+                        <a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors" style="font-family: 'Poppins', sans-serif;">Home</a>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                        <a href="{{ route('about') }}" class="hover:text-blue-600 transition-colors">Tentang Kami</a>
+                        <a href="{{ route('about') }}" class="hover:text-blue-600 transition-colors" style="font-family: 'Poppins', sans-serif;">Tentang Kami</a>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                        <span class="text-gray-900 font-medium">{{ $team->name }}</span>
+                        <span class="text-gray-900 font-medium" style="font-family: 'Poppins', sans-serif;">{{ $team->name }}</span>
                     </nav>
                 </div>
             </div>
@@ -33,20 +33,20 @@
             <div class="max-w-4xl mx-auto">
                 <div class="bg-white rounded-3xl shadow-xl overflow-hidden">
                     <!-- Hero Section -->
-                    <div class="relative h-64 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600">
+                    <div class="relative h-64 bg-gradient-to-r from-red-600 via-yellow-600 to-orange-600">
                         <div class="absolute inset-0 bg-black/20"></div>
                         <div class="absolute bottom-6 left-6 right-6">
                             <div class="flex items-end space-x-6">
                                 <!-- Profile Photo -->
                                 <div class="relative">
                                     <div
-                                        class="w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl">
+                                        class="w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-white shadow-xl" style="font-family: 'Poppins', sans-serif;">
                                         @if ($team->photo && file_exists(public_path('storage/' . $team->photo)))
                                             <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
                                                 class="w-full h-full object-cover">
                                         @else
                                             <div
-                                                class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                                class="w-full h-full bg-gradient-to-br from-red-500 to-yellow-600 flex items-center justify-center" style="font-family: 'Poppins', sans-serif;">
                                                 <span class="text-3xl font-bold text-white">
                                                     {{ strtoupper(substr($team->name, 0, 2)) }}
                                                 </span>
@@ -67,11 +67,11 @@
 
                                 <!-- Basic Info -->
                                 <div class="flex-1 text-white">
-                                    <h2 class="text-3xl font-bold mb-2">{{ $team->name }}</h2>
-                                    <p class="text-xl text-blue-100 mb-2">{{ $team->position }}</p>
-                                    <div class="flex items-center space-x-4 text-sm text-blue-100">
+                                    <h2 class="text-3xl font-bold mb-2" style="font-family: 'Poppins', sans-serif;">{{ $team->name }}</h2>
+                                    <p class="text-xl text-red-100 mb-2" style="font-family: 'Poppins', sans-serif;">{{ $team->position }}</p>
+                                    <div class="flex items-center space-x-4 text-sm text-red-100">
                                         @if ($team->email)
-                                            <div class="flex items-center space-x-1">
+                                            <div class="flex items-center space-x-1" style="font-family: 'Poppins', sans-serif;">
                                                 <!--<svg class="w-4 h-4" fill="none" stroke="currentColor"
                                                     viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -106,10 +106,10 @@
                                 <div class="space-y-6">
                                     @if ($team->bio)
                                         <div>
-                                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                                            <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center" style="font-family: 'Poppins', sans-serif;">
                                                 <div
-                                                    class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
-                                                    <svg class="w-4 h-4 text-blue-600" fill="none" stroke="currentColor"
+                                                    class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center mr-3">
+                                                    <svg class="w-4 h-4 text-red-600" fill="none" stroke="currentColor"
                                                         viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round"
                                                             stroke-width="2"
@@ -120,7 +120,7 @@
                                                 Tentang {{ $team->name }}
                                             </h3>
                                             <div class="prose prose-gray max-w-none">
-                                                <p class="text-gray-600 leading-relaxed">{{ $team->bio }}</p>
+                                                <p class="text-gray-600 leading-relaxed" style="font-family: 'Poppins', sans-serif;">{{ $team->bio }}</p>
                                             </div>
                                         </div>
                                     @endif
@@ -317,10 +317,10 @@
                 <!-- Other Team Members -->
                 @if ($otherTeamMembers && $otherTeamMembers->count() > 0)
                     <div class="mt-12">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Tim Lainnya</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center" style="font-family: 'Poppins', sans-serif;">Tim Lainnya</h3>
                         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
                             @foreach ($otherTeamMembers as $member)
-                                <a href="{{ route('team.detail', $member->id) }}" class="group">
+                                <a href="{{ route('team.detail', $member->id) }}" class="group" style="font-family: 'Poppins', sans-serif;">
                                     <div
                                         class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-6 text-center">
                                         <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
@@ -329,7 +329,7 @@
                                                     alt="{{ $member->name }}" class="w-full h-full object-cover">
                                             @else
                                                 <div
-                                                    class="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
+                                                    class="w-full h-full bg-gradient-to-br from-red-500 to-yellow-600 flex items-center justify-center">
                                                     <span class="text-sm font-bold text-white">
                                                         {{ strtoupper(substr($member->name, 0, 2)) }}
                                                     </span>

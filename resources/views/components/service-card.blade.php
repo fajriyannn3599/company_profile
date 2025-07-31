@@ -123,7 +123,7 @@
     <div class="p-6">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <h3
-            class="text-xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300 line-clamp-2"
+            class="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300 line-clamp-2"
             style="font-family: 'Poppins', sans-serif;">
             {{ $service->title }}
         </h3>
@@ -137,7 +137,7 @@
     <div class="p-6 pt-0 mt-auto">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
         <a href="{{ route('services.show', $service->slug) }}"
-            class="inline-flex items-center bg-gradient-to-r from-yellow-600 to-red-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
+            class="inline-flex items-center bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 hover:shadow-lg"
             style="font-family: 'Poppins', sans-serif;">
             @if($variant === 'compact')
                 Selengkapnya
