@@ -92,7 +92,7 @@ class PageHeroSeeder extends Seeder
                 'cta_secondary_text' => 'Tentang Kami',
                 'cta_secondary_url' => '/tentang-kami',
                 'height' => 'large',
-                'is_active' => true
+                'is_active' => false
             ]
         ];
 

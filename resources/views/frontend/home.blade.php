@@ -112,7 +112,7 @@
                                 <!-- Durasi -->
                                 <div class="absolute top-3 right-3 z-10">
                                     <span class="px-3 py-1 bg-black/50 text-white text-xs ">
-                                        <i class="fas fa-clock mr-1"></i> {{ rand(3, 8) }} min
+                                        <i class="fas fa-clock mr-1"></i> {{ $article->created_at->diffForHumans() }}
                                     </span>
                                 </div>
                             </div>
@@ -125,10 +125,10 @@
                                 <div class="flex items-center text-xs text-gray-500 mb-1"
                                     style="font-family: 'Poppins', sans-serif;">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    <span>{{ optional($article->published_at)->format('d M Y') }}</span>
+                                    <span>{{ ($article->published_at)->format('d M Y') }}</span>
                                     <span class="mx-1">•</span>
                                     <i class="fas fa-eye mr-1"></i>
-                                    <span>{{ $article->views ?? rand(50, 1000) }}</span>
+                                    <span>{{ $article->views }}</span>
                                 </div>
 
                                 <!-- Judul -->

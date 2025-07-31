@@ -12,7 +12,7 @@ class PageSeoSeeder extends Seeder
         $seoData = [
             [
                 'page_identifier' => 'home',
-                'title' => 'Solusi Digital Terdepan - ' . config('app.name'),
+                'title' => 'BPRS Arsa Sejahtera - ' . config('app.name'),
                 'description' => 'Kami menyediakan solusi digital terdepan dengan teknologi modern untuk mengembangkan bisnis Anda. Konsultasi gratis dan layanan professional.',
                 'keywords' => 'solusi digital, development, konsultasi IT, teknologi, bisnis digital',
                 'og_title' => 'Solusi Digital Terdepan untuk Bisnis Modern',
