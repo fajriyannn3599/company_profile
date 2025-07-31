@@ -230,7 +230,7 @@
                                 Coba gunakan kata kunci yang berbeda.
                             </p>
                             <a href="{{ route('services.index') }}"
-                                class="inline-flex items-center bg-blue-600 text-white px-6 py-3 font-medium hover:bg-blue-700 transition-colors">
+                                class="inline-flex items-center bg-red-600 text-white px-6 py-3 font-medium hover:bg-red-700 transition-colors">
                                 Lihat Semua Produk
                             </a>
                         </div>
