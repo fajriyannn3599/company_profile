@@ -26,7 +26,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/' . setting('favicon', '/favicon.ico')) }}">
 
     <!-- Fonts -->
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700" rel="stylesheet" />
 
@@ -271,52 +271,57 @@
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex space-x-3 items-center">
                     <a href="{{ route('home') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('home') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('home') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Beranda
                     </a>
                     <a href="{{ route('about') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('about') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('about') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Profile
                     </a>
                     <a href="{{ route('services.index') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Produk
                     </a>
                     <!--<a href="{{ route('projects.index') }}" class="text-gray-700 hover:text-blue-600 px-3 py-2 text-sm font-medium transition-colors {{ request()->routeIs('projects*') ? 'text-blue-600' : '' }}">
                         Laporan Keuangan
                     </a> -->
                     <a href="{{ route('articles.index') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Berita
                     </a>
                     <a href="{{ route('financial-reports.index') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('careers*') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('careers*') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Laporan Keuangan
                     </a>
                     </a>
                     <a href="{{ route('contact') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Pengajuan
                     </a>
                     <a href="{{ route('hubungi-kami') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}" style="font-family: 'Poppins', sans-serif;">
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Hubungi Kami
                     </a>
                     <!-- Social Media Links -->
-                        @if(setting('facebook_url'))
-                            <a href="{{ setting('facebook_url') }}"
-                                class="text-red-900 hover:text-white transition-colors"
-                                style="font-family: 'Poppins', sans-serif;">
-                                <i class="fab fa-facebook-f text-lg"></i>
-                            </a>
-                        @endif
-                        @if(setting('instagram_url'))
-                            <a href="{{ setting('instagram_url') }}"
-                                class="text-red-900 hover:text-white transition-colors"
-                                style="font-family: 'Poppins', sans-serif;">
-                                <i class="fab fa-instagram text-lg"></i>
-                            </a>
-                        @endif
+                    @if(setting('facebook_url'))
+                        <a href="{{ setting('facebook_url') }}" class="text-red-900 hover:text-white transition-colors"
+                            style="font-family: 'Poppins', sans-serif;">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                    @endif
+                    @if(setting('instagram_url'))
+                        <a href="{{ setting('instagram_url') }}" class="text-red-900 hover:text-white transition-colors"
+                            style="font-family: 'Poppins', sans-serif;">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                    @endif
                 </div>
 
                 <!-- Mobile menu button -->
@@ -354,6 +359,11 @@
                         Berita
                     </a>
                     <a href="{{ route('contact') }}"
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
+                        Pengajuan
+                    </a>
+                    <a href="{{ route('hubungi-kami') }}"
                         class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}">
                         Hubungi Kami
                     </a>
