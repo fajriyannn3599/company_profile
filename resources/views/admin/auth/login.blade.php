@@ -273,8 +273,8 @@
         </div>
 
         <!-- Kanan: Info & Demo -->
-        <div class="space-y-8">            <!-- Welcome Card -->
-            <div class="demo-card rounded-3xl shadow-xl p-8 text-center">
+        <!-- <div class="space-y-8">            Welcome Card -->
+            <!-- <div class="demo-card rounded-3xl shadow-xl p-8 text-center">
                 <div class="mb-6">
                     <div class="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                         <i class="fas fa-rocket text-white text-2xl"></i>
@@ -299,10 +299,10 @@
                         <div class="text-xs text-gray-700 font-semibold">Uptime</div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Demo Account Card -->
-            <div class="demo-card rounded-3xl shadow-xl p-8">
+            <!-- <div class="demo-card rounded-3xl shadow-xl p-8">
                 <div class="flex items-center mb-6">
                     <div class="w-12 h-12 bg-gradient-to-r from-green-500 to-blue-500 rounded-xl flex items-center justify-center mr-4">
                         <i class="fas fa-user-cog text-white text-lg"></i>
@@ -343,7 +343,7 @@
                 </div>
             </div>
         </div>
-    </div>    <script>
+    </div> -->   <script> 
         // Demo account functionality
         function fillDemoAccount() {
             const emailInput = document.getElementById('email');
