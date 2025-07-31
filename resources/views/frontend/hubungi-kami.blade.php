@@ -1,9 +1,9 @@
 @extends('layouts.frontend')
 
 @push('seo')
-    <x-seo-head page-identifier="contact" :title="page_title('contact', 'Hubungi Kami - ' . setting('site_name'))"
+    <x-seo-head page-identifier="hubungi-kami" :title="page_title('hubungi-kami', 'Hubungi Kami - ' . setting('site_name'))"
         :description="page_description(
-            'contact',
+            'hubungi-kami',
             'Hubungi ' .
             setting('site_name') .
             ' untuk konsultasi gratis tentang kebutuhan teknologi dan digital solution untuk bisnis Anda.',
