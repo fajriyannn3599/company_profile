@@ -12,8 +12,8 @@
 
 @section('content')
     <!-- Page Header -->
-    <x-hero page-identifier="contact" fallback-title="Hubungi Kami"
-        fallback-subtitle="Mari diskusikan bagaimana kami dapat membantu bisnis Anda" />
+    <!-- <x-hero page-identifier="contact" fallback-title="Hubungi Kami"
+        fallback-subtitle="Mari diskusikan bagaimana kami dapat membantu bisnis Anda" /> -->
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
