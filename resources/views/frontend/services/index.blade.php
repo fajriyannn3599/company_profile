@@ -89,7 +89,7 @@
             style="animation-delay: -3s;"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            @if($service_categories->count() > 0)
+
                 <!-- Section Header -->
                 <div class="text-center mb-auto">
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -118,7 +118,7 @@
 
                     <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-300 rounded-full mx-auto mt-8"></div>
                 </div>
-            @endif
+
 
             <!-- Search & Filter Section -->
             <div class="py-12 bg-gray-50">
