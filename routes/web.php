@@ -18,6 +18,10 @@ Route::get('/tim/{id}', [AboutController::class, 'teamDetail'])->name('team.deta
 Route::get('/layanan', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/layanan/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
+// Financial Reports
+Route::get('/laporan-keuangan', [App\Http\Controllers\Frontend\FinancialReportController::class, 'index'])->name('financial-reports.index');
+Route::get('/laporan-keuangan/{id}', [App\Http\Controllers\Frontend\FinancialReportController::class, 'show'])->name('financial-reports.show');
+
 // Projects/Portfolio
 Route::get('/portofolio', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/portofolio/{slug}', [ProjectController::class, 'show'])->name('projects.show');
@@ -33,8 +37,12 @@ Route::get('/karier/{slug}/apply', [CareerController::class, 'showApplyForm'])->
 Route::post('/karier/{slug}/apply', [CareerController::class, 'apply'])->name('careers.apply.store');
 
 // Contact
-Route::get('/kontak', [ContactController::class, 'index'])->name('contact');
-Route::post('/kontak', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/pengajuan', [ContactController::class, 'index'])->name('contact');
+Route::post('/pengajuan', [ContactController::class, 'store'])->name('contact.store');
+
+// Hubungi Kami
+Route::get('/hubungi-kami', [CareerController   ::class, 'index'])->name('hubungi-kami');
+Route::post('/hubungi-kami', [ContactController::class, 'store'])->name('contact.store');
 
 // Admin Authentication Routes (Public)
 Route::prefix('admin')->name('admin.')->group(function () {
@@ -69,7 +77,13 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
     
     // Article Categories
     Route::resource('article-categories', App\Http\Controllers\Admin\ArticleCategoryController::class);
-    
+
+    // Service Categories
+    Route::resource('service-categories', App\Http\Controllers\Admin\ServiceCategoryController::class);
+
+    // Financial Reports
+    Route::resource('financial-reports', App\Http\Controllers\Admin\FinancialReportController::class);
+
     // Teams
     Route::resource('teams', App\Http\Controllers\Admin\TeamController::class);
     

@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('short_description');
             $table->longText('description');
+            $table->text('requirement_title')->nullable();
+            $table->longText('requirement_description')->nullable();
             $table->string('icon')->nullable(); // icon class or image path
             $table->string('image')->nullable();
             $table->boolean('is_featured')->default(false);

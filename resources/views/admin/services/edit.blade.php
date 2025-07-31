@@ -81,6 +81,53 @@
                         @enderror
                     </div>
                 </div>
+
+                <!-- Short Description -->
+                    <!-- <div>
+                        <label for="requirement_title" class="block text-sm font-medium text-gray-700 mb-2">
+                            Deskripsi Singkat
+                        </label>
+                        <textarea name="requirement_title" 
+                                  id="requirement_title" 
+                                  rows="2" 
+                                  class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('requirement_title') border-red-500 @enderror"
+                                  placeholder="Deskripsi singkat untuk preview">{{ old('requirement_title', $service->requirement_title) }}</textarea>
+                        @error('requirement_title')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div> -->
+                    <!-- Description -->
+                    <div>
+                        <label for="requirement_description" class="block text-sm font-medium text-gray-700 mb-2">
+                            Persyaratan Pembiayaan <span class="text-red-500">*</span>
+                        </label>
+                        <textarea name="requirement_description" id="requirement_description" rows="8" class="summernote w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('requirement_description') border-red-500 @enderror" placeholder="Deskripsi lengkap layanan">{{ old('requirement_description', $service->requirement_description ?? '') }}</textarea>
+                        @error('requirement_description')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <!-- Description_2 -->
+                    <div>
+                        <label for="requirement_description_2" class="block text-sm font-medium text-gray-700 mb-2">
+                            Persyaratan Pembiayaan 2 <span class="text-red-500">*</span>
+                        </label>
+                        <textarea name="requirement_description_2" id="requirement_description_2" rows="8" class="summernote w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('requirement_description_2') border-red-500 @enderror" placeholder="Deskripsi lengkap layanan">{{ old('requirement_description_2', $service->requirement_description_2 ?? '') }}</textarea>
+                        @error('requirement_description_2')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                    <!-- Description_3 -->
+                    <div>
+                        <label for="requirement_description_3" class="block text-sm font-medium text-gray-700 mb-2">
+                            Persyaratan Pembiayaan 3 <span class="text-red-500">*</span>
+                        </label>
+                        <textarea name="requirement_description_3" id="requirement_description_3" rows="8" class="summernote w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent @error('requirement_description_3') border-red-500 @enderror" placeholder="Deskripsi lengkap layanan">{{ old('requirement_description_3', $service->requirement_description_3 ?? '') }}</textarea>
+                        @error('requirement_description_3')
+                            <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                        @enderror
+                    </div>
+                </div>
+
             </div>
             <!-- SEO Meta -->
             <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6">
@@ -139,7 +186,7 @@
                     </div>
                     
                     <!-- Price Range -->
-                    <div>
+                    <!-- <div>
                         <label for="price_range" class="block text-sm font-medium text-gray-700 mb-2">
                             Rentang Harga
                         </label>
@@ -153,7 +200,7 @@
                         @error('price_range')
                             <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
                         @enderror
-                    </div>
+                    </div> -->
                     <!-- Sort Order -->
                     <div>
                         <label for="sort_order" class="block text-sm font-medium text-gray-700 mb-2">
@@ -231,6 +278,43 @@
                     @enderror
                 </div>
             </div>
+
+            <!-- Kategori & Status -->
+                <div class="bg-white shadow-sm border border-gray-200 rounded-lg mb-6">
+                    <div class="px-6 py-4 border-b border-gray-200">
+                        <h3 class="text-lg font-medium text-gray-900">Pengaturan Publikasi</h3>
+                    </div>
+                    <div class="px-6 py-4 space-y-4">                        
+                        <div>
+                            <label for="service_category_id" class="block text-sm font-medium text-gray-700 mb-2">
+                                Kategori <span class="text-red-500">*</span>
+                            </label>
+                            <select name="service_category_id" id="service_category_id"
+                                class="w-full px-3 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 @error('service_category_id') border-red-300 focus:ring-red-500 focus:border-red-500 @enderror"
+                                required>
+                                <option value="">Pilih Kategori</option>
+                                @foreach ($service_categories as $category)
+                                    <option value="{{ $category->id }}"
+                                        {{ old('service_category_id', $service->service_category_id) == $category->id ? 'selected' : '' }}>
+                                        {{ $category->name }}
+                                    </option>
+                                @endforeach
+                            </select>
+                            @error('service_category_id')
+                                <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
+
+                        <hr class="border-gray-200">
+
+                        <!-- <label class="flex items-center">
+                            <input type="checkbox" name="is_published" value="1"
+                                {{ old('is_published') ? 'checked' : '' }}
+                                class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <span class="ml-2 text-sm text-gray-700">Terbitkan artikel</span>
+                        </label> -->
+                    </div>
+                </div>
             <!-- Live Preview -->
             <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6">
                 <h3 class="text-lg font-medium text-gray-900 mb-4">Live Preview</h3>

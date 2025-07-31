@@ -31,7 +31,7 @@ class CareerController extends Controller
         
         $jobs = $query->orderBy('created_at', 'desc')->paginate(6);
         
-        return view('frontend.careers.index', compact('jobs'));
+        return view('frontend.hubungi-kami', compact('jobs'));
     }
     
     public function show($slug)

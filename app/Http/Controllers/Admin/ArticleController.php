@@ -20,8 +20,7 @@ class ArticleController extends Controller
         $articles = Article::with('category')
             ->latest()
             ->paginate(10);
-            
-        $categories = ArticleCategory::all();
+        $categories = ArticleCategory::withCount('articles')->latest()->paginate(10);
 
         return view('admin.articles.index', compact('articles', 'categories'));
     }

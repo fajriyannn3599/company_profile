@@ -38,7 +38,7 @@
             </div>
         </div>
         <!-- Projects -->
-        <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
+        <!-- <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm text-gray-600 mb-1">Total Proyek</p>
@@ -51,7 +51,7 @@
                     <i class="fas fa-folder text-green-600 text-xl"></i>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- Articles -->
         <div class="bg-white rounded-xl shadow-lg p-6 border border-gray-100 hover:shadow-xl transition-shadow">
             <div class="flex items-center justify-between">

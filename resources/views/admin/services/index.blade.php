@@ -2,23 +2,26 @@
 
 @section('title', 'Kelola Layanan')
 
-@section('content')
-    <div class="mb-6">
-        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-            <div>
-                <h1 class="text-2xl font-bold text-gray-900">Kelola Layanan</h1>
-                <p class="mt-1 text-sm text-gray-600">Kelola layanan yang ditawarkan perusahaan</p>
-            </div>
-            <div class="mt-4 sm:mt-0">
-                <a href="{{ route('admin.services.create') }}"
-                    class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-lg font-medium text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
-                    <i class="fas fa-plus mr-2"></i>
-                    Tambah Layanan
-                </a>
-            </div>
-        </div>
-    </div>
 
+@section('content')
+<div class="mb-6">        
+@include('admin.service-categories._table', ['categories' => $service_categories])
+</div>
+<div class="mb-6">
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+        <div>
+            <h1 class="text-2xl font-bold text-gray-900">Kelola Layanan</h1>
+            <p class="mt-1 text-sm text-gray-600">Kelola layanan yang ditawarkan perusahaan</p>
+        </div>
+        <div class="mt-4 sm:mt-0">
+            <a href="{{ route('admin.services.create') }}"
+            class="inline-flex items-center px-4 py-2 bg-blue-600 border border-transparent rounded-lg font-medium text-sm text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-150 ease-in-out">
+            <i class="fas fa-plus mr-2"></i>
+            Tambah Layanan
+        </a>
+    </div>
+</div>
+</div>
     <!-- Stats Cards -->
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-6">
         <div class="bg-white overflow-hidden shadow-sm border border-gray-200 rounded-lg">
@@ -108,12 +111,16 @@
                         </th>
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                            Harga Mulai
+                            Kategori
                         </th>
-                        <th scope="col"
+                        <!-- <th scope="col"
+                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                            Harga Mulai
+                        </th> -->
+                        <!-- <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Status
-                        </th>
+                        </th> -->
                         <th scope="col"
                             class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                             Urutan
@@ -165,6 +172,19 @@
                                 </div>
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
+                                @if ($service->serviceCategory)
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-purple-100 text-red-800">
+                                        {{ $service->serviceCategory->name }}
+                                    </span>
+                                @else
+                                    <span
+                                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
+                                        Tanpa Kategori
+                                    </span>
+                                @endif
+                            </td>
+                            <!-- <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($service->price_range)
                                     <div class="text-sm font-medium text-gray-900">
                                         {{ $service->price_range }}
@@ -172,8 +192,8 @@
                                 @else
                                     <span class="text-sm text-gray-500 italic">Belum diset</span>
                                 @endif
-                            </td>
-                            <td class="px-6 py-4 whitespace-nowrap">
+                            </td> -->
+                            <!-- <td class="px-6 py-4 whitespace-nowrap">
                                 @if ($service->is_active)
                                     <span
                                         class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
@@ -187,7 +207,7 @@
                                         Nonaktif
                                     </span>
                                 @endif
-                            </td>
+                            </td> -->
                             <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                                 {{ $service->sort_order }}
                             </td>
@@ -242,47 +262,40 @@
     </div>
 
     <!-- Delete Modal -->
-    <div id="deleteModal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog"
-        aria-modal="true">
-        <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-            <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"
-                onclick="closeDeleteModal()"></div>
-            <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-            <div
-                class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-                <div class="sm:flex sm:items-start">
-                    <div
-                        class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
-                        <i class="fas fa-exclamation-triangle text-red-600"></i>
-                    </div>
-                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                        <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
-                            Hapus Layanan
-                        </h3>
-                        <div class="mt-2">
-                            <p class="text-sm text-gray-500" id="deleteMessage">
-                                Apakah Anda yakin ingin menghapus layanan ini?
-                            </p>
-                        </div>
+    <div id="deleteModal" class="fixed inset-0 z-50 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+        <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" onclick="closeDeleteModal()" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+        <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left shadow-xl sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
+            <div class="sm:flex sm:items-start">
+                <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
+                    <i class="fas fa-exclamation-triangle text-red-600"></i>
+                </div>
+                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900" id="modal-title">
+                        Hapus Layanan
+                    </h3>
+                    <div class="mt-2">
+                        <p class="text-sm text-gray-500" id="deleteMessage">Apakah Anda yakin ingin menghapus layanan ini?</p>
                     </div>
                 </div>
-                <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                    <form id="deleteForm" method="POST" class="inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                            class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm transition duration-150 ease-in-out">
-                            Ya, Hapus
-                        </button>
-                    </form>
-                    <button type="button" onclick="closeDeleteModal()"
-                        class="mt-3 w-full inline-flex justify-center rounded-lg border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:w-auto sm:text-sm transition duration-150 ease-in-out">
-                        Batal
+            </div>
+            <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                <form id="deleteForm" method="POST" class="inline">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="w-full inline-flex justify-center rounded-lg border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                        Ya, Hapus
                     </button>
-                </div>
+                </form>
+                <button type="button" onclick="closeDeleteModal()" class="mt-3 w-full inline-flex justify-center rounded-lg border border-gray-300 shadow-sm px-4 py-2 bg-white text-base font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:mt-0 sm:w-auto sm:text-sm">
+                    Batal
+                </button>
             </div>
         </div>
     </div>
+</div>
+
 
     @push('scripts')
         <script>

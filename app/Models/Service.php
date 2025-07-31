@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
 
 class Service extends Model
@@ -12,6 +13,10 @@ class Service extends Model
         'slug',
         'short_description',
         'description',
+        'requirement_title',
+        'requirement_description',
+        'requirement_description_2',
+        'requirement_description_3',
         'icon',
         'image',
         'price_range',
@@ -19,7 +24,8 @@ class Service extends Model
         'is_active',
         'sort_order',
         'meta_title',
-        'meta_description'
+        'meta_description',
+        'service_category_id',
     ];
 
     protected $casts = [
@@ -36,6 +42,15 @@ class Service extends Model
                 $service->slug = Str::slug($service->title);
             }
         });
+    }
+
+    public function serviceCategory(): BelongsTo
+    {
+        return $this->belongsTo(ServiceCategory::class, 'service_category_id');
+    }
+    public function category(): BelongsTo
+    {
+        return $this->belongsTo(ServiceCategory::class, 'service_category_id');
     }
 
     public function scopeActive($query)

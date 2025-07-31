@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-100 p-6 rounded-lg shadow-md">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-gray-100 p-6  shadow-md">
     <div class="space-y-4 text-gray-800">
         <x-info-item icon="📅" label="Jam Operasional" value="Senin – Jumat" />
         <x-info-item icon="📍" label="Alamat" value="Jl. Dewi Sartika 10, Batu" />

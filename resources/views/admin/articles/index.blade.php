@@ -3,6 +3,9 @@
 @section('title', 'Kelola Artikel')
 
 @section('content')
+<div class="mb-6">        
+@include('admin.article-categories._table', ['categories' => $categories])
+</div>
     <div class="mb-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div>

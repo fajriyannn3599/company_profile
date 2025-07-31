@@ -147,7 +147,7 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto">
                 <div class="flex items-center justify-between mb-8">
-                    <!--<div>
+                    <!-- <div>
                         <h2 class="text-3xl font-bold text-gray-900 mb-2">Posisi Terbuka</h2>
                         @if (request('search') || request('location') || request('type'))
                             <p class="text-gray-600">

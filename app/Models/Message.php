@@ -15,7 +15,10 @@ class Message extends Model
         'is_read',
         'read_at',
         'reply',
-        'replied_at'
+        'replied_at',
+        'nilai_pembiayaan', // Nilai Pembiayaan (baru)      
+        'jenis_produk', // Jenis Produk (baru) 
+        'lokasi', // Lokasi (baru)
     ];
 
     protected $casts = [

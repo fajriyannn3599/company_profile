@@ -130,7 +130,8 @@
                     <div class="px-6 py-4 border-b border-gray-200">
                         <h3 class="text-lg font-medium text-gray-900">Pengaturan Publikasi</h3>
                     </div>
-                    <div class="px-6 py-4 space-y-4">                        <div>
+                    <div class="px-6 py-4 space-y-4">                        
+                        <div>
                             <label for="article_category_id" class="block text-sm font-medium text-gray-700 mb-2">
                                 Kategori <span class="text-red-500">*</span>
                             </label>

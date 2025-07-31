@@ -39,7 +39,7 @@
         </div>
 
         <!-- Projects Card -->
-        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+        <!-- <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
             <div class="flex items-center justify-between">
                 <div>
                     <p class="text-sm font-medium text-gray-600">Total Proyek</p>
@@ -54,7 +54,7 @@
                     Kelola Proyek →
                 </a>
             </div>
-        </div>
+        </div> -->
 
         <!-- Articles Card -->
         <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
@@ -251,9 +251,9 @@
                 <i class="fas fa-plus-circle text-blue-600 text-2xl mb-2"></i>
                 <span class="text-sm font-medium text-gray-700">Tambah Layanan</span>
             </a>
-            <a href="{{ route('admin.projects.create') }}" class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition duration-200">
+            <!-- <a href="{{ route('admin.projects.create') }}" class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-green-50 transition duration-200">
                 <i class="fas fa-project-diagram text-green-600 text-2xl mb-2"></i>
-                <span class="text-sm font-medium text-gray-700">Tambah Proyek</span>
+                <span class="text-sm font-medium text-gray-700">Tambah Proyek</span> -->
             </a>
             <a href="{{ route('admin.articles.create') }}" class="flex flex-col items-center p-4 border border-gray-200 rounded-lg hover:bg-yellow-50 transition duration-200">
                 <i class="fas fa-edit text-yellow-600 text-2xl mb-2"></i>

@@ -131,12 +131,12 @@
                         <div class="text-sm text-gray-500 mb-1">Urutan Tampil:</div>
                         <div class="text-gray-800">{{ $service->sort_order }}</div>
                     </div>
-                    @if ($service->price_range)
+                    <!-- @if ($service->price_range)
                         <div class="mb-4">
                             <div class="text-sm text-gray-500 mb-1">Rentang Harga:</div>
                             <div class="text-lg font-medium text-blue-600">{{ $service->price_range }}</div>
                         </div>
-                    @endif
+                    @endif -->
                 </div>
                 <div>
                     <div class="mb-4">

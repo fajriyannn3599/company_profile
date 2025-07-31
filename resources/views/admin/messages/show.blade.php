@@ -79,6 +79,19 @@
                 </div>
                 
                 <div>
+                    <label class="text-sm font-medium text-gray-500">Jenis Produk</label>
+                    <p class="mt-1 text-gray-900">{{ $message->jenis_produk }}</p>
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-500">Lokasi</label>
+                    <p class="mt-1 text-gray-900">{{ $message->lokasi }}</p>
+                </div>
+                <div>
+                    <label class="text-sm font-medium text-gray-500">Nilai Pembiayaan</label>
+                    <p class="mt-1 text-gray-900">{{ $message->nilai_pembiayaan }}</p>
+                </div>
+                
+                <div>
                     <label class="text-sm font-medium text-gray-500">Email</label>
                     <p class="mt-1">
                         <a href="mailto:{{ $message->email }}" 

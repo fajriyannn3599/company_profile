@@ -12,7 +12,7 @@
                     <ol class="flex items-center space-x-2 text-sm text-gray-600">
                         <li><a href="{{ route('home') }}" class="hover:text-blue-600">Beranda</a></li>
                         <li><span class="mx-2">/</span></li>
-                        <li><a href="{{ route('careers.index') }}" class="hover:text-blue-600">Karier</a></li>
+                        <li><a href="{{ route('careers.index') }}" class="hover:text-blue-600">Laporan Keuangan</a></li>
                         <li><span class="mx-2">/</span></li>
                         <li class="text-gray-800">{{ Str::limit($job->title, 30) }}</li>
                     </ol>

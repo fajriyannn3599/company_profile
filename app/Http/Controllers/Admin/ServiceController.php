@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Service;
+use App\Models\ServiceCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
@@ -13,10 +14,14 @@ class ServiceController extends Controller
     /**
      * Display a listing of the resource.
      */
+
     public function index()
     {
-        $services = Service::latest()->paginate(10);
-        return view('admin.services.index', compact('services'));
+        $services = Service::with('serviceCategory')
+            ->latest()
+            ->paginate(10);
+        $service_categories = ServiceCategory::withCount('services')->latest()->paginate(10);
+        return view('admin.services.index', compact('services', 'service_categories'));
     }
 
     /**
@@ -24,7 +29,8 @@ class ServiceController extends Controller
      */
     public function create()
     {
-        return view('admin.services.create');
+        $service_categories = ServiceCategory::all();
+        return view('admin.services.create', compact('service_categories'));
     }
 
     /**
@@ -37,6 +43,10 @@ class ServiceController extends Controller
             'slug' => 'nullable|string|max:255|unique:services',
             'description' => 'required|string',
             'short_description' => 'nullable|string|max:500',
+            'requirement_description' => 'nullable|string',
+            'requirement_description_2' => 'nullable|string',
+            'requirement_description_3' => 'nullable|string',
+            'requirement_title' => 'nullable|string|max:500',
             'icon' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'price_range' => 'nullable|string|max:255',
@@ -45,6 +55,7 @@ class ServiceController extends Controller
             'is_featured' => 'boolean',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
+            'service_category_id' => 'required|exists:service_categories,id',
         ]);
 
         if (empty($validated['slug'])) {
@@ -77,7 +88,8 @@ class ServiceController extends Controller
      */
     public function edit(Service $service)
     {
-        return view('admin.services.edit', compact('service'));
+        $service_categories = ServiceCategory::all();
+        return view('admin.services.edit', compact('service', 'service_categories'));
     }
 
     /**
@@ -90,6 +102,10 @@ class ServiceController extends Controller
             'slug' => 'nullable|string|max:255|unique:services,slug,' . $service->id,
             'description' => 'required|string',
             'short_description' => 'nullable|string|max:500',
+            'requirement_description' => 'nullable|string',
+            'requirement_description_2' => 'nullable|string',
+            'requirement_description_3' => 'nullable|string',
+            'requirement_title' => 'nullable|string|max:500',
             'icon' => 'nullable|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,webp|max:2048',
             'price_range' => 'nullable|string|max:255',
@@ -98,6 +114,7 @@ class ServiceController extends Controller
             'is_featured' => 'boolean',
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
+            'service_category_id' => 'required|exists:service_categories,id',
         ]);
 
         if (empty($validated['slug'])) {
@@ -126,7 +143,7 @@ class ServiceController extends Controller
      */
     public function destroy(Service $service)
     {
-        if ($service->image) {
+        if ($service->services) {
             Storage::disk('public')->delete($service->image);
         }
 
@@ -134,4 +151,5 @@ class ServiceController extends Controller
 
         return redirect()->route('admin.services.index')->with('success', 'Layanan berhasil dihapus!');
     }
+
 }

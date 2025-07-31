@@ -138,13 +138,13 @@
                         </div>
                         <span class="ml-3 font-medium">Layanan</span>
                     </a>
-                    <a href="{{ route('admin.projects.index') }}"
-                        class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.projects.*') ? 'nav-item-active bg-white/15' : '' }}">
+                    <a href="{{ route('admin.financial-reports.index') }}"
+                        class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.financial-reports.*') ? 'nav-item-active bg-white/15' : '' }}">
                         <div
                             class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                             <i class="fas fa-folder-open text-white"></i>
                         </div>
-                        <span class="ml-3 font-medium">Proyek</span>
+                        <span class="ml-3 font-medium">Laporan Keuangan</span>
                     </a>
                     <a href="{{ route('admin.articles.index') }}"
                         class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.articles.*') ? 'nav-item-active bg-white/15' : '' }}">

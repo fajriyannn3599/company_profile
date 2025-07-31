@@ -37,7 +37,7 @@
         @if($projects->count() > 0)
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 @foreach($projects as $project)
-                    <div class="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group">
+                    <div class="bg-white shadow-lg hover:shadow-xl transition-shadow overflow-hidden group">
                         <div class="relative overflow-hidden">
                             @if($project->featured_image)
                                 <img src="{{ asset('storage/'.$project->featured_image) }}"
