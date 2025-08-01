@@ -161,14 +161,14 @@
                         </div>
                         <span class="ml-3 font-medium">Tim</span>
                     </a>
-                    <a href="{{ route('admin.why-choose-us.index') }}"
+                    <!-- <a href="{{ route('admin.why-choose-us.index') }}"
                         class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.why-choose-us.*') ? 'nav-item-active bg-white/15' : '' }}">
                         <div
                             class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                             <i class="fas fa-star text-white"></i>
                         </div>
                         <span class="ml-3 font-medium">Mengapa Memilih Kami</span>
-                    </a>
+                    </a> -->
                     <a href="{{ route('admin.testimonials.index') }}"
                         class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.testimonials.*') ? 'nav-item-active bg-white/15' : '' }}">
                         <div
@@ -202,7 +202,7 @@
                     </a>
                 </div>
             </div> <!-- Career Management -->
-            <div class="mt-8">
+            <!-- <div class="mt-8">
                 <h3 class="px-4 text-xs font-semibold text-blue-200 uppercase tracking-wider mb-4">Manajemen Karir</h3>
                 <div class="space-y-2">
                     <a href="{{ route('admin.jobs.index') }}"
@@ -222,7 +222,7 @@
                         <span class="ml-3 font-medium">Lamaran Kerja</span>
                     </a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Communications -->
             <div class="mt-8">

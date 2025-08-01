@@ -83,7 +83,7 @@
                                     @method('DELETE')
                                     <button type="submit" 
                                             class="text-red-400 hover:text-red-600 transition duration-150 ease-in-out"
-                                            {{ $category->articles_count > 0 ? 'disabled title="Kategori memiliki artikel"' : '' }}>
+                                            @if($category->articles_count > 0) disabled title="Kategori memiliki artikel" @endif>
                                         <i class="fas fa-trash"></i>
                                     </button>
                                 </form>

@@ -3,9 +3,9 @@
 @section('title', 'Kelola Artikel')
 
 @section('content')
-<div class="mb-6">        
-@include('admin.article-categories._table', ['categories' => $categories])
-</div>
+    <div class="mb-6">
+        @include('admin.article-categories._table', ['categories' => $categories])
+    </div>
     <div class="mb-6">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
             <div>
@@ -51,7 +51,8 @@
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-500">Diterbitkan</p>
                         <p class="text-2xl font-semibold text-gray-900">
-                            {{ $articles->where('is_published', true)->count() }}</p>
+                            {{ $articles->where('is_published', true)->count() }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -68,7 +69,8 @@
                     <div class="ml-4">
                         <p class="text-sm font-medium text-gray-500">Draft</p>
                         <p class="text-2xl font-semibold text-gray-900">
-                            {{ $articles->where('is_published', false)->count() }}</p>
+                            {{ $articles->where('is_published', false)->count() }}
+                        </p>
                     </div>
                 </div>
             </div>
@@ -81,7 +83,8 @@
                         <div class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center">
                             <i class="fas fa-tags text-purple-600"></i>
                         </div>
-                    </div>                    <div class="ml-4">
+                    </div>
+                    <div class="ml-4">
                         <p class="text-sm font-medium text-gray-500">Kategori</p>
                         <p class="text-2xl font-semibold text-gray-900">{{ $categories->count() }}</p>
                     </div>
@@ -139,8 +142,7 @@
                                     @if ($article->featured_image)
                                         <div class="flex-shrink-0 h-10 w-10">
                                             <img class="h-10 w-10 rounded-lg object-cover"
-                                                src="{{ Storage::url($article->featured_image) }}"
-                                                alt="{{ $article->title }}">
+                                                src="{{ Storage::url($article->featured_image) }}" alt="{{ $article->title }}">
                                         </div>
                                     @else
                                         <div
@@ -201,15 +203,19 @@
                                         title="Edit">
                                         <i class="fas fa-edit"></i>
                                     </a>
-                                    <button type="button"
-                                        class="text-red-400 hover:text-red-600 transition duration-150 ease-in-out focus:outline-none"
-                                        onclick="openDeleteModal({{ $article->id }}, '{{ addslashes($article->title) }}')"
-                                        title="Hapus">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
+                                    <form action="{{ route('admin.articles.destroy', $article->id) }}" method="POST"
+                                        class="inline"
+                                        onsubmit="return confirm('Yakin ingin menghapus artikel {{ $article->title }}?')">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="text-red-600 hover:underline">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
-                    </tr> @empty
+                        </tr>
+                    @empty
                         <tr>
                             <td colspan="5" class="px-6 py-12 text-center">
                                 <div class="flex flex-col items-center">
@@ -300,7 +306,7 @@
             }
 
             // Close modal with ESC key
-            document.addEventListener('keydown', function(event) {
+            document.addEventListener('keydown', function (event) {
                 if (event.key === 'Escape') {
                     closeDeleteModal();
                 }
