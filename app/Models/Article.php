@@ -35,7 +35,7 @@ class Article extends Model
     protected static function boot()
     {
         parent::boot();
-        
+
         static::creating(function ($article) {
             if (empty($article->slug)) {
                 $article->slug = Str::slug($article->title);
@@ -66,5 +66,16 @@ class Article extends Model
     public function incrementViews()
     {
         $this->increment('views');
+    }
+
+    public function getReadTimeAttribute()
+    {
+        // Hitung jumlah kata dari konten artikel
+        $wordCount = str_word_count(strip_tags($this->content));
+
+        // Rata-rata kecepatan membaca orang (150 kata per menit)
+        $minutes = ceil($wordCount / 150);
+
+        return $minutes;
     }
 }
