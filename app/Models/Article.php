@@ -73,8 +73,8 @@ class Article extends Model
         // Hitung jumlah kata dari konten artikel
         $wordCount = str_word_count(strip_tags($this->content));
 
-        // Rata-rata kecepatan membaca orang (150 kata per menit)
-        $minutes = ceil($wordCount / 150);
+        // Rata-rata kecepatan membaca orang (100 kata per menit)
+        $minutes = ceil($wordCount / 100);
 
         return $minutes;
     }

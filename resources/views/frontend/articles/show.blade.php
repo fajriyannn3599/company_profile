@@ -116,6 +116,7 @@
                             <span class="text-sm" style="font-family: 'Poppins', sans-serif;">
                                 {{ $article->read_time }} menit baca
                             </span>
+                            
                         </div>
                         <div class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Diterbitkan
                             {{ $article->published_at->format('d F Y') }}
