@@ -36,13 +36,13 @@
                 </div>
 
                 <div class="text-center">
-                    @if($service->icon)
-                        <div class="text-8xl mb-6 text-blue-200">
+                    @if($service->image)
+                    <img src="{{ asset('storage/' . $service->image) }}" alt="{{ $service->title }}"
+                        class="w-full max-w-md mx-auto rounded-lg shadow-xl">
+                    @elseif($service->icon)
+                            <div class="text-8xl mb-6 text-blue-200">
                             <i class="{{ $service->icon }}"></i>
                         </div>
-                    @elseif($service->image)
-                        <img src="{{ asset($service->image) }}" alt="{{ $service->title }}"
-                            class="w-full max-w-md mx-auto rounded-lg shadow-xl">
                     @endif
                 </div>
             </div>

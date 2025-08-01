@@ -71,10 +71,10 @@
 
                     <div class="bg-white shadow-2xl overflow-hidden">
                         <div class="grid grid-cols-1 lg:grid-cols-2">
-                            @if ($featuredArticle->image)
+                            @if ($featuredArticle->featured_image)
                                 <div class="aspect-video lg:aspect-square overflow-hidden"
                                     style="font-family: 'Poppins', sans-serif;">
-                                    <img src="{{ Storage::url($featuredArticle->image) }}"
+                                    <img src="{{ Storage::url($featuredArticle->featured_image) }}"
                                         alt="{{ $featuredArticle->title }}"
                                         class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                                 </div>
@@ -178,9 +178,9 @@
                         @foreach ($articles as $article)
                             <article
                                 class="bg-white shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-                                @if ($article->image)
+                                @if ($article->featured_image)
                                     <div class="aspect-video overflow-hidden">
-                                        <img src="{{ Storage::url($article->image) }}" alt="{{ $article->title }}"
+                                        <img src="{{ Storage::url($article->featured_image) }}" alt="{{ $article->title }}"
                                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                                     </div>
                                 @endif

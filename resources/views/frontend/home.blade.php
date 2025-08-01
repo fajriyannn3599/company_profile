@@ -9,11 +9,43 @@
 
 
     <!-- Hero Section -->
-    <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
-        :fallback-subtitle="setting(
-                                                                                                                                                                            'hero_subtitle',
-                                                                                                                                                                            'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-                                                                                                                                                                        )" />
+    <!-- <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
+                    :fallback-subtitle="setting(
+                                                                                                                                                                                        'hero_subtitle',
+                                                                                                                                                                                        'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                                                                                                                                                                                    )" /> -->
+
+    <section class="w-full h-[70vh] sm:h-[70vh] overflow-hidden relative">
+        <!-- Swiper -->
+        <div class="swiper w-full h-full">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/slide1.png') }}" class="w-full h-full object-cover" alt="Slide 1">
+                </div>
+                <!-- Slide 2 -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/slide2.png') }}" class="w-full h-full object-cover" alt="Slide 2">
+                </div>
+                <!-- Slide 3 -->
+                <div class="swiper-slide">
+                    <img src="{{ asset('images/SIMPANAN-ANDA.jpg') }}" class="w-full h-full object-cover" alt="Slide 3">
+                </div>
+            </div>
+
+            <!-- Tombol Navigasi -->
+            <div
+                class="swiper-button-next !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700  !p-7 !rounded-sm !shadow-md  transition-all">
+            </div>
+            <div
+                class="swiper-button-prev !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700  !p-7 !rounded-sm !shadow-md  transition-all">
+            </div>
+
+            <!-- Bullet Pagination -->
+            <div class="swiper-pagination !bottom-3 "></div>
+        </div>
+    </section>
+
 
 
 
@@ -158,37 +190,37 @@
 
     <!-- Section Pengajuan -->
     <!-- Why Choose Us Section -->
-    
-        <section class="py-20 bg-white">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header -->
-                <div class="text-center mb-16">
-                    <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6"
-                        style="font-family: 'Poppins', sans-serif;">
-                        <i class="fas fa-star mr-2"></i>
-                        Pengajuan biaya
-                    </div>
-                    <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
-                        Ajukan Pembiayaan Anda</h2>
-                    <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
-                    </p>
-                </div>
 
-                <!-- CTA Button -->
-                <div class="text-center mt-16">
-                    <a href="{{ route('contact') }}"
-                        class="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
-                        style="font-family: 'Poppins', sans-serif;">
-                        <i class="fas fa-handshake mr-3"></i>
-                        Ajukan Pembiayaan
-                        <i class="fas fa-arrow-right ml-3"></i>
-                    </a>
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6"
+                    style="font-family: 'Poppins', sans-serif;">
+                    <i class="fas fa-star mr-2"></i>
+                    Pengajuan biaya
                 </div>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                    Ajukan Pembiayaan Anda</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                    style="font-family: 'Poppins', sans-serif;">
+                    Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
+                </p>
             </div>
-        </section>
-    
+
+            <!-- CTA Button -->
+            <div class="text-center mt-16">
+                <a href="{{ route('contact') }}"
+                    class="inline-flex items-center bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105"
+                    style="font-family: 'Poppins', sans-serif;">
+                    <i class="fas fa-handshake mr-3"></i>
+                    Ajukan Pembiayaan
+                    <i class="fas fa-arrow-right ml-3"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Service Categories Section -->
     @if ($service_categories->count() > 0)
         <section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
@@ -271,35 +303,3 @@
 
 
 @endsection
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        new Swiper('.swiper', {
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            effect: 'fade',
-        });
-    });
-</script>
-
-<!-- SwiperJS Script -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-    const swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
-        spaceBetween: 20,
-        breakpoints: {
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-        },
-        loop: false,
-        grabCursor: true,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-</script>
