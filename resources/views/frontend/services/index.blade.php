@@ -90,34 +90,34 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
 
-                <!-- Section Header -->
-                <div class="text-center mb-auto">
-                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                    <span
-                        class="inline-block px-4 py-2 bg-white/80 text-yellow-600 rounded-full text-sm font-semibold mb-4 shadow-md backdrop-blur-sm"
-                        style="font-family: 'Poppins', sans-serif;" >
-                        🚀 Produk Profesional
-                    </span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                        Solusi <span
-                            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Teknologi</span>
-                        Terdepan
-                    </h2>
+            <!-- Section Header -->
+            <div class="text-center mb-auto">
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                <span
+                    class="inline-block px-4 py-2 bg-white/80 text-yellow-600 rounded-full text-sm font-semibold mb-4 shadow-md backdrop-blur-sm"
+                    style="font-family: 'Poppins', sans-serif;">
+                    🚀 Produk Profesional
+                </span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Solusi <span
+                        class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Teknologi</span>
+                    Terdepan
+                </h2>
 
-                    @if (request('search') || request('servicecategory'))
-                        <p
-                            class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-opacity duration-500 ease-in-out">
-                            Menampilkan layanan berdasarkan hasil pencarian dan kategori pilihan Anda.
-                        </p>
-                    @else
-                        <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                            Kami menyediakan berbagai layanan teknologi profesional yang dirancang khusus untuk memenuhi kebutuhan
-                            bisnis modern Anda
-                        </p>
-                    @endif
+                @if (request('search') || request('servicecategory'))
+                    <p
+                        class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed transition-opacity duration-500 ease-in-out">
+                        Menampilkan layanan berdasarkan hasil pencarian dan kategori pilihan Anda.
+                    </p>
+                @else
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Kami menyediakan berbagai layanan teknologi profesional yang dirancang khusus untuk memenuhi kebutuhan
+                        bisnis modern Anda
+                    </p>
+                @endif
 
-                    <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-300 rounded-full mx-auto mt-8"></div>
-                </div>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-300 rounded-full mx-auto mt-8"></div>
+            </div>
 
 
             <!-- Search & Filter Section -->
@@ -145,9 +145,11 @@
                                         @endforeach
                                     </select>
                                 </div>
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
                                 <button type="submit"
-                                    class="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-yellow-600 transition-colors font-medium" style="font-family: 'Poppins', sans-serif;">
+                                    class="bg-orange-600 text-white px-6 py-3 rounded-xl hover:bg-yellow-600 transition-colors font-medium"
+                                    style="font-family: 'Poppins', sans-serif;">
                                     Cari
                                 </button>
                             </form>
@@ -162,9 +164,9 @@
                     @if (request('search') || request('servicecategory'))
                         <div class="mb-8">
                             <div class="flex items-center justify-between">
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <h2 class="text-2xl font-bold text-gray-900"
-                                    style="font-family: 'Poppins', sans-serif;">
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
+                                <h2 class="text-2xl font-bold text-gray-900" style="font-family: 'Poppins', sans-serif;">
                                     Hasil Pencarian
                                     @if (request('search'))
                                         untuk "{{ request('search') }}"
@@ -179,14 +181,7 @@
                         </div>
                     @endif
 
-                    <!-- Services Grid -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                        @foreach($services as $index => $service)
-                            <div class="service-grid-animation">
-                                <x-service-card :service="$service" variant="featured" />
-                            </div>
-                        @endforeach
-                    </div>
+                    
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         @foreach($service_categories as $category)
                             @if($category->services->count() > 0)
@@ -196,7 +191,6 @@
                                         {{ $category->name }}
                                     </h2>
                                 </div>
-
                                 <!-- Layanan Grid -->
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     @foreach($category->services as $index => $service)
@@ -206,6 +200,16 @@
                                     @endforeach
                                 </div>
                             @endif
+                        @endforeach
+                    </div>
+
+                    <!-- Services Grid -->
+                    <div class="mb-6 mt-12"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                        @foreach($services as $index => $service)
+                            <div class="service-grid-animation">
+                                <x-service-card :service="$service" variant="featured" />
+                            </div>
                         @endforeach
                     </div>
                     <!-- Pagination -->
