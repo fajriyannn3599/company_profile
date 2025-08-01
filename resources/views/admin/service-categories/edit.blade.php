@@ -5,7 +5,7 @@
 @section('content')
     <div class="mb-6">
         <div class="flex items-center">
-            <a href="{{ route('admin.service-categories.index') }}"
+            <a href="{{ route('admin.services.index') }}"
                 class="text-gray-500 hover:text-gray-700 transition duration-150 ease-in-out mr-4">
                 <i class="fas fa-arrow-left"></i>
             </a>

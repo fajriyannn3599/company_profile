@@ -43,7 +43,7 @@ class ArticleCategoryController extends Controller
 
         ArticleCategory::create($validated);
 
-        return redirect()->route('admin.article-categories.index')->with('success', 'Kategori artikel berhasil ditambahkan!');
+        return redirect()->route('admin.articles.index')->with('success', 'Kategori artikel berhasil ditambahkan!');
     }
 
     /**
@@ -71,7 +71,7 @@ class ArticleCategoryController extends Controller
 
         $articleCategory->update($validated);
 
-        return redirect()->route('admin.article-categories.index')->with('success', 'Kategori artikel berhasil diperbarui!');
+        return redirect()->route('admin.articles.index')->with('success', 'Kategori artikel berhasil diperbarui!');
     }
 
     /**
@@ -87,6 +87,6 @@ class ArticleCategoryController extends Controller
 
         $articleCategory->delete();
 
-        return redirect()->route('admin.article-categories.index')->with('success', 'Kategori artikel berhasil dihapus!');
+        return redirect()->route('admin.articles.index')->with('success', 'Kategori artikel berhasil dihapus!');
     }
 }
