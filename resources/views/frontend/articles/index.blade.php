@@ -89,7 +89,7 @@
                                     </span>
                                     <span class="text-sm text-gray-500"
                                         style="font-family: 'Poppins', sans-serif;">
-                                        {{ $featuredArticle->published_at->format('d M Y') }}
+                                        {{ $featuredArticle->created_at->format('d M Y') }}
                                     </span>
                                 </div>
 
@@ -195,7 +195,7 @@
                                         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                                         <span class="text-sm text-gray-500"
                                             style="font-family: 'Poppins', sans-serif;">
-                                            {{ $article->published_at ? $article->published_at->format('d M Y') : '-' }}
+                                            {{ $article->created_at ? $article->created_at->format('d M Y') : '-' }}
                                         </span>
                                     </div>
 

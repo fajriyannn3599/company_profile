@@ -125,7 +125,7 @@
                                 <div class="flex items-center text-xs text-gray-500 mb-1"
                                     style="font-family: 'Poppins', sans-serif;">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    <span>{{ ($article->published_at)->format('d M Y') }}</span>
+                                    <span>{{ ($article->created_at)->format('d M Y') }}</span>
                                     <span class="mx-1">•</span>
                                     <i class="fas fa-eye mr-1"></i>
                                     <span>{{ $article->views }}</span>

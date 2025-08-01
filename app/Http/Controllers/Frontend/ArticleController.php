@@ -28,14 +28,14 @@ class ArticleController extends Controller
             });
         }
 
-        $articles = $query->orderBy('published_at', 'desc')->paginate(9);
+        $articles = $query->orderBy('created_at', 'desc')->paginate(9);
 
         // Get featured article (latest published article when no search/filter)
         $featuredArticle = null;
         if (!$request->search && !$request->category) {
             $featuredArticle = Article::published()
                 ->with(['category', 'author'])
-                ->orderBy('published_at', 'desc')
+                ->orderBy('created_at', 'desc')
                 ->first();
 
             // Remove featured article from main query if it exists
@@ -43,7 +43,7 @@ class ArticleController extends Controller
                 $articles = Article::published()
                     ->with(['category', 'author'])
                     ->where('id', '!=', $featuredArticle->id)
-                    ->orderBy('published_at', 'desc')
+                    ->orderBy('created_at', 'desc')
                     ->paginate(9);
             }
         } else {
@@ -61,7 +61,7 @@ class ArticleController extends Controller
             ->where('article_category_id', $article->article_category_id)
             ->where('id', '!=', $article->id)
             ->with(['category', 'author'])
-            ->orderBy('published_at', 'desc')
+            ->orderBy('created_at', 'desc')
             ->take(3)
             ->get();
 
