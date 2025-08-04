@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ServiceCategory;
+use File;
 use Illuminate\Http\Request;
 use Storage;
 use Str;
@@ -48,6 +49,12 @@ class ServiceCategoryController extends Controller
 
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('service_categories', 'public');
+
+            // Copy ke public/storage agar dapat diakses publik
+            File::copy(
+                storage_path('app/public/' . $validated['image']),
+                public_path('storage/' . $validated['image'])
+            );
         }
 
         $validated['is_active'] = $request->has('is_active');
@@ -98,8 +105,18 @@ class ServiceCategoryController extends Controller
             // Delete old image
             if ($serviceCategory->image) {
                 Storage::disk('public')->delete($serviceCategory->image);
+                $oldPublicPath = public_path('storage/' . $serviceCategory->image);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
             $validated['image'] = $request->file('image')->store('service_categories', 'public');
+
+            // Copy ke public/storage agar dapat diakses
+            File::copy(
+                storage_path('app/public/' . $validated['image']),
+                public_path('storage/' . $validated['image'])
+            );
         }
 
         $validated['is_active'] = $request->has('is_active');
