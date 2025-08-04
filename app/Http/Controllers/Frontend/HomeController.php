@@ -20,7 +20,7 @@ class HomeController extends Controller
         $testimonials = Testimonial::active()->featured()->orderBy('sort_order')->take(3)->get();
         $latestArticles = Article::published()->orderBy('created_at', 'desc')->take(4)->get();
         $whyChooseUs = WhyChooseUs::active()->orderBy('sort_order')->take(6)->get();
-        $service_categories = ServiceCategory::withCount('services')->latest()->paginate(10);
+        $service_categories = ServiceCategory::withCount('services')->orderBy('sort_order')->get();
         
         
         return view('frontend.home', compact(
