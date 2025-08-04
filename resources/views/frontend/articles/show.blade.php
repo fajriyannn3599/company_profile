@@ -13,7 +13,7 @@
         <meta property="og:image" content="{{ Storage::url($article->image) }}">
     @endif
     <meta property="article:author" content="{{ $article->author->name }}">
-    <meta property="article:published_time" content="{{ $article->published_at->toISOString() }}">
+    <meta property="article:published_time" content="{{ $article->created_at->toISOString() }}">
     <meta property="article:section" content="{{ $article->category->name }}">
 
     <!-- Twitter Card Meta Tags -->
@@ -43,7 +43,7 @@
           "url": "{{ asset('images/logo.png') }}"
         }
       },
-      "datePublished": "{{ $article->published_at->toISOString() }}",
+      "datePublished": "{{ $article->created_at->toISOString() }}",
       "dateModified": "{{ $article->updated_at->toISOString() }}",
       @if($article->image)
           "image": "{{ Storage::url($article->image) }}",
@@ -77,7 +77,7 @@
                         {{ $article->category->name }}
                     </span>
                     <span class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">
-                        {{ $article->published_at->format('d F Y') }}
+                        {{ $article->created_at->format('d F Y') }}
                     </span>
                 </div>
 
@@ -119,7 +119,7 @@
                             
                         </div>
                         <div class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Diterbitkan
-                            {{ $article->published_at->format('d F Y') }}
+                            {{ $article->created_at->format('d F Y') }}
                         </div>
                     </div>
 
@@ -290,7 +290,7 @@
                                             {{ $relatedArticle->category->name }}
                                         </span>
                                         <span class="text-sm text-gray-500">
-                                            {{ $relatedArticle->published_at->format('d M Y') }}
+                                            {{ $relatedArticle->created_at->format('d M Y') }}
                                         </span>
                                     </div>
 
