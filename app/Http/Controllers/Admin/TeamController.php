@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Team;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -48,6 +49,12 @@ class TeamController extends Controller
 
         if ($request->hasFile('photo')) {
             $validated['photo'] = $request->file('photo')->store('teams', 'public');
+
+            // Copy ke public/storage agar dapat diakses publik
+            File::copy(
+                storage_path('app/public/' . $validated['photo']),
+                public_path('storage/' . $validated['photo'])
+            );
         }
 
         // Handle social links
@@ -109,8 +116,18 @@ class TeamController extends Controller
             // Delete old photo
             if ($team->photo) {
                 Storage::disk('public')->delete($team->photo);
+                $oldPublicPath = public_path('storage/' . $team->photo);
+                if (file_exists($oldPublicPath)) {
+                    unlink($oldPublicPath);
+                }
             }
             $validated['photo'] = $request->file('photo')->store('teams', 'public');
+
+            // Copy ke public/storage agar dapat diakses
+            File::copy(
+                storage_path('app/public/' . $validated['photo']),
+                public_path('storage/' . $validated['photo'])
+            );
         }
 
         // Handle social links

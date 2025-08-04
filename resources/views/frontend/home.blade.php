@@ -10,12 +10,12 @@
 
     <!-- Hero Section -->
     <!-- <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
-                    :fallback-subtitle="setting(
-                                                                                                                                                                                        'hero_subtitle',
-                                                                                                                                                                                        'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-                                                                                                                                                                                    )" /> -->
+                                :fallback-subtitle="setting(
+                                                                                                                                                                                                    'hero_subtitle',
+                                                                                                                                                                                                    'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                                                                                                                                                                                                )" /> -->
 
-    <section class="w-full h-[70vh] sm:h-[70vh] overflow-hidden relative">
+    <section class="w-full h-[400px] sm:h-[600px] overflow-hidden relative">
         <!-- Swiper -->
         <div class="swiper w-full h-full">
             <div class="swiper-wrapper">
@@ -194,8 +194,8 @@
     <section class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
-            <div class="text-center mb-16">
-                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-semibold mb-6"
+            <!-- <div class="text-center mb-16">
+                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-6"
                     style="font-family: 'Poppins', sans-serif;">
                     <i class="fas fa-star mr-2"></i>
                     Pengajuan biaya
@@ -206,6 +206,24 @@
                     style="font-family: 'Poppins', sans-serif;">
                     Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
                 </p>
+            </div> -->
+
+            <div class="text-center mb-10">
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                <div class="inline-flex items-center px-5 py-2 bg-red-100 text-red-800 text-sm font-semibold rounded-lg shadow-md mb-6"
+                    style="font-family: 'Poppins', sans-serif;">
+                    <i class="fas fa-star mr-2"></i>
+                    Pengajuan Biaya
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Ajukan <span
+                        class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Pembiayaan</span>
+                    Anda
+                </h2>
+                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                    Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
+                </p>
+                <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-300 rounded-full mx-auto mt-8"></div>
             </div>
 
             <!-- CTA Button -->
@@ -228,11 +246,22 @@
                 <!-- Header -->
                 <div class="text-center mb-10">
                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                    <div class="inline-flex items-center px-5 py-2 bg-red-100 text-red-800 text-sm font-semibold rounded-lg shadow-md"
+                    <div class="inline-flex items-center px-5 py-2 bg-red-100 text-red-800 text-sm font-semibold rounded-lg shadow-md mb-6"
                         style="font-family: 'Poppins', sans-serif;">
                         <i class="fas fa-dollar mr-2"></i>
                         Layanan Kami
                     </div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+                        Solusi <span
+                            class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Keuangan
+                            Syariah</span>
+                        Terdepan
+                    </h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Kami menyediakan layanan keuangan syariah yang profesional dan sesuai prinsip syariah, untuk mendukung
+                        pertumbuhan UMKM dan meningkatkan kesejahteraan ekonomi masyarakat.
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-300 rounded-full mx-auto mt-8"></div>
                 </div>
 
                 <!-- Grid -->

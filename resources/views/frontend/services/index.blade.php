@@ -100,7 +100,8 @@
                 </span>
                 <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
                     Solusi <span
-                        class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Teknologi</span>
+                        class="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">Keuangan
+                        Syariah</span>
                     Terdepan
                 </h2>
 
@@ -111,8 +112,8 @@
                     </p>
                 @else
                     <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                        Kami menyediakan berbagai layanan teknologi profesional yang dirancang khusus untuk memenuhi kebutuhan
-                        bisnis modern Anda
+                        Kami menyediakan layanan keuangan syariah yang profesional dan sesuai prinsip syariah, untuk mendukung
+                        pertumbuhan UMKM dan meningkatkan kesejahteraan ekonomi masyarakat.
                     </p>
                 @endif
 
@@ -181,7 +182,7 @@
                         </div>
                     @endif
 
-                    
+
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         @foreach($service_categories as $category)
                             @if($category->services->count() > 0)

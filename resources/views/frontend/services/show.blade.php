@@ -167,21 +167,7 @@
             </div>
         </div>
 
-<!-- JavaScript Toggle Accordion -->
-<script>
-    function toggleAccordion(id) {
-        const content = document.getElementById(id);
-        const icon = document.getElementById('icon-' + id);
 
-        if (content.classList.contains('hidden')) {
-            content.classList.remove('hidden');
-            icon.classList.add('rotate-90');
-        } else {
-            content.classList.add('hidden');
-            icon.classList.remove('rotate-90');
-        }
-    }
-</script>
                 <!-- Sidebar -->
                 <div class="space-y-8">
                     <!-- Contact Card -->
@@ -273,3 +259,19 @@
                                 </div>
                             </section> -->
 @endsection
+
+<!-- JavaScript Toggle Accordion -->
+<script>
+    function toggleAccordion(id) {
+        const content = document.getElementById(id);
+        const icon = document.getElementById('icon-' + id);
+
+        if (content.classList.contains('hidden')) {
+            content.classList.remove('hidden');
+            icon.classList.add('rotate-90');
+        } else {
+            content.classList.add('hidden');
+            icon.classList.remove('rotate-90');
+        }
+    }
+</script>
