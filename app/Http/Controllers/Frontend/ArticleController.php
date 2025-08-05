@@ -44,7 +44,7 @@ class ArticleController extends Controller
                     ->with(['category', 'author'])
                     ->where('id', '!=', $featuredArticle->id)
                     ->orderBy('created_at', 'desc')
-                    ->paginate(9);
+                    ->paginate(3);
             }
         } else {
             $featuredArticle = null;

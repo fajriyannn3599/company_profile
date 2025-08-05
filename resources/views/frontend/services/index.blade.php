@@ -122,7 +122,7 @@
 
 
             <!-- Search & Filter Section -->
-            <div class="py-12 bg-gray-50">
+            <!-- <div class="py-12 bg-gray-50">
                 <div class="container mx-auto px-4">
                     <div class="max-w-4xl mx-auto">
                         <div class="bg-white rounded-2xl shadow-lg p-6">
@@ -157,7 +157,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
 
             <!-- Services Result -->
             <div class="max-w-6xl mx-auto">
@@ -182,16 +183,20 @@
                         </div>
                     @endif
 
+                    <!-- Services Grid -->
+                    
+
 
                     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                         @foreach($service_categories as $category)
                             @if($category->services->count() > 0)
                                 <!-- Kategori Header -->
-                                <div class="mb-6 mt-12">
+                                <div id="{{ $category->slug }}" class="mb-6 mt-12 scroll-mt-20">
                                     <h2 class="text-2xl font-bold text-gray-800 border-b pb-2 border-yellow-400">
                                         {{ $category->name }}
                                     </h2>
                                 </div>
+
                                 <!-- Layanan Grid -->
                                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                                     @foreach($category->services as $index => $service)
@@ -204,15 +209,6 @@
                         @endforeach
                     </div>
 
-                    <!-- Services Grid -->
-                    <div class="mb-6 mt-12"></div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-                        @foreach($services as $index => $service)
-                            <div class="service-grid-animation">
-                                <x-service-card :service="$service" variant="featured" />
-                            </div>
-                        @endforeach
-                    </div>
                     <!-- Pagination -->
                     @if($services->hasPages())
                         <div class="flex justify-center">
@@ -222,24 +218,7 @@
                         </div>
                     @endif
                 @else
-                    <div class="text-center py-16">
-                        <div class="max-w-md mx-auto">
-                            <svg class="w-16 h-16 text-gray-400 mx-auto mb-6" fill="none" stroke="currentColor"
-                                viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                            </svg>
-                            <h3 class="text-xl font-bold text-gray-900 mb-4">Produk Tidak Ditemukan</h3>
-                            <p class="text-gray-600 mb-6">
-                                Maaf, tidak ada produk yang sesuai dengan pencarian Anda.
-                                Coba gunakan kata kunci yang berbeda.
-                            </p>
-                            <a href="{{ route('services.index') }}"
-                                class="inline-flex items-center bg-red-600 text-white px-6 py-3 font-medium hover:bg-red-700 transition-colors">
-                                Lihat Semua Produk
-                            </a>
-                        </div>
-                    </div>
+
                 @endif
             </div>
         </div>

@@ -23,7 +23,7 @@ Route::get('/laporan-keuangan', [App\Http\Controllers\Frontend\FinancialReportCo
 Route::get('/laporan-keuangan/{id}', [App\Http\Controllers\Frontend\FinancialReportController::class, 'show'])->name('financial-reports.show');
 
 // Projects/Portfolio
-Route::get('/portofolio', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/tata-kelola', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/portofolio/{slug}', [ProjectController::class, 'show'])->name('projects.show');
 
 // Articles

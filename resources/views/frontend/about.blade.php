@@ -202,11 +202,11 @@
                         <div class="text-sm text-gray-600">Proyek Selesai</div>
                     </div> -->
 
-                    <div class="absolute -top-8 -right-8 bg-white shadow-xl p-6 glass-effect">
+                    <!-- <div class="absolute -top-8 -right-8 bg-white shadow-xl p-6 glass-effect">
                         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                         <div class="text-3xl font-bold text-orange-600" style="font-family: 'Poppins', sans-serif;">400+</div>
                         <div class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Klien Puas</div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

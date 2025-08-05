@@ -10,91 +10,119 @@
 
     <!-- Hero Section -->
     <!-- <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
-                                :fallback-subtitle="setting(
-                                                                                                                                                                                                    'hero_subtitle',
-                                                                                                                                                                                                    'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-                                                                                                                                                                                                )" /> -->
+                                                                :fallback-subtitle="setting(
+                                                                                                                                                                                                                                    'hero_subtitle',
+                                                                                                                                                                                                                                    'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                                                                                                                                                                                                                                )" /> -->
+    <section class="w-full overflow-hidden relative">
+        <!-- Aspect Ratio 1440x554 -->
+        <div class="aspect-[1440/553]">
+            <!-- Swiper -->
+            <div class="swiper w-full h-full">
+                <div class="swiper-wrapper h-full">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide h-full">
+                        <a href="#">
+                            <img src="{{ asset('images/slides/slide1.png') }}" class="w-full h-full object-cover"
+                                alt="Slide 1">
+                            <div class="slider-content">
+                                <!-- Konten tambahan (jika ada) -->
+                            </div>
+                        </a>
+                    </div>
 
-    <section class="w-full h-[400px] sm:h-[600px] overflow-hidden relative">
-        <!-- Swiper -->
-        <div class="swiper w-full h-full">
-            <div class="swiper-wrapper">
-                <!-- Slide 1 -->
-                <div class="swiper-slide">
-                    <img src="{{ asset('images/slide1.png') }}" class="w-full h-full object-cover" alt="Slide 1">
-                </div>
-                <!-- Slide 2 -->
-                <div class="swiper-slide">
-                    <img src="{{ asset('images/slide2.png') }}" class="w-full h-full object-cover" alt="Slide 2">
-                </div>
-                <!-- Slide 3 -->
-                <div class="swiper-slide">
-                    <img src="{{ asset('images/SIMPANAN-ANDA.jpg') }}" class="w-full h-full object-cover" alt="Slide 3">
-                </div>
-            </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide h-full">
+                        <a href="#">
+                            <img src="{{ asset('images/slides/slide2.png') }}" class="w-full h-full object-cover"
+                                alt="Slide 2">
+                            <div class="slider-content">
+                                <!-- Konten tambahan (jika ada) -->
+                            </div>
+                        </a>
+                    </div>
 
-            <!-- Tombol Navigasi -->
-            <div
-                class="swiper-button-next !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700  !p-7 !rounded-sm !shadow-md  transition-all">
-            </div>
-            <div
-                class="swiper-button-prev !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700  !p-7 !rounded-sm !shadow-md  transition-all">
-            </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide h-full">
+                        <a href="#">
+                            <img src="{{ asset('images/slides/SIMPANAN-ANDA.jpg') }}" class="w-full h-full object-cover"
+                                alt="Slide 3">
+                            <div class="slider-content">
+                                <!-- Konten tambahan (jika ada) -->
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-            <!-- Bullet Pagination -->
-            <div class="swiper-pagination !bottom-3 "></div>
+                <!-- Tombol Navigasi -->
+                <div
+                    class="swiper-button-next !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 !p-4 sm:!p-6 !rounded !shadow transition-all">
+                </div>
+                <div
+                    class="swiper-button-prev !text-white !bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 !p-4 sm:!p-6 !rounded !shadow transition-all">
+                </div>
+
+                <!-- Bullet Pagination -->
+                <div class="swiper-pagination !bottom-3"></div>
+            </div>
         </div>
     </section>
+
+
+
+
+
+
 
 
 
 
     <!-- home -->
-    <section class="py-16 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center">
-            <!-- Left Side -->
-            <div>
-                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                    BPR Syariah Arsa Sejahtera
-                </h2>
+    <!-- <section class="py-16 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center"> -->
+    <!-- Left Side -->
+    <!-- <div>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                            BPR Syariah Arsa Sejahtera
+                        </h2>
 
-                <div class="border-l-4 border-blue-800 pl-4 mb-6">
-                    <p class="text-gray-700 text-justify">
-                        BPR Syariah Arsa Sejahtera siap memberikan layanan perbankan dengan proses yang mudah dan juga siap
-                        menjalin kemitraan secara professional dan saling menguntungkan dengan seluruh stakeholder untuk
-                        kelangsungan dan pertumbuhan bisnis.
-                    </p>
-                </div>
+                        <div class="border-l-4 border-blue-800 pl-4 mb-6">
+                            <p class="text-gray-700 text-justify">
+                                BPR Syariah Arsa Sejahtera siap memberikan layanan perbankan dengan proses yang mudah dan juga siap
+                                menjalin kemitraan secara professional dan saling menguntungkan dengan seluruh stakeholder untuk
+                                kelangsungan dan pertumbuhan bisnis.
+                            </p>
+                        </div>
 
-                <div class="border-l-4 border-blue-800 pl-4 mb-6">
-                    <p class="text-gray-700 text-justify">
-                        BPR Syariah Arsa Sejahtera merupakan peserta penjaminan LPS. Maksimum nilai simpanan yang dijamin
-                        LPS per nasabah per bank adalah Rp 2 miliar. Untuk Mengetahui Tingkat Bunga Penjaminan LPS, silahkan
-                        akses ke
-                        <a href="https://apps.lps.go.id/BankPesertaLPSRate" class="text-blue-600 hover:underline"
-                            target="_blank">
-                            https://apps.lps.go.id/BankPesertaLPSRate
-                        </a>
-                    </p>
-                </div>
-            </div>
+                        <div class="border-l-4 border-blue-800 pl-4 mb-6">
+                            <p class="text-gray-700 text-justify">
+                                BPR Syariah Arsa Sejahtera merupakan peserta penjaminan LPS. Maksimum nilai simpanan yang dijamin
+                                LPS per nasabah per bank adalah Rp 2 miliar. Untuk Mengetahui Tingkat Bunga Penjaminan LPS, silahkan
+                                akses ke
+                                <a href="https://apps.lps.go.id/BankPesertaLPSRate" class="text-blue-600 hover:underline"
+                                    target="_blank">
+                                    https://apps.lps.go.id/BankPesertaLPSRate
+                                </a>
+                            </p>
+                        </div>
+                    </div> -->
 
-            <!-- Right Side -->
-            @if(setting('about_image'))
-                <img src="{{ asset('storage/' . setting('about_image')) }}" alt="About Us"
-                    class="relative shadow-2xl w-full h-96 object-cover">
-            @else
-                <div
-                    class="relative bg-gradient-to-br from-blue-100 to-purple-100 h-96 flex items-center justify-center shadow-2xl">
-                    <div class="text-center">
-                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                        <i class="fas fa-building text-6xl text-blue-400 mb-4"></i>
-                        <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar Perusahaan</p>
-                    </div>
+    <!-- Right Side -->
+    <!-- @if(setting('about_image'))
+                        <img src="{{ asset('storage/' . setting('about_image')) }}" alt="About Us"
+                            class="relative shadow-2xl w-full h-96 object-cover">
+                    @else
+                        <div
+                            class="relative bg-gradient-to-br from-blue-100 to-purple-100 h-96 flex items-center justify-center shadow-2xl">
+                            <div class="text-center">
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                                <i class="fas fa-building text-6xl text-blue-400 mb-4"></i>
+                                <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar Perusahaan</p>
+                            </div>
+                        </div>
+                    @endif
                 </div>
-            @endif
-        </div>
-    </section>
+            </section> -->
 
     <!-- Latest Articles Section -->
     @if ($latestArticles->count() > 0)
@@ -123,7 +151,7 @@
                             <div class="relative h-48 overflow-hidden">
                                 @if ($article->featured_image)
                                     <img src="{{ asset('storage/' . $article->featured_image) }}" alt="{{ $article->title }}"
-                                        class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105">
+                                        class="w-full h-48 object-cover transition-transform duration-700 group-hover:scale-105">
                                 @else
                                     <div
                                         class="w-full h-full bg-gradient-to-br from-red-200 to-blue-200 flex items-center justify-center">
@@ -150,29 +178,23 @@
                             </div>
 
                             <!-- Konten -->
-                            <div class="p-4 relative h-40 overflow-hidden">
+                            <div class="p-4 h-auto">
                                 <!-- Meta -->
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
-                                    rel="stylesheet">
-                                <div class="flex items-center text-xs text-gray-500 mb-1"
-                                    style="font-family: 'Poppins', sans-serif;">
+                                <div class="flex items-center text-xs text-gray-500 mb-2">
                                     <i class="fas fa-calendar mr-1"></i>
-                                    <span>{{ ($article->created_at)->format('d M Y') }}</span>
+                                    <span>{{ $article->created_at->format('d M Y') }}</span>
                                     <span class="mx-1">•</span>
                                     <i class="fas fa-eye mr-1"></i>
                                     <span>{{ $article->views }}</span>
                                 </div>
 
                                 <!-- Judul -->
-                                <h3 class="text-sm font-semibold text-gray-800 leading-tight">
+                                <h3 class="text-sm font-semibold text-gray-800 leading-tight line-clamp-2 mb-2">
                                     {{ $article->title }}
                                 </h3>
 
-                                <!-- Deskripsi (muncul saat hover) -->
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
-                                    rel="stylesheet">
-                                <p class="absolute bottom-3 left-4 right-4 text-gray-600 text-xs leading-snug opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                                    style="font-family: 'Poppins', sans-serif;">
+                                <!-- Deskripsi langsung ditampilkan -->
+                                <p class="text-gray-600 text-xs leading-snug">
                                     {{ Str::limit($article->excerpt ?? strip_tags($article->content), 120) }}
                                 </p>
                             </div>
@@ -195,18 +217,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <!-- <div class="text-center mb-16">
-                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-6"
-                    style="font-family: 'Poppins', sans-serif;">
-                    <i class="fas fa-star mr-2"></i>
-                    Pengajuan biaya
-                </div>
-                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
-                    Ajukan Pembiayaan Anda</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-                    style="font-family: 'Poppins', sans-serif;">
-                    Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
-                </p>
-            </div> -->
+                                                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-6"
+                                                    style="font-family: 'Poppins', sans-serif;">
+                                                    <i class="fas fa-star mr-2"></i>
+                                                    Pengajuan biaya
+                                                </div>
+                                                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                                                    Ajukan Pembiayaan Anda</h2>
+                                                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                                                    style="font-family: 'Poppins', sans-serif;">
+                                                    Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
+                                                </p>
+                                            </div> -->
 
             <div class="text-center mb-10">
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -267,7 +289,7 @@
                 <!-- Grid -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 ">
                     @foreach ($service_categories as $category)
-                        <a href="{{ route('services.index', ['servicecategory' => $category->slug]) }}"
+                        <a href="{{ route('services.index') }}#{{ $category->slug }}"
                             class="service-card relative h-[400px] overflow-hidden shadow-md group transition-all duration-700 ease-in-out hover:scale-105">
 
 
@@ -294,8 +316,8 @@
                             </div>
 
                             <!-- Konten hover / deskripsi -->
-                            <div class="absolute bottom-0 left-0 w-full h-[45%] z-20 overflow-hidden rounded-xs">
-                                <div class="service-description translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out bg-white px-4 py-3 h-full flex flex-col justify-between"
+                            <div class="hidden md:flex absolute bottom-0 left-0 w-full h-[45%] z-20 overflow-hidden rounded-b-xl">
+                                <div class="service-description translate-y-full group-hover:translate-y-0 transition-all duration-700 ease-in-out bg-white px-4 py-3 h-full flex flex-col justify-between w-full"
                                     style="font-family: 'Poppins', sans-serif;">
                                     <div>
                                         <p class="text-sm md:text-base text-gray-800 line-clamp-2 mb-2 font-bold">

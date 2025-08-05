@@ -276,8 +276,8 @@
 <body class="bg-white text-gray-900 antialiased">
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white/95 backdrop-blur-sm border-b border-gray-100 z-50">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-sm">
+            <div class="flex gap-6 justify-between items-center h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="{{ route('home') }}" class="flex items-center">
@@ -316,7 +316,7 @@
                         Berita
                     </a>
                     <a href="{{ route('financial-reports.index') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('careers*') ? 'text-blue-600' : '' }}"
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('financial-reports*') ? 'text-blue-600' : '' }}"
                         style="font-family: 'Poppins', sans-serif;">
                         Laporan Keuangan
                     </a>
@@ -331,6 +331,12 @@
                         style="font-family: 'Poppins', sans-serif;">
                         Hubungi Kami
                     </a>
+                    <!-- <a href="{{ route('projects.index') }}"
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('projects.index') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
+                        Tata Kelola
+                    </a> -->
+                    
                     <!-- Social Media Links -->
                     @if(setting('facebook_url'))
                         <a href="{{ setting('facebook_url') }}" class="text-red-900 hover:text-white transition-colors"
@@ -349,7 +355,7 @@
                 <!-- Mobile menu button -->
                 <div class="md:hidden">
                     <button type="button"
-                        class="mobile-menu-button text-gray-700 hover:text-blue-600 focus:outline-none focus:text-blue-600">
+                        class="mobile-menu-button text-gray-700 hover:text-red-600 focus:outline-none focus:text-red-600">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M4 6h16M4 12h16M4 18h16" />
@@ -362,33 +368,45 @@
             <div class="mobile-menu hidden md:hidden">
                 <div class="px-2 pt-2 pb-3 space-y-1 border-t border-gray-100">
                     <a href="{{ route('home') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('home') ? 'text-blue-600' : '' }}">
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('home') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Beranda
                     </a>
                     <a href="{{ route('about') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('about') ? 'text-blue-600' : '' }}">
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('about') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Profile
-                    </a> <a href="{{ route('services.index') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('services*') ? 'text-blue-600' : '' }}">
+                    </a>
+                    <a href="{{ route('services.index') }}"
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('services*') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Produk
                     </a>
-                    <a href="{{ route('projects.index') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('projects*') ? 'text-blue-600' : '' }}">
+                    <a href="{{ route('financial-reports.index') }}"
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('financial-reports*') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Laporan Keuangan
                     </a>
                     <a href="{{ route('articles.index') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-blue-600' : '' }}">
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Berita
                     </a>
                     <a href="{{ route('contact') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}"
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-red-600' : '' }}"
                         style="font-family: 'Poppins', sans-serif;">
                         Pengajuan
                     </a>
                     <a href="{{ route('hubungi-kami') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}">
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('contact') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
                         Hubungi Kami
                     </a>
+                    <!-- <a href="{{ route('projects.index') }}"
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('project') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
+                        Tata Kelola
+                    </a> -->
                 </div>
             </div>
         </nav>
@@ -408,7 +426,7 @@
     <!-- Footer -->
     <footer class="bg-red-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4">
                 <!-- Company Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center mb-4">
