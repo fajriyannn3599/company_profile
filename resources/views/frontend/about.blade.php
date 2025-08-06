@@ -388,7 +388,7 @@
                                 @endif
                                 <div class="text-center">
                                     <a href="{{ route('team.detail', $team->id) }}"
-                                        class="inline-flex items-center bg-gradient-to-r from-red-500 to-yellow-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:from-yellow-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                                        class="inline-flex items-center bg-gradient-to-r from-red-500 to-yellow-600 text-white px-6 py-2 rounded-xl text-sm font-semibold hover:from-yellow-600 hover:to-red-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2"
                                         style="font-family: 'Poppins', sans-serif;">
                                         <i class="fas fa-info-circle mr-2"></i>Lihat Detail
                                     </a>

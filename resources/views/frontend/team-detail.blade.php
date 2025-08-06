@@ -8,18 +8,18 @@
 @endsection
 
 @section('content')
-    <div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+    <div class="min-h-screen bg-gradient-to-br from-red-50 via-indigo-50 to-purple-50">
         <!-- Header Section with Breadcrumb -->
         <div class="bg-white/80 backdrop-blur-sm border-b border-gray-200">
             <div class="container px-6 py-8">
                 <div class="max-w-4xl mx-auto ">
                     <nav class="flex items-center space-x-2 text-sm text-gray-600">
-                        <a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors"
+                        <a href="{{ route('home') }}" class="hover:text-red-600 transition-colors"
                             style="font-family: 'Poppins', sans-serif;">Home</a>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                         </svg>
-                        <a href="{{ route('about') }}" class="hover:text-blue-600 transition-colors"
+                        <a href="{{ route('about') }}" class="hover:text-red-600 transition-colors"
                             style="font-family: 'Poppins', sans-serif;">Tentang Kami</a>
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
