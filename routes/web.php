@@ -22,8 +22,12 @@ Route::get('/layanan/{slug}', [ServiceController::class, 'show'])->name('service
 Route::get('/laporan-keuangan', [App\Http\Controllers\Frontend\FinancialReportController::class, 'index'])->name('financial-reports.index');
 Route::get('/laporan-keuangan/{id}', [App\Http\Controllers\Frontend\FinancialReportController::class, 'show'])->name('financial-reports.show');
 
+// Governances
+Route::get('/tata-kelola', [App\Http\Controllers\Frontend\GovernanceController::class, 'index'])->name('governances.index');
+Route::get('/tata-kelola/{id}', [App\Http\Controllers\Frontend\GovernanceController::class, 'show'])->name('governances.show');
+
 // Projects/Portfolio
-Route::get('/tata-kelola', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/portofolio', [ProjectController::class, 'index'])->name('projects.index');
 Route::get('/portofolio/{slug}', [ProjectController::class, 'show'])->name('projects.show');
 
 // Articles
@@ -83,6 +87,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
 
     // Financial Reports
     Route::resource('financial-reports', App\Http\Controllers\Admin\FinancialReportController::class);
+
+    // Governance
+    Route::resource('governances', App\Http\Controllers\Admin\GovernanceController::class);
 
     // Teams
     Route::resource('teams', App\Http\Controllers\Admin\TeamController::class);

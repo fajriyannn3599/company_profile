@@ -23,7 +23,7 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/slide1.png') }}" class="w-full h-full object-cover"
+                            <img src="{{ asset('images/slides/test.jpg') }}" class="w-full h-full object-cover"
                                 alt="Slide 1">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->

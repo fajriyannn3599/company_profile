@@ -321,6 +321,11 @@
                         Laporan Keuangan
                     </a>
                     </a>
+                    <a href="{{ route('governances.index') }}"
+                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('governances.index') ? 'text-blue-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
+                        Tata Kelola
+                    </a>
                     <a href="{{ route('contact') }}"
                         class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-blue-600' : '' }}"
                         style="font-family: 'Poppins', sans-serif;">
@@ -331,11 +336,7 @@
                         style="font-family: 'Poppins', sans-serif;">
                         Hubungi Kami
                     </a>
-                    <!-- <a href="{{ route('projects.index') }}"
-                        class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('projects.index') ? 'text-blue-600' : '' }}"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Tata Kelola
-                    </a> -->
+                    
                     
                     <!-- Social Media Links -->
                     @if(setting('facebook_url'))
@@ -382,15 +383,20 @@
                         style="font-family: 'Poppins', sans-serif;">
                         Produk
                     </a>
+                    <a href="{{ route('articles.index') }}"
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-red-600' : '' }}"
+                        style="font-family: 'Poppins', sans-serif;">
+                        Berita
+                    </a>
                     <a href="{{ route('financial-reports.index') }}"
                         class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('financial-reports*') ? 'text-red-600' : '' }}"
                         style="font-family: 'Poppins', sans-serif;">
                         Laporan Keuangan
                     </a>
-                    <a href="{{ route('articles.index') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('articles*') ? 'text-red-600' : '' }}"
+                    <a href="{{ route('governances.index') }}"
+                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('governances*') ? 'text-red-600' : '' }}"
                         style="font-family: 'Poppins', sans-serif;">
-                        Berita
+                        Tata Kelola
                     </a>
                     <a href="{{ route('contact') }}"
                         class="text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium transition-colors {{ request()->routeIs('contact') ? 'text-red-600' : '' }}"
@@ -402,11 +408,6 @@
                         style="font-family: 'Poppins', sans-serif;">
                         Hubungi Kami
                     </a>
-                    <!-- <a href="{{ route('projects.index') }}"
-                        class="block text-red-900 hover:text-yellow-600 px-3 py-2 text-base font-medium {{ request()->routeIs('project') ? 'text-red-600' : '' }}"
-                        style="font-family: 'Poppins', sans-serif;">
-                        Tata Kelola
-                    </a> -->
                 </div>
             </div>
         </nav>
