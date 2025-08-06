@@ -239,7 +239,7 @@
             <div class="container mx-auto px-4">
                 <div class="max-w-6xl mx-auto">
                     <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4" style="font-family:'Poppins', sans-serif;">
                             Artikel Terkait
                         </h2>
                         <p class="text-xl text-gray-600">
@@ -247,7 +247,7 @@
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" style="font-family:'Poppins', sans-serif;">
                         @foreach ($relatedArticles as $relatedArticle)
                             <article
                                 class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -258,9 +258,9 @@
                                     </div>
                                 @endif
 
-                                <div class="p-6">
+                                <div class="p-6" style="font-family:'Poppins', sans-serif;">
                                     <div class="flex items-center justify-between mb-3">
-                                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                                        <span class="bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">
                                             {{ $relatedArticle->category->name }}
                                         </span>
                                         <span class="text-sm text-gray-500">
@@ -269,18 +269,18 @@
                                     </div>
 
                                     <h3
-                                        class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2">
+                                        class="text-xl font-bold text-gray-900 mb-3 hover:text-red-600 transition-colors line-clamp-2" style="font-family:'Poppins', sans-serif;">
                                         <a href="{{ route('articles.show', $relatedArticle->slug) }}">
                                             {{ $relatedArticle->title }}
                                         </a>
                                     </h3>
 
-                                    <p class="text-gray-600 mb-4 line-clamp-3">
+                                    <p class="text-gray-600 mb-4 line-clamp-3" style="font-family:'Poppins', sans-serif;">
                                         {{ $relatedArticle->excerpt }}
                                     </p>
 
                                     <a href="{{ route('articles.show', $relatedArticle->slug) }}"
-                                        class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium">
+                                        class="inline-flex items-center text-red-600 hover:text-red-800 font-medium" style="font-family:'Poppins', sans-serif;">
                                         Baca Selengkapnya
                                         <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -292,9 +292,9 @@
                         @endforeach
                     </div>
 
-                    <div class="text-center mt-12">
+                    <div class="text-center mt-12" style="font-family:'Poppins', sans-serif;">
                         <a href="{{ route('articles.index') }}"
-                            class="inline-flex items-center bg-blue-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors">
+                            class="inline-flex items-center bg-red-600 text-white px-8 py-3 rounded-xl font-medium hover:bg-red-700 transition-colors">
                             Lihat Semua Artikel
                             <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

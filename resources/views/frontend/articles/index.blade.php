@@ -236,7 +236,7 @@
 
                                         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                                         <a href="{{ route('articles.show', $article->slug) }}"
-                                            class="inline-flex items-center text-red-600 hover:text-blue-800 font-medium text-sm"
+                                            class="inline-flex items-center text-red-600 hover:text-red-800 font-medium text-sm"
                                             style="font-family: 'Poppins', sans-serif;">
                                             Baca
                                             <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor"
