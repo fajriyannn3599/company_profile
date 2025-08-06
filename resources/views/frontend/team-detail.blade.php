@@ -127,59 +127,37 @@
                                             </div>
                                         </div>
                                     @endif
-
-                                    
-
-                                    <!-- Other Team Members -->
                                     <!-- Other Team Members -->
                                     @if ($otherTeamMembers && $otherTeamMembers->count() > 0)
-                                        <div class="mt-12 px-4">
-                                            <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center"
-                                                style="font-family: 'Poppins', sans-serif;">
-                                                Tim Lainnya
-                                            </h3>
-
-                                            <div
-                                                class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 justify-items-center">
-                                                @foreach ($otherTeamMembers as $member)
-                                                    <a href="{{ route('team.detail', $member->id) }}"
-                                                        class="group w-full max-w-[230px]"
-                                                        style="font-family: 'Poppins', sans-serif;">
-                                                        <div
-                                                            class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow px-4 py-6 flex flex-col items-center justify-between h-full min-h-[300px]">
-
-                                                            <!-- Avatar -->
-                                                            <div class="w-20 h-20 rounded-full overflow-hidden mb-4 shadow">
-                                                                @if ($member->photo && file_exists(public_path('storage/' . $member->photo)))
-                                                                    <img src="{{ asset('storage/' . $member->photo) }}"
-                                                                        alt="{{ $member->name }}"
-                                                                        class="w-full h-full object-cover object-center">
-                                                                @else
-                                                                    <div
-                                                                        class="w-full h-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-white font-bold text-md">
+                                    <div class="mt-12">
+                                        <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Tim Lainnya</h3>
+                                        <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+                                            @foreach ($otherTeamMembers as $member)
+                                                <a href="{{ route('team.detail', $member->id) }}" class="group">
+                                                    <div
+                                                        class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow p-6 text-center">
+                                                        <div class="w-16 h-16 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
+                                                            @if ($member->photo && file_exists(public_path('storage/' . $member->photo)))
+                                                                <img src="{{ asset('storage/' . $member->photo) }}"
+                                                                    alt="{{ $member->name }}" class="w-full h-full object-cover">
+                                                            @else
+                                                                <div class="w-full h-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center rounded-full overflow-hidden">
+                                                                    <span class="text-xs font-bold text-white text-center truncate w-full px-1">
                                                                         {{ strtoupper(substr($member->name, 0, 2)) }}
-                                                                    </div>
-                                                                @endif
-                                                            </div>
-
-                                                            <!-- Name -->
-                                                            <h4
-                                                                class="text-sm font-semibold text-gray-900 text-center leading-tight group-hover:text-blue-600 transition-colors break-words">
-                                                                {{ \Illuminate\Support\Str::limit($member->name, 35, '') }}
-                                                            </h4>
-
-                                                            <!-- Position -->
-                                                            <p
-                                                                class="text-sm text-gray-600 text-center mt-2 leading-snug break-words">
-                                                                {{ $member->position }}
-                                                            </p>
+                                                                    </span>
+                                                                </div>
+                                                            @endif
                                                         </div>
-                                                    </a>
-                                                @endforeach
-                                            </div>
+                                                        <h4
+                                                            class="font-semibold text-gray-900 group-hover:text-red-600 transition-colors">
+                                                            {{ $member->name }}</h4>
+                                                        <p class="text-sm text-gray-600">{{ $member->position }}</p>
+                                                    </div>
+                                                </a>
+                                            @endforeach
                                         </div>
-                                    @endif
-                                    
+                                    </div>
+                                @endif
                                 </div>
                             </div>
                         </div>

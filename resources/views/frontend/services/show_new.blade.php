@@ -119,7 +119,7 @@
                 </div>
 
                 <!-- Service Features -->
-                <div class="bg-white border border-gray-200 rounded-xl p-6">
+                <!-- <div class="bg-white border border-gray-200 rounded-xl p-6">
                     <h3 class="text-xl font-semibold text-gray-900 mb-4">Keunggulan Produk</h3>
                     <ul class="space-y-3">
                         <li class="flex items-center">
@@ -143,7 +143,7 @@
                             <span class="text-gray-700">Harga kompetitif</span>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
