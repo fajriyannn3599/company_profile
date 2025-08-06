@@ -25,11 +25,11 @@
                         <div class="flex-1">
                             <input type="text" name="search" value="{{ request('search') }}"
                                 placeholder="Cari artikel..."
-                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent">
                         </div>
                         <div class="sm:w-48">
                             <select name="category"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-red-500 focus:border-transparent"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <option value="">Semua Kategori</option>                                
                                 @foreach ($categories as $category)
@@ -201,7 +201,7 @@
 
                                     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                                     <h3
-                                        class="text-xl font-bold text-gray-900 mb-3 hover:text-blue-600 transition-colors line-clamp-2"
+                                        class="text-xl font-bold text-gray-900 mb-3 hover:text-red-600 transition-colors line-clamp-2"
                                         style="font-family: 'Poppins', sans-serif;">
                                         <a href="{{ route('articles.show', $article->slug) }}">
                                             {{ $article->title }}
@@ -273,7 +273,7 @@
                             </p>
                             <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                             <a href="{{ route('articles.index') }}"
-                                class="inline-flex items-center bg-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-blue-700 transition-colors"
+                                class="inline-flex items-center bg-red-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-red-700 transition-colors"
                                 style="font-family: 'Poppins', sans-serif;">
                                 Lihat Semua Artikel
                             </a>
