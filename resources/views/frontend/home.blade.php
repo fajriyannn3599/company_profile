@@ -23,7 +23,7 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/test.jpg') }}" class="w-full h-full object-cover"
+                            <img src="{{ asset('images/slides/1.jpg') }}" class="w-full h-full object-cover"
                                 alt="Slide 1">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
@@ -34,7 +34,7 @@
                     <!-- Slide 2 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/slide2.png') }}" class="w-full h-full object-cover"
+                            <img src="{{ asset('images/slides/2.jpg') }}" class="w-full h-full object-cover"
                                 alt="Slide 2">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
@@ -45,7 +45,7 @@
                     <!-- Slide 3 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/SIMPANAN-ANDA.jpg') }}" class="w-full h-full object-cover"
+                            <img src="{{ asset('images/slides/3.jpg') }}" class="w-full h-full object-cover"
                                 alt="Slide 3">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
@@ -290,7 +290,7 @@
                 <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 ">
                     @foreach ($service_categories as $category)
                         <a href="{{ route('services.index') }}#{{ $category->slug }}"
-                            class="service-card relative h-[400px] overflow-hidden shadow-md group transition-all duration-700 ease-in-out hover:scale-105">
+                            class="service-card relative h-[400px] overflow-hidden shadow-md group transition-all duration-700 ease-in-out hover:scale-105 bg-white rounded-xl flex flex-col">
 
 
                             <!-- Gambar -->
