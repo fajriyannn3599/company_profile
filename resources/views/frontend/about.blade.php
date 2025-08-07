@@ -93,9 +93,9 @@
 @section('content')
     <!-- Page Header -->
     <!-- <x-hero
-        page-identifier="about"
-        fallback-title="Tentang Kami"
-        fallback-subtitle="Mengenal lebih dalam tentang perusahaan kami" /> -->
+            page-identifier="about"
+            fallback-title="Tentang Kami"
+            fallback-subtitle="Mengenal lebih dalam tentang perusahaan kami" /> -->
 
     <!-- About Content -->
     <section class="py-20 bg-gradient-to-br from-gray-50 to-white">
@@ -103,9 +103,9 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
                 <div class="space-y-8">
                     <div>
-                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                        <span
-                            class="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-4"
+                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                            rel="stylesheet">
+                        <span class="inline-block px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-4"
                             style="font-family: 'Poppins', sans-serif;">
                             🏢 Tentang Perusahaan
                         </span>
@@ -116,15 +116,17 @@
                     </div>
 
                     <div class="text-gray-700 text-lg leading-relaxed space-y-6">
-                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                            rel="stylesheet">
                         @if(setting('about_description'))
                             @foreach(explode("\n\n", setting('about_description')) as $paragraph)
-                                <p class="text-justify"
-                                style="font-family: 'Poppins', sans-serif;">{{ $paragraph }}</p>
+                                <p class="text-justify" style="font-family: 'Poppins', sans-serif;">{{ $paragraph }}</p>
                             @endforeach
                         @else
-                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                            <p class="text-justify" style="font-family: 'Poppins', sans-serif;">Kami adalah perusahaan yang berdedikasi untuk memberikan solusi terbaik bagi
+                            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                rel="stylesheet">
+                            <p class="text-justify" style="font-family: 'Poppins', sans-serif;">Kami adalah perusahaan yang
+                                berdedikasi untuk memberikan solusi terbaik bagi
                                 klien kami. Dengan pengalaman bertahun-tahun dan tim profesional yang berpengalaman, kami siap
                                 membantu mengembangkan bisnis Anda.</p>
                         @endif
@@ -137,9 +139,12 @@
                                 <i class="fas fa-check text-green-600 text-xl"></i>
                             </div>
                             <div>
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Berpengalaman</h4>
-                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">20+ tahun sudah terjun di industri perbankan</p>
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
+                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                                    Berpengalaman</h4>
+                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">20+ tahun sudah
+                                    terjun di industri perbankan</p>
                             </div>
                         </div>
 
@@ -148,9 +153,12 @@
                                 <i class="fas fa-unlock-keyhole text-blue-600 text-xl"></i>
                             </div>
                             <div>
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Mudah</h4>
-                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Proses layanan perbankan yang sederhana dan efisien</p>
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
+                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Mudah
+                                </h4>
+                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Proses layanan
+                                    perbankan yang sederhana dan efisien</p>
                             </div>
                         </div>
 
@@ -159,9 +167,12 @@
                                 <i class="fas fa-solid fa-bolt text-red-600 text-xl"></i>
                             </div>
                             <div>
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Cepat</h4>
-                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Pencairan pembiayaan dilakukan tanpa hambatan</p>
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
+                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Cepat
+                                </h4>
+                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Pencairan
+                                    pembiayaan dilakukan tanpa hambatan</p>
                             </div>
                         </div>
 
@@ -170,9 +181,12 @@
                                 <i class="fas fa-cloud text-yellow-600 text-xl"></i>
                             </div>
                             <div>
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">Responsif</h4>
-                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Pelayanan cepat tanggap dan ramah terhadap nasabah</p>
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
+                                <h4 class="font-semibold text-gray-900" style="font-family: 'Poppins', sans-serif;">
+                                    Responsif</h4>
+                                <p class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Pelayanan cepat
+                                    tanggap dan ramah terhadap nasabah</p>
                             </div>
                         </div>
                     </div>
@@ -189,24 +203,26 @@
                         <div
                             class="relative bg-gradient-to-br from-blue-100 to-purple-100 h-96 flex items-center justify-center shadow-2xl">
                             <div class="text-center">
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap"
+                                    rel="stylesheet">
                                 <i class="fas fa-building text-6xl text-blue-400 mb-4"></i>
-                                <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar Perusahaan</p>
+                                <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar
+                                    Perusahaan</p>
                             </div>
                         </div>
                     @endif
 
                     <!-- Floating Stats -->
                     <!-- <div class="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-xl p-6 glass-effect">
-                        <div class="text-3xl font-bold text-blue-600">500+</div>
-                        <div class="text-sm text-gray-600">Proyek Selesai</div>
-                    </div> -->
+                            <div class="text-3xl font-bold text-blue-600">500+</div>
+                            <div class="text-sm text-gray-600">Proyek Selesai</div>
+                        </div> -->
 
                     <!-- <div class="absolute -top-8 -right-8 bg-white shadow-xl p-6 glass-effect">
-                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                        <div class="text-3xl font-bold text-orange-600" style="font-family: 'Poppins', sans-serif;">400+</div>
-                        <div class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Klien Puas</div>
-                    </div> -->
+                            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                            <div class="text-3xl font-bold text-orange-600" style="font-family: 'Poppins', sans-serif;">400+</div>
+                            <div class="text-sm text-gray-600" style="font-family: 'Poppins', sans-serif;">Klien Puas</div>
+                        </div> -->
                 </div>
             </div>
         </div>
@@ -224,10 +240,12 @@
             <div class="text-center mb-16">
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                 <span
-                    class="inline-block px-4 py-2 bg-white/80 text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md" style="font-family: 'Poppins', sans-serif;">
+                    class="inline-block px-4 py-2 bg-white/80 text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md"
+                    style="font-family: 'Poppins', sans-serif;">
                     🎯 Visi & Misi
                 </span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Panduan Langkah Kami</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                    Panduan Langkah Kami</h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-600 rounded-full mx-auto"></div>
             </div>
 
@@ -242,8 +260,10 @@
                             class="w-20 h-20 bg-gradient-to-r from-orange-500 to-red-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                             <i class="fas fa-eye text-white text-3xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Visi Kami</h3>
-                        <p class="text-gray-700 text-lg leading-relaxed font-medium" style="font-family: 'Poppins', sans-serif;">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Visi
+                            Kami</h3>
+                        <p class="text-gray-700 text-lg leading-relaxed font-medium"
+                            style="font-family: 'Poppins', sans-serif;">
                             {{ setting('vision', 'Menjadi perusahaan teknologi terdepan di Indonesia yang memberikan solusi digital inovatif dan berkelanjutan') }}
                         </p>
 
@@ -264,7 +284,8 @@
                             class="w-20 h-20 bg-gradient-to-r from-red-500 to-orange-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                             <i class="fas fa-bullseye text-white text-3xl"></i>
                         </div>
-                        <h3 class="text-3xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Misi Kami</h3>
+                        <h3 class="text-3xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Misi
+                            Kami</h3>
                         <p class="text-gray-700 text-lg leading-relaxed font-medium">
                             {{ setting('mission', 'Membantu perusahaan dalam transformasi digital melalui teknologi terdepan, layanan berkualitas tinggi, dan partnership jangka panjang yang saling menguntungkan') }}
                         </p>
@@ -281,65 +302,65 @@
 
     <!-- Our Values -->
     <!-- <section class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
-                    💎 Nilai-Nilai Kami
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Fondasi Kekuatan</h2>
-                <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-                    Nilai-nilai yang menjadi fondasi dalam setiap layanan dan solusi yang kami berikan untuk menciptakan partnership yang berkelanjutan
-                </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mt-8"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-20">
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-4">
+                        💎 Nilai-Nilai Kami
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Fondasi Kekuatan</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+                        Nilai-nilai yang menjadi fondasi dalam setiap layanan dan solusi yang kami berikan untuk menciptakan partnership yang berkelanjutan
+                    </p>
+                    <div class="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mx-auto mt-8"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card-hover text-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-blue-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                <i class="fas fa-lightbulb text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Inovasi</h3>
+                            <p class="text-gray-700 leading-relaxed font-medium">Selalu menghadirkan solusi terdepan dan teknologi terbaru untuk kebutuhan klien</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover text-center bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-green-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                <i class="fas fa-award text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Kualitas</h3>
+                            <p class="text-gray-700 leading-relaxed font-medium">Berkomitmen memberikan hasil terbaik dengan standar kualitas tinggi</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover text-center bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-purple-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                <i class="fas fa-handshake text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Integritas</h3>
+                            <p class="text-gray-700 leading-relaxed font-medium">Menjalankan bisnis dengan transparansi dan kejujuran dalam setiap proses</p>
+                        </div>
+                    </div>
+
+                    <div class="card-hover text-center bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-20 h-20 bg-orange-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
+                        <div class="relative">
+                            <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                                <i class="fas fa-users text-white text-3xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-4">Kolaborasi</h3>
+                            <p class="text-gray-700 leading-relaxed font-medium">Membangun kemitraan jangka panjang yang saling menguntungkan</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="card-hover text-center bg-gradient-to-br from-blue-50 to-blue-100 rounded-3xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-blue-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                            <i class="fas fa-lightbulb text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Inovasi</h3>
-                        <p class="text-gray-700 leading-relaxed font-medium">Selalu menghadirkan solusi terdepan dan teknologi terbaru untuk kebutuhan klien</p>
-                    </div>
-                </div>
-
-                <div class="card-hover text-center bg-gradient-to-br from-green-50 to-green-100 rounded-3xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-green-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                            <i class="fas fa-award text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Kualitas</h3>
-                        <p class="text-gray-700 leading-relaxed font-medium">Berkomitmen memberikan hasil terbaik dengan standar kualitas tinggi</p>
-                    </div>
-                </div>
-
-                <div class="card-hover text-center bg-gradient-to-br from-purple-50 to-purple-100 rounded-3xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-purple-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                            <i class="fas fa-handshake text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Integritas</h3>
-                        <p class="text-gray-700 leading-relaxed font-medium">Menjalankan bisnis dengan transparansi dan kejujuran dalam setiap proses</p>
-                    </div>
-                </div>
-
-                <div class="card-hover text-center bg-gradient-to-br from-orange-50 to-orange-100 rounded-3xl p-8 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-orange-200 rounded-full -translate-y-10 translate-x-10 opacity-30"></div>
-                    <div class="relative">
-                        <div class="w-20 h-20 bg-gradient-to-r from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                            <i class="fas fa-users text-white text-3xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-900 mb-4">Kolaborasi</h3>
-                        <p class="text-gray-700 leading-relaxed font-medium">Membangun kemitraan jangka panjang yang saling menguntungkan</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
+        </section> -->
 
     <!-- Team Section -->
     @if($teams->count() > 0)
@@ -353,12 +374,14 @@
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
                 <div class="text-center mb-20">
-                    <span
-                        class="inline-block px-4 py-2 bg-white text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md" style="font-family: 'Poppins', sans-serif;">
+                    <span class="inline-block px-4 py-2 bg-white text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md"
+                        style="font-family: 'Poppins', sans-serif;">
                         👥 Tim Kami
                     </span>
-                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">Tim Manajemen</h2>
-                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                        Tim Manajemen</h2>
+                    <p class="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+                        style="font-family: 'Poppins', sans-serif;">
                         Dipimpin oleh profesional berpengalaman di bidangnya masing-masing untuk memberikan hasil terbaik
                     </p>
                     <div class="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mx-auto mt-8"></div>
@@ -366,7 +389,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     @foreach($teams as $team)
-                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
                         <div class="team-card card-hover bg-white shadow-xl overflow-hidden">
                             @if($team->photo)
                                 <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
@@ -381,10 +404,13 @@
                             @endif
 
                             <div class="p-8">
-                                <h3 class="text-2xl font-bold text-gray-900 mb-2" style="font-family: 'Poppins', sans-serif;">{{ $team->name }}</h3>
-                                <p class="text-orange-600 font-semibold mb-4 text-lg" style="font-family: 'Poppins', sans-serif;">{{ $team->position }}</p>
+                                <h3 class="text-2xl font-bold text-gray-900 mb-2" style="font-family: 'Poppins', sans-serif;">
+                                    {{ $team->name }}</h3>
+                                <p class="text-orange-600 font-semibold mb-4 text-lg" style="font-family: 'Poppins', sans-serif;">
+                                    {{ $team->position }}</p>
                                 @if($team->bio)
-                                    <p class="text-gray-700 text-sm mb-6 leading-relaxed" style="font-family: 'Poppins', sans-serif;">{{ Str::limit($team->bio, 100) }}</p>
+                                    <p class="text-gray-700 text-sm mb-6 leading-relaxed" style="font-family: 'Poppins', sans-serif;">
+                                        {{ Str::limit($team->bio, 100) }}</p>
                                 @endif
                                 <div class="text-center">
                                     <a href="{{ route('team.detail', $team->id) }}"
@@ -401,149 +427,186 @@
         </section>
     @endif
 
+
+    <section class="py-20 bg-white" style="font-family: 'Poppins', sans-serif;">
+        <!-- Awards Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- SECTION TITLE -->
+        <div class="text-center mb-10">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+            <div class="inline-flex items-center px-5 py-2 bg-yellow-100 text-yellow-800 text-sm font-semibold rounded-lg shadow-md mb-6"
+                style="font-family: 'Poppins', sans-serif;">
+                <i class="fas fa-award mr-2"></i>
+                Penghargaan Kami
+            </div>
+        </div>
+
+        <!-- LOOPING AWARDS -->
+        @php
+            $awards = \App\Models\Award::latest()->get();
+        @endphp
+
+        @if ($awards->count())
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+                @foreach ($awards as $award)
+            <div class="text-center">
+                <img src="{{ asset('storage/' . $award->image) }}" alt="{{ $award->title }}" class="mx-auto mb-2 rounded shadow-md w-[250px] h-[250px] object-cover">
+                <h4 class="font-semibold">{{ $award->title }}</h4>
+                <p class="text-sm text-red-700">{{ $award->description }}</p>
+            </div>
+        @endforeach
+            </div>
+        @else
+            <p class="text-center text-gray-500 mt-10">Belum ada penghargaan yang ditampilkan.</p>
+        @endif
+    </div>
+</section>
+
+
+   
     <!-- Stats Section --> <!--
-    <section class="py-20 relative overflow-hidden"> -->
+        <section class="py-20 relative overflow-hidden"> -->
     <!-- Animated Background --> <!--
-        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-blue-900"></div>
-        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.3) 1px, transparent 0); background-size: 60px 60px;"></div>
-    -->
+            <div class="absolute inset-0 bg-gradient-to-r from-blue-900 via-purple-900 to-blue-900"></div>
+            <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at 3px 3px, rgba(255, 255, 255, 0.3) 1px, transparent 0); background-size: 60px 60px;"></div>
+        -->
     <!-- Floating Elements -->
     <!-- <div class="absolute top-20 left-20 w-32 h-32 bg-white/10 rounded-full blur-xl float-animation"></div>
-        <div class="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-xl float-animation" style="animation-delay: -3s;"></div>
+            <div class="absolute bottom-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-xl float-animation" style="animation-delay: -3s;"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-white">
-            <div class="text-center mb-20">
-                <span class="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
-                    📊 Pencapaian Kami
-                </span>
-                <h2 class="text-4xl md:text-5xl font-bold mb-6">Angka Berbicara</h2>
-                <p class="text-xl opacity-90 max-w-4xl mx-auto leading-relaxed">
-                    Bukti nyata dedikasi dan kepercayaan klien yang telah memilih kami sebagai partner teknologi
-                </p>
-                <div class="w-24 h-1 bg-white/40 rounded-full mx-auto mt-8"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="text-center counter-animation">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
-                        <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-project-diagram text-white text-2xl"></i>
-                        </div>
-                        <div class="text-5xl font-bold mb-4">500+</div>
-                        <p class="text-lg opacity-90 font-medium">Proyek Selesai</p>
-                        <p class="text-sm opacity-70 mt-2">Berbagai industri & skala</p>
-                    </div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-white">
+                <div class="text-center mb-20">
+                    <span class="inline-block px-4 py-2 bg-white/20 text-white rounded-full text-sm font-semibold mb-4 backdrop-blur-sm">
+                        📊 Pencapaian Kami
+                    </span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Angka Berbicara</h2>
+                    <p class="text-xl opacity-90 max-w-4xl mx-auto leading-relaxed">
+                        Bukti nyata dedikasi dan kepercayaan klien yang telah memilih kami sebagai partner teknologi
+                    </p>
+                    <div class="w-24 h-1 bg-white/40 rounded-full mx-auto mt-8"></div>
                 </div>
 
-                <div class="text-center counter-animation" style="animation-delay: 0.2s;">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
-                        <div class="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-heart text-white text-2xl"></i>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center counter-animation">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                            <div class="w-20 h-20 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-project-diagram text-white text-2xl"></i>
+                            </div>
+                            <div class="text-5xl font-bold mb-4">500+</div>
+                            <p class="text-lg opacity-90 font-medium">Proyek Selesai</p>
+                            <p class="text-sm opacity-70 mt-2">Berbagai industri & skala</p>
                         </div>
-                        <div class="text-5xl font-bold mb-4">200+</div>
-                        <p class="text-lg opacity-90 font-medium">Klien Puas</p>
-                        <p class="text-sm opacity-70 mt-2">Rating kepuasan 4.9/5</p>
                     </div>
-                </div>
 
-                <div class="text-center counter-animation" style="animation-delay: 0.4s;">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
-                        <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                    <div class="text-center counter-animation" style="animation-delay: 0.2s;">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                            <div class="w-20 h-20 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-heart text-white text-2xl"></i>
+                            </div>
+                            <div class="text-5xl font-bold mb-4">200+</div>
+                            <p class="text-lg opacity-90 font-medium">Klien Puas</p>
+                            <p class="text-sm opacity-70 mt-2">Rating kepuasan 4.9/5</p>
                         </div>
-                        <div class="text-5xl font-bold mb-4">8+</div>
-                        <p class="text-lg opacity-90 font-medium">Tahun Pengalaman</p>
-                        <p class="text-sm opacity-70 mt-2">Sejak 2016 melayani</p>
                     </div>
-                </div>
 
-                <div class="text-center counter-animation" style="animation-delay: 0.6s;">
-                    <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
-                        <div class="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-users text-white text-2xl"></i>
+                    <div class="text-center counter-animation" style="animation-delay: 0.4s;">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                            <div class="w-20 h-20 bg-gradient-to-r from-green-400 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-calendar-alt text-white text-2xl"></i>
+                            </div>
+                            <div class="text-5xl font-bold mb-4">8+</div>
+                            <p class="text-lg opacity-90 font-medium">Tahun Pengalaman</p>
+                            <p class="text-sm opacity-70 mt-2">Sejak 2016 melayani</p>
                         </div>
-                        <div class="text-5xl font-bold mb-4">50+</div>
-                        <p class="text-lg opacity-90 font-medium">Tim Profesional</p>
-                        <p class="text-sm opacity-70 mt-2">Expert di bidangnya</p>
                     </div>
-                </div>
-            </div> -->
+
+                    <div class="text-center counter-animation" style="animation-delay: 0.6s;">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 card-hover">
+                            <div class="w-20 h-20 bg-gradient-to-r from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-users text-white text-2xl"></i>
+                            </div>
+                            <div class="text-5xl font-bold mb-4">50+</div>
+                            <p class="text-lg opacity-90 font-medium">Tim Profesional</p>
+                            <p class="text-sm opacity-70 mt-2">Expert di bidangnya</p>
+                        </div>
+                    </div>
+                </div> -->
 
     <!-- Additional Stats Row -->
     <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
-                <div class="text-center">
-                    <div class="text-3xl font-bold mb-2">99.9%</div>
-                    <p class="opacity-90">Uptime Server</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold mb-2">24/7</div>
-                    <p class="opacity-90">Support System</p>
-                </div>
-                <div class="text-center">
-                    <div class="text-3xl font-bold mb-2">100%</div>
-                    <p class="opacity-90">Money Back Guarantee</p>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">99.9%</div>
+                        <p class="opacity-90">Uptime Server</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">24/7</div>
+                        <p class="opacity-90">Support System</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold mb-2">100%</div>
+                        <p class="opacity-90">Money Back Guarantee</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section> -->
+        </section> -->
 
     <!-- CTA Section -->
     <!-- <section class="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden"> -->
     <!-- Background Elements -->
     <!-- <div class="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-blue-100 to-purple-100 rounded-full translate-x-48 -translate-y-48 opacity-40"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-100 to-pink-100 rounded-full -translate-x-48 translate-y-48 opacity-40"></div>
+            <div class="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-purple-100 to-pink-100 rounded-full -translate-x-48 translate-y-48 opacity-40"></div>
 
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
-            <div class="max-w-4xl mx-auto">
-                <span class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
-                    🤝 Mari Berkolaborasi
-                </span>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <div class="max-w-4xl mx-auto">
+                    <span class="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-semibold mb-6">
+                        🤝 Mari Berkolaborasi
+                    </span>
 
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-                    Siap Bekerja Sama Dengan Kami?
-                </h2>
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+                        Siap Bekerja Sama Dengan Kami?
+                    </h2>
 
-                <p class="text-xl text-gray-600 mb-12 leading-relaxed">
-                    Mari diskusikan bagaimana kami dapat membantu mengembangkan bisnis Anda dengan solusi teknologi terdepan dan strategi digital yang efektif
-                </p>
+                    <p class="text-xl text-gray-600 mb-12 leading-relaxed">
+                        Mari diskusikan bagaimana kami dapat membantu mengembangkan bisnis Anda dengan solusi teknologi terdepan dan strategi digital yang efektif
+                    </p>
 
-                <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-                    <a href="{{ route('contact') }}" class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                        <i class="fas fa-phone mr-3 group-hover:animate-pulse"></i>
-                        Hubungi Kami Sekarang
-                    </a>
-                    <a href="{{ route('services.index') }}" class="group border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
-                        <i class="fas fa-eye mr-3 group-hover:animate-pulse"></i>
-                        Lihat Produk Kami
-                    </a>
-                </div> -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+                        <a href="{{ route('contact') }}" class="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                            <i class="fas fa-phone mr-3 group-hover:animate-pulse"></i>
+                            Hubungi Kami Sekarang
+                        </a>
+                        <a href="{{ route('services.index') }}" class="group border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-10 py-4 rounded-2xl text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                            <i class="fas fa-eye mr-3 group-hover:animate-pulse"></i>
+                            Lihat Produk Kami
+                        </a>
+                    </div> -->
 
     <!-- Contact Info Quick -->
     <!-- <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-phone text-blue-600 text-2xl"></i>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-phone text-blue-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Telepon</h4>
+                            <p class="text-gray-600">{{ setting('phone', '+62 812-3456-7890') }}</p>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Telepon</h4>
-                        <p class="text-gray-600">{{ setting('phone', '+62 812-3456-7890') }}</p>
-                    </div>
 
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-envelope text-purple-600 text-2xl"></i>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-purple-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-envelope text-purple-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Email</h4>
+                            <p class="text-gray-600">{{ setting('email', 'info@example.com') }}</p>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Email</h4>
-                        <p class="text-gray-600">{{ setting('email', 'info@example.com') }}</p>
-                    </div>
 
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                            <i class="fas fa-clock text-green-600 text-2xl"></i>
+                        <div class="text-center">
+                            <div class="w-16 h-16 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                                <i class="fas fa-clock text-green-600 text-2xl"></i>
+                            </div>
+                            <h4 class="font-semibold text-gray-900 mb-2">Jam Kerja</h4>                    <p class="text-gray-600">Senin - Jumat, 08:00 - 17:00</p>
                         </div>
-                        <h4 class="font-semibold text-gray-900 mb-2">Jam Kerja</h4>                    <p class="text-gray-600">Senin - Jumat, 08:00 - 17:00</p>
-                    </div>
-                </div>        </div>
-        </div>
-    </section> -->
+                    </div>        </div>
+            </div>
+        </section> -->
 
 @endsection

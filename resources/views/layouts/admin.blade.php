@@ -162,6 +162,14 @@
                         </div>
                         <span class="ml-3 font-medium">Tim</span>
                     </a>
+                    </a> <a href="{{ route('admin.awards.index') }}"
+                        class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.awards.*') ? 'nav-item-active bg-white/15' : '' }}">
+                        <div
+                            class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                            <i class="fas fa-award text-white"></i>
+                        </div>
+                        <span class="ml-3 font-medium">Penghargaan</span>
+                    </a>
                     <a href="{{ route('admin.governances.index') }}"
                         class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.governances.*') ? 'nav-item-active bg-white/15' : '' }}">
                         <div
