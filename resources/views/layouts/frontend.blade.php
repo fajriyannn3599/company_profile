@@ -500,8 +500,6 @@
                     </ul>
                 </div>
             </div>
-
-
             <div class="border-t border-gray-800 pt-8 mt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center">
                     <p class="text-gray-300 text-sm">

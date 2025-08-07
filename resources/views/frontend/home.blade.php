@@ -10,10 +10,10 @@
 
     <!-- Hero Section -->
     <!-- <x-hero page-identifier="home" :fallback-title="setting('hero_title', 'Solusi Terbaik untuk Bisnis Anda')"
-                                                                :fallback-subtitle="setting(
-                                                                                                                                                                                                                                    'hero_subtitle',
-                                                                                                                                                                                                                                    'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
-                                                                                                                                                                                                                                )" /> -->
+                                                                        :fallback-subtitle="setting(
+                                                                                                                                                                                                                                            'hero_subtitle',
+                                                                                                                                                                                                                                            'Kami menyediakan layanan profesional dan inovatif untuk mengembangkan bisnis Anda ke level yang lebih tinggi.',
+                                                                                                                                                                                                                                        )" /> -->
     <section class="w-full overflow-hidden relative">
         <!-- Aspect Ratio 1440x554 -->
         <div class="aspect-[1440/553]">
@@ -23,8 +23,7 @@
                     <!-- Slide 1 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/1.jpg') }}" class="w-full h-full object-cover"
-                                alt="Slide 1">
+                            <img src="{{ asset('images/slides/1.jpg') }}" class="w-full h-full object-cover" alt="Slide 1">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
                             </div>
@@ -34,8 +33,7 @@
                     <!-- Slide 2 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/2.jpg') }}" class="w-full h-full object-cover"
-                                alt="Slide 2">
+                            <img src="{{ asset('images/slides/2.jpg') }}" class="w-full h-full object-cover" alt="Slide 2">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
                             </div>
@@ -45,8 +43,7 @@
                     <!-- Slide 3 -->
                     <div class="swiper-slide h-full">
                         <a href="#">
-                            <img src="{{ asset('images/slides/3.jpg') }}" class="w-full h-full object-cover"
-                                alt="Slide 3">
+                            <img src="{{ asset('images/slides/3.jpg') }}" class="w-full h-full object-cover" alt="Slide 3">
                             <div class="slider-content">
                                 <!-- Konten tambahan (jika ada) -->
                             </div>
@@ -79,50 +76,50 @@
 
     <!-- home -->
     <!-- <section class="py-16 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center"> -->
+                        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-8 items-center"> -->
     <!-- Left Side -->
     <!-- <div>
-                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-                            BPR Syariah Arsa Sejahtera
-                        </h2>
+                                <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                                    BPR Syariah Arsa Sejahtera
+                                </h2>
 
-                        <div class="border-l-4 border-blue-800 pl-4 mb-6">
-                            <p class="text-gray-700 text-justify">
-                                BPR Syariah Arsa Sejahtera siap memberikan layanan perbankan dengan proses yang mudah dan juga siap
-                                menjalin kemitraan secara professional dan saling menguntungkan dengan seluruh stakeholder untuk
-                                kelangsungan dan pertumbuhan bisnis.
-                            </p>
-                        </div>
+                                <div class="border-l-4 border-blue-800 pl-4 mb-6">
+                                    <p class="text-gray-700 text-justify">
+                                        BPR Syariah Arsa Sejahtera siap memberikan layanan perbankan dengan proses yang mudah dan juga siap
+                                        menjalin kemitraan secara professional dan saling menguntungkan dengan seluruh stakeholder untuk
+                                        kelangsungan dan pertumbuhan bisnis.
+                                    </p>
+                                </div>
 
-                        <div class="border-l-4 border-blue-800 pl-4 mb-6">
-                            <p class="text-gray-700 text-justify">
-                                BPR Syariah Arsa Sejahtera merupakan peserta penjaminan LPS. Maksimum nilai simpanan yang dijamin
-                                LPS per nasabah per bank adalah Rp 2 miliar. Untuk Mengetahui Tingkat Bunga Penjaminan LPS, silahkan
-                                akses ke
-                                <a href="https://apps.lps.go.id/BankPesertaLPSRate" class="text-blue-600 hover:underline"
-                                    target="_blank">
-                                    https://apps.lps.go.id/BankPesertaLPSRate
-                                </a>
-                            </p>
-                        </div>
-                    </div> -->
+                                <div class="border-l-4 border-blue-800 pl-4 mb-6">
+                                    <p class="text-gray-700 text-justify">
+                                        BPR Syariah Arsa Sejahtera merupakan peserta penjaminan LPS. Maksimum nilai simpanan yang dijamin
+                                        LPS per nasabah per bank adalah Rp 2 miliar. Untuk Mengetahui Tingkat Bunga Penjaminan LPS, silahkan
+                                        akses ke
+                                        <a href="https://apps.lps.go.id/BankPesertaLPSRate" class="text-blue-600 hover:underline"
+                                            target="_blank">
+                                            https://apps.lps.go.id/BankPesertaLPSRate
+                                        </a>
+                                    </p>
+                                </div>
+                            </div> -->
 
     <!-- Right Side -->
     <!-- @if(setting('about_image'))
-                        <img src="{{ asset('storage/' . setting('about_image')) }}" alt="About Us"
-                            class="relative shadow-2xl w-full h-96 object-cover">
-                    @else
-                        <div
-                            class="relative bg-gradient-to-br from-blue-100 to-purple-100 h-96 flex items-center justify-center shadow-2xl">
-                            <div class="text-center">
-                                <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                                <i class="fas fa-building text-6xl text-blue-400 mb-4"></i>
-                                <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar Perusahaan</p>
-                            </div>
+                                <img src="{{ asset('storage/' . setting('about_image')) }}" alt="About Us"
+                                    class="relative shadow-2xl w-full h-96 object-cover">
+                            @else
+                                <div
+                                    class="relative bg-gradient-to-br from-blue-100 to-purple-100 h-96 flex items-center justify-center shadow-2xl">
+                                    <div class="text-center">
+                                        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                                        <i class="fas fa-building text-6xl text-blue-400 mb-4"></i>
+                                        <p class="text-gray-600 font-medium" style="font-family: 'Poppins', sans-serif;">Gambar Perusahaan</p>
+                                    </div>
+                                </div>
+                            @endif
                         </div>
-                    @endif
-                </div>
-            </section> -->
+                    </section> -->
 
     <!-- Latest Articles Section -->
     @if ($latestArticles->count() > 0)
@@ -217,18 +214,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Section Header -->
             <!-- <div class="text-center mb-16">
-                                                <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-6"
-                                                    style="font-family: 'Poppins', sans-serif;">
-                                                    <i class="fas fa-star mr-2"></i>
-                                                    Pengajuan biaya
-                                                </div>
-                                                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
-                                                    Ajukan Pembiayaan Anda</h2>
-                                                <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
-                                                    style="font-family: 'Poppins', sans-serif;">
-                                                    Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
-                                                </p>
-                                            </div> -->
+                                                        <div class="inline-flex items-center px-4 py-2 bg-red-100 text-red-800 rounded-full text-sm font-bold mb-6"
+                                                            style="font-family: 'Poppins', sans-serif;">
+                                                            <i class="fas fa-star mr-2"></i>
+                                                            Pengajuan biaya
+                                                        </div>
+                                                        <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                                                            Ajukan Pembiayaan Anda</h2>
+                                                        <p class="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                                                            style="font-family: 'Poppins', sans-serif;">
+                                                            Solusi praktis untuk memenuhi kebutuhanmu. Siap mewujudkan setiap impian dengan semangat baru.
+                                                        </p>
+                                                    </div> -->
 
             <div class="text-center mb-10">
                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -338,8 +335,32 @@
                                     </div>
                                 </div>
                             </div>
+
                         </a>
                     @endforeach
+                </div>
+
+            </div>
+        </section>
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- NISBAH HASIL -->
+                <div class="text-center mb-10">
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                    <div class="inline-flex items-center px-5 py-2 bg-red-100 text-red-800 text-sm font-semibold rounded-lg shadow-md mb-6"
+                        style="font-family: 'Poppins', sans-serif;">
+                        <i class="fas fa-box mr-2"></i>
+                        Nisbah Bagi Hasil
+                    </div>
+                    @php
+                        $nisbahImage = \App\Models\NisbahImage::latest()->first();
+                    @endphp
+                    @if ($nisbahImage)
+                        <div class="text-center my-10">
+                            <img src="{{ asset('storage/' . $nisbahImage->image_path) }}" alt="{{ $nisbahImage->title }}"
+                                class="mx-auto rounded shadow">
+                        </div>
+                    @endif
                 </div>
             </div>
         </section>

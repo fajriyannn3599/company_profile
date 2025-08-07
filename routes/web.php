@@ -91,6 +91,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
     // Governance
     Route::resource('governances', App\Http\Controllers\Admin\GovernanceController::class);
 
+    // Nisbah Images
+    Route::resource('nisbah', \App\Http\Controllers\Admin\NisbahImageController::class)->except(['edit', 'update', 'show']);
+
     // Teams
     Route::resource('teams', App\Http\Controllers\Admin\TeamController::class);
     
