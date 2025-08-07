@@ -507,11 +507,11 @@
                     <p class="text-gray-300 text-sm">
                         © {{ date('Y') }} {{ setting('site_name', 'Company Profile') }}. All rights reserved.
                     </p>
-                    <div class="flex space-x-6 mt-4 md:mt-0">
+                    <!-- <div class="flex space-x-6 mt-4 md:mt-0">
                         <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Privacy Policy</a>
                         <a href="#" class="text-gray-300 hover:text-white text-sm transition-colors">Terms &
                             Conditions</a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
