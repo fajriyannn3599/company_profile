@@ -24,7 +24,7 @@ class NisbahImageController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'image' => 'required|image|max:2048',
+            'image' => 'required|image|mimes:jpeg,png,jpg,webp|max:2048',
         ]);
 
         $path = $request->file('image')->store('nisbah_images', 'public');
