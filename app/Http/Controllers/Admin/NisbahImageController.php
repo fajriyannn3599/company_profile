@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\NisbahImage;
+use File;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -33,6 +34,16 @@ class NisbahImageController extends Controller
             'title' => $request->title,
             'image_path' => $path,
         ]);
+
+        if ($request->hasFile('image')) {
+            $validated['image'] = $request->file('image')->store('nisbah_images', 'public');
+
+            // Copy ke public/storage agar dapat diakses publik
+            File::copy(
+                storage_path('app/public/' . $validated['image']),
+                public_path('storage/' . $validated['image'])
+            );
+        }
 
         return redirect()->route('admin.nisbah.index')->with('success', 'Gambar berhasil ditambahkan.');
     }
