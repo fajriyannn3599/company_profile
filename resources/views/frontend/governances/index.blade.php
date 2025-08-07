@@ -14,15 +14,8 @@
     <section class="py-16 bg-gray-50">
         <div class="container mx-auto px-4">
             <div class="max-w-5xl mx-auto">
-                <div class="mb-10 text-center">
-                    <h2 class="text-3xl font-bold text-gray-900" style="font-family: 'Poppins', sans-serif;">Daftar Piagam
-                    </h2>
-                    <p class="mt-2 text-gray-600" style="font-family: 'Poppins', sans-serif;">Unduh piagam dalam format PDF
-                        untuk setiap periode</p>
-                </div>
-
                 <div class="max-w-5xl mx-auto px-4" style="font-family: 'Poppins', sans-serif;"">
-    <h1 class=" text-3xl font-bold text-gray-900 mb-6">Piagam Audit Internal</h1>
+                <h1 class=" text-3xl font-bold text-gray-900 mb-6">Piagam Audit Internal</h1>
                     <p class="text-gray-700 leading-relaxed mb-4">
                         Piagam Audit Internal BPR Syariah Arsa Sejahtera (Piagam) adalah wewenang Direksi dan Dewan
                         Komisaris
@@ -56,7 +49,6 @@
                     </div>
 
                 </div>
-
                 @if ($governances->count())
                         <div class="space-y-6">
                             @foreach ($governances as $governance)

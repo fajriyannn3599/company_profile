@@ -176,7 +176,7 @@
                         <p class="text-gray-600 mb-6" style="font-family: 'Poppins', sans-serif;">Diskusikan kebutuhan produk Anda dengan tim ahli kami</p>
 
                         <div class="space-y-4">
-                            <a href="{{ route('contact') }}"
+                            <a href="{{ route('hubungi-kami') }}"
                                 class="block bg-orange-700 hover:bg-blue-700 text-white text-center px-6 py-3 rounded-lg font-semibold transition-colors" style="font-family: 'Poppins', sans-serif;">
                                 Konsultasi Gratis
                             </a>
