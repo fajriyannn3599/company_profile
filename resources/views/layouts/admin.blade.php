@@ -186,13 +186,13 @@
                         </div>
                         <span class="ml-3 font-medium">Nisbah Bagi Hasil</span>
                     </a>
-                    <a href="{{ route('admin.testimonials.index') }}"
-                        class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.testimonials.*') ? 'nav-item-active bg-white/15' : '' }}">
+                    <a href="{{ route('admin.structures.index') }}"
+                        class="nav-item flex items-center px-4 py-3 text-white/90 rounded-xl hover:bg-white/10 transition-all duration-200 group {{ request()->routeIs('admin.structures.*') ? 'nav-item-active bg-white/15' : '' }}">
                         <div
                             class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/20 transition-colors">
                             <i class="fas fa-quote-right text-white"></i>
                         </div>
-                        <span class="ml-3 font-medium">Testimoni</span>
+                        <span class="ml-3 font-medium">Struktur Karyawan (Gambar)</span>
                     </a>
                 </div>
             </div>

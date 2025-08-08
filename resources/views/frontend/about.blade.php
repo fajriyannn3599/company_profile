@@ -427,6 +427,29 @@
         </section>
     @endif
 
+    <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- STRUCTURE -->
+                <div class="text-center mb-10">
+                    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+                    <div class="inline-block px-4 py-2 bg-white text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md"
+                        style="font-family: 'Poppins', sans-serif;">
+                        <i class="fas fa-users mr-2"></i>
+                        Struktur Organisasi Karyawan
+                    </div>
+                    @php
+                        $Structure = \App\Models\Structure::latest()->first();
+                    @endphp
+                    @if ($Structure)
+                        <div class="text-center my-10">
+                            <img src="{{ asset('storage/' . $Structure->image_path) }}" alt="{{ $Structure->title }}"
+                                class="mx-auto rounded shadow">
+                        </div>
+                    @endif
+                </div>
+            </div>
+        </section>
+
 
     <section class="py-20 bg-white" style="font-family: 'Poppins', sans-serif;">
         <!-- Awards Section -->

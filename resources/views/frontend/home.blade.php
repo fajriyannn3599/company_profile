@@ -283,7 +283,7 @@
 
                 <!-- Grid -->
                 <div class="flex justify-center">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
                         @foreach ($service_categories as $category)
                             <a href="{{ route('services.index') }}#{{ $category->slug }}"
                                 class="relative overflow-hidden group transition-all duration-500 hover:scale-105 bg-white rounded-xl shadow-md flex flex-col aspect-[2/3]">

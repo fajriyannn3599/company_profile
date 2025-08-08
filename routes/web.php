@@ -97,6 +97,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
     // Nisbah Images
     Route::resource('nisbah', \App\Http\Controllers\Admin\NisbahImageController::class)->except(['edit', 'update', 'show']);
 
+    // Structures
+    Route::resource('structures', \App\Http\Controllers\Admin\StructureController::class)->except(['edit', 'update', 'show']);
+
     // Teams
     Route::resource('teams', App\Http\Controllers\Admin\TeamController::class);
     
