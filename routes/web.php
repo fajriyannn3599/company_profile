@@ -9,6 +9,7 @@ use App\Http\Controllers\Frontend\ArticleController;
 use App\Http\Controllers\Frontend\CareerController;
 use App\Http\Controllers\Frontend\ContactController;
 
+
 // Frontend Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/tentang-kami', [AboutController::class, 'index'])->name('about');
@@ -93,6 +94,9 @@ Route::prefix('admin')->name('admin.')->middleware('admin.auth')->group(function
 
     // Awards
     Route::resource('awards', App\Http\Controllers\Admin\AwardController::class);
+
+    // Stories
+    Route::resource('stories', App\Http\Controllers\Admin\StoryController::class);
 
     // Nisbah Images
     Route::resource('nisbah', \App\Http\Controllers\Admin\NisbahImageController::class)->except(['edit', 'update', 'show']);

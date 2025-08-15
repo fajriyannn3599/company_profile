@@ -228,6 +228,11 @@
         </div>
     </section>
 
+
+
+
+
+
     <!-- Vision & Mission -->
     <section class="py-20 relative overflow-hidden">
         <!-- Background Pattern -->
@@ -299,6 +304,64 @@
             </div>
         </div>
     </section>
+
+
+    <!-- Story Section -->
+    @if ($stories->count() > 0)
+<section class="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+            <span
+                class="inline-block px-4 py-2 bg-white/80 text-red-600 rounded-full text-sm font-semibold mb-4 shadow-md"
+                style="font-family: 'Poppins', sans-serif;">
+                <i class="fas fa-history"></i> Sejarah Perusahaan
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6" style="font-family: 'Poppins', sans-serif;">
+                Perjalanan Kami
+            </h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-yellow-600 to-red-600 rounded-full mx-auto mt-4"></div>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+            @foreach ($stories as $story)
+                <div class="relative rounded-xl overflow-hidden shadow-lg group h-[450px]">
+
+                    <!-- Gambar -->
+                    <img src="{{ asset('storage/' . $story->image) }}"
+                        alt="{{ $story->title }}"
+                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+
+                    <!-- Overlay -->
+                    <div class="absolute inset-0 bg-black/50 group-hover:bg-black/80 transition-colors duration-500 pointer-events-none"></div>
+
+                    <!-- Judul di atas -->
+                    <div class="absolute top-3 left-0 right-0 p-6 text-white z-10">
+                        <h3 class="text-2xl font-bold">
+                            {{ $story->year }} – {{ $story->title }}
+                        </h3>
+                    </div>
+
+                    <!-- Deskripsi -->
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white 
+                        opacity-100 md:opacity-0 md:group-hover:opacity-100 
+                        transition-opacity duration-500">
+                        <p class="text-sm text-gray-200">
+                            {{ $story->description }}
+                        </p>
+                    </div>
+
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+@endif
+
+
 
     <!-- Our Values -->
     <!-- <section class="py-20 bg-white">
