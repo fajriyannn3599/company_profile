@@ -204,7 +204,7 @@
       
       <!-- Form Input -->
       <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
-        <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan</h2>
+        <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Kendaraan</h2>
 
         <div class="space-y-4">
           <div>
@@ -269,6 +269,7 @@
   </div>
 </section>
 @endif
+
 
 
 <script>
