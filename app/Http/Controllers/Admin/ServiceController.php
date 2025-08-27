@@ -58,6 +58,12 @@ class ServiceController extends Controller
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
             'service_category_id' => 'required|exists:service_categories,id',
+
+            'vehicle_simulation' => 'boolean',
+            'marriage_simulation' => 'boolean',
+            'property_simulation' => 'boolean',
+            'education_simulation' => 'boolean',
+            'hajj_simulation' => 'boolean',
         ]);
 
         if (empty($validated['slug'])) {
@@ -78,6 +84,12 @@ class ServiceController extends Controller
         $validated['is_featured'] = $request->has('is_featured');
         $validated['is_active'] = $request->has('is_active');
         $validated['sort_order'] = $validated['sort_order'] ?? 0;
+
+        $validated['vehicle_simulation'] = $request->has('vehicle_simulation');
+        $validated['marriage_simulation'] = $request->has('marriage_simulation');
+        $validated['property_simulation'] = $request->has('property_simulation');
+        $validated['education_simulation'] = $request->has('education_simulation');
+        $validated['hajj_simulation'] = $request->has('hajj_simulation');
 
         Service::create($validated);
 
@@ -124,6 +136,12 @@ class ServiceController extends Controller
             'is_active' => 'boolean',
             'sort_order' => 'nullable|integer|min:0',
             'service_category_id' => 'required|exists:service_categories,id',
+
+            'vehicle_simulation' => 'boolean',
+            'marriage_simulation' => 'boolean',
+            'property_simulation' => 'boolean',
+            'education_simulation' => 'boolean',
+            'hajj_simulation' => 'boolean',
         ]);
 
         if (empty($validated['slug'])) {
@@ -153,6 +171,12 @@ class ServiceController extends Controller
         $validated['is_featured'] = $request->has('is_featured');
         $validated['is_active'] = $request->has('is_active');
         $validated['sort_order'] = $validated['sort_order'] ?? $service->sort_order ?? 0;
+
+        $validated['vehicle_simulation'] = $request->has('vehicle_simulation');
+        $validated['marriage_simulation'] = $request->has('marriage_simulation');
+        $validated['property_simulation'] = $request->has('property_simulation');
+        $validated['education_simulation'] = $request->has('education_simulation');
+        $validated['hajj_simulation'] = $request->has('hajj_simulation');
 
         $service->update($validated);
 

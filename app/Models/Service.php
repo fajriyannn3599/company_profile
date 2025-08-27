@@ -26,6 +26,13 @@ class Service extends Model
         'meta_title',
         'meta_description',
         'service_category_id',
+        'vehicle_simulation',
+        'marriage_simulation',
+        'property_simulation',
+        'education_simulation',
+        'hajj_simulation',
+
+
     ];
 
     protected $casts = [
@@ -62,4 +69,31 @@ class Service extends Model
     {
         return $query->where('is_featured', true);
     }
+
+    public function scopeVehicle($query)
+    {
+        return $query->where('vehicle_simulation', true);
+    }
+
+    public function scopeMarriage($query)
+    {
+        return $query->where('marriage_simulation', true);
+    }
+
+    public function scopeProperty($query)
+    {
+        return $query->where('property_simulation', true);
+    }
+
+    public function scopeEducation($query)
+    {
+        return $query->where('education_simulation', true);
+    }
+
+    public function scopeHajj($query)
+    {
+        return $query->where('hajj_simulation', true);
+    }
+
+
 }

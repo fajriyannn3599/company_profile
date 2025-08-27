@@ -128,7 +128,7 @@
                                         </div>
                                     @endif
                                     <!-- Other Team Members -->
-                                    @if ($otherTeamMembers && $otherTeamMembers->count() > 0)
+                                    <!-- @if ($otherTeamMembers && $otherTeamMembers->count() > 0)
                                     <div class="mt-12">
                                         <h3 class="text-2xl font-bold text-gray-900 mb-8 text-center">Tim Lainnya</h3>
                                         <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -156,7 +156,7 @@
                                                 </a>
                                             @endforeach
                                         </div>
-                                    </div>
+                                    </div> -->
                                 @endif
                                 </div>
                             </div>

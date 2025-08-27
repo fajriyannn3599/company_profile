@@ -26,12 +26,12 @@
                     <p class="text-xl opacity-90 leading-relaxed" style="font-family: 'Poppins', sans-serif;">{{ $service->short_description }}</p>
 
                     @if($service->serviceCategory)
-                        <!-- <div class="mt-6">
+                        <div class="mt-6">
                             <span class="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
                                 <i class="fas fa-star mr-1"></i>
                                 {{ $service->serviceCategory->name }}
                             </span>
-                        </div> -->
+                        </div>
                     @endif
                 </div>
 
@@ -190,38 +190,166 @@
                                 </a>
                             @endif
                         </div>
+                        
                     </div>
-
-                    <!-- Service Features -->
-                    <!-- <div class="bg-white border border-gray-200 rounded-xl p-6" >
-                        <h3 class="text-xl font-semibold text-gray-900 mb-4" style="font-family: 'Poppins', sans-serif;">Keunggulan Produk</h3>
-                        <ul class="space-y-3">
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                <span class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Konsultasi gratis</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                <span class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Tim berpengalaman</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                <span class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Teknologi terdepan</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                <span class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Support berkelanjutan</span>
-                            </li>
-                            <li class="flex items-center">
-                                <i class="fas fa-check-circle text-green-500 mr-3"></i>
-                                <span class="text-gray-700" style="font-family: 'Poppins', sans-serif;">Harga kompetitif</span>
-                            </li>
-                        </ul>
-                    </div> -->
                 </div>
             </div>
         </div>
     </section>
+
+<!-- Simulasi Pembiayaan -->
+<section class="py-20 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      
+      <!-- Form Input -->
+      <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+        <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan</h2>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block font-semibold">Harga Mobil (OTR)</label>
+            <input type="text" id="hargaMobil" value="Rp. 0"
+                   class="w-full border rounded p-2 text-left" />
+          </div>
+
+          <div>
+            <label class="block font-semibold">Total Uang Muka</label>
+            <input type="text" id="uangMuka" value="Rp. 0"
+                   class="w-full border rounded p-2 text-left" />
+          </div>
+
+          <div>
+            <label class="block font-semibold">Tenor (Bulan)</label>
+            <select id="tenor" class="w-full border rounded p-2">
+              <option value="" selected disabled>Pilih tenor</option>
+              <option value="12">12</option>
+              <option value="24">24</option>
+              <option value="36">36</option>
+              <option value="48">48</option>
+              <option value="60">60</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Error Alert -->
+        <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+        </div>
+
+        <!-- Tombol Submit -->
+        <div class="mt-6">
+          <button type="submit" 
+                  class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+            Hitung Simulasi
+          </button>
+        </div>
+      </form>
+
+      <!-- Ringkasan -->
+      <div class="bg-white shadow-md rounded-xl p-6">
+        <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+        <ul class="space-y-2 text-gray-700">
+          <li>Harga Mobil (OTR): <span id="outHarga">Rp. 0</span></li>
+          <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+          <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+          <li>Tenor: <span id="outTenor">0</span> bulan</li>
+          <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+        </ul>
+
+        <h4 class="mt-6 font-semibold">Rincian Biaya</h4>
+        <ul class="space-y-1 text-gray-600">
+          <li>Biaya Asuransi: <span id="outAsuransi">Rp. 0</span></li>
+          <li>Administrasi Bank: <span id="outAdmin">Rp. 0</span></li>
+          <li>Biaya Fiducia Notaris: <span id="outFiducia">Rp. 0</span></li>
+          <li>Biaya BBNKB (5% OTR): <span id="outBbnkb">Rp. 0</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+function formatRupiah(angka) {
+  if (!angka) return "Rp. 0";
+  return "Rp. " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function unformatRupiah(str) {
+  return parseInt(str.replace(/[^0-9]/g, "")) || 0;
+}
+
+function hitungSimulasi() {
+  let harga = unformatRupiah(document.getElementById("hargaMobil").value);
+  let dp = unformatRupiah(document.getElementById("uangMuka").value);
+  let tenor = parseInt(document.getElementById("tenor").value);
+
+  // biaya tetap
+  let admin = 1010000;
+  let fiducia = 275000;
+  let asuransi = Math.round(harga * 0.026);
+  let bbnkb = Math.round(harga * 0.05);
+
+  let errors = [];
+
+  // validasi DP
+  let minDp = Math.round(harga * 0.15);
+  if (dp <= 0) {
+    errors.push("Uang muka harus lebih dari 0.");
+  } else if (dp < minDp) {
+    errors.push("Minimum Total Uang Muka adalah " + formatRupiah(minDp));
+  }
+
+  if (!tenor) {
+    errors.push("Silakan pilih tenor terlebih dahulu.");
+  }
+
+  if (errors.length > 0) {
+    document.getElementById("errorBox").classList.remove("hidden");
+    document.getElementById("errorList").innerHTML = errors.map(e => `<li>${e}</li>`).join("");
+    return; // stop hitung
+  } else {
+    document.getElementById("errorBox").classList.add("hidden");
+  }
+
+  // hitung hanya jika tidak ada error
+  let uangMukaMurni = dp - (asuransi + admin + fiducia + bbnkb);
+  let plafon = harga - uangMukaMurni;
+  let angsuran = tenor > 0 ? Math.round(plafon / tenor) : 0;
+
+  // output
+  document.getElementById("outHarga").innerText = formatRupiah(harga);
+  document.getElementById("outUangMukaMurni").innerText = formatRupiah(uangMukaMurni);
+  document.getElementById("outPlafon").innerText = formatRupiah(plafon);
+  document.getElementById("outTenor").innerText = tenor || 0;
+  document.getElementById("outAngsuran").innerText = formatRupiah(angsuran);
+  document.getElementById("outAsuransi").innerText = formatRupiah(asuransi);
+  document.getElementById("outAdmin").innerText = formatRupiah(admin);
+  document.getElementById("outFiducia").innerText = formatRupiah(fiducia);
+  document.getElementById("outBbnkb").innerText = formatRupiah(bbnkb);
+}
+
+// auto format input
+document.querySelectorAll("#hargaMobil, #uangMuka").forEach(el => {
+  el.addEventListener("input", e => {
+    let cursor = el.selectionStart;
+    el.value = formatRupiah(unformatRupiah(el.value));
+    el.setSelectionRange(cursor, cursor);
+  });
+});
+
+// submit button action
+document.getElementById("simulasiForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  hitungSimulasi();
+});
+
+// trigger awal
+hitungSimulasi();
+</script>
+
+
+
 
     <!-- Related Services -->
     @if($relatedServices && $relatedServices->count() > 0)

@@ -231,6 +231,29 @@
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" 
+                                   name="vehicle_simulation" 
+                                   id="vehicle_simulation " 
+                                   value="1"
+                                   {{ old('vehicle_simulation', $service->vehicle_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="vehicle_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Kendaraan
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="marriage_simulation" 
+                                   id="marriage_simulation" 
+                                   value="1"
+                                   {{ old('marriage_simulation', $service->marriage_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="marriage_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Pernikahan
+                            </label>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" 
                                    name="is_active" 
                                    id="is_active" 
                                    value="1"

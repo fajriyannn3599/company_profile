@@ -450,13 +450,13 @@
                     <div class="w-24 h-1 bg-gradient-to-r from-orange-600 to-red-600 rounded-full mx-auto mt-8"></div>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
                     @foreach($teams as $team)
                         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-                        <div class="team-card card-hover bg-white shadow-xl overflow-hidden">
+                        <div class="bg-white shadow-lg rounded-sm overflow-hidden flex items-center p-8 hover:shadow-2xl transition duration-300 w-full">
                             @if($team->photo)
                                 <img src="{{ asset('storage/' . $team->photo) }}" alt="{{ $team->name }}"
-                                    class="w-full h-64 object-cover" style="font-family: 'Poppins', sans-serif;">
+                                    class="w-40 h-60 object-cover" style="font-family: 'Poppins', sans-serif;">
                             @else
                                 <div class="w-full h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
                                     <div class="text-center">
