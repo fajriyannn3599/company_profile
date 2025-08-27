@@ -196,9 +196,9 @@
             </div>
         </div>
     </section>
-
-<!-- Simulasi Pembiayaan -->
-<section class="py-20 bg-gray-50">
+    <!-- Simulasi Pembiayaan -->
+    @if($service->vehicle_simulation)
+    <section class="py-20 bg-gray-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
       
@@ -268,6 +268,8 @@
     </div>
   </div>
 </section>
+@endif
+
 
 <script>
 function formatRupiah(angka) {
@@ -347,8 +349,6 @@ document.getElementById("simulasiForm").addEventListener("submit", function(e) {
 // trigger awal
 hitungSimulasi();
 </script>
-
-
 
 
     <!-- Related Services -->
