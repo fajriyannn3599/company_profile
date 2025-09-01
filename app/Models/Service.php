@@ -31,6 +31,11 @@ class Service extends Model
         'property_simulation',
         'education_simulation',
         'hajj_simulation',
+        'working_capital_simulation',
+        'business_machine_simulation',
+        'business_renovation_simulation',
+        'deposit_simulation',
+        'saving_simulation'
 
 
     ];
@@ -95,5 +100,30 @@ class Service extends Model
         return $query->where('hajj_simulation', true);
     }
 
+
+    public function scopeWorkingCapital($query)
+    {
+        return $query->where('working_capital_simulation', true);
+    }
+
+    public function scopeBusinessMachine($query)
+    {
+        return $query->where('business_machine_simulation', true);
+    }
+
+    public function scopeBusinessRenovation($query)
+    {
+        return $query->where('business_renovation_simulation', true);
+    }
+
+    public function scopeDeposit($query)
+    {
+        return $query->where('deposit_simulation', true);
+    }
+
+    public function scopeSaving($query)
+    {
+        return $query->where('saving_simulation', true);
+    }
 
 }

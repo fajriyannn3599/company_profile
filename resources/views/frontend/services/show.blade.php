@@ -196,83 +196,81 @@
             </div>
         </div>
     </section>
-    <!-- Simulasi Pembiayaan -->
-    @if($service->vehicle_simulation)
-    <section class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-      
-      <!-- Form Input -->
-      <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
-        <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Kendaraan</h2>
 
-        <div class="space-y-4">
-          <div>
-            <label class="block font-semibold">Harga Mobil (OTR)</label>
-            <input type="text" id="hargaMobil" value="Rp. 0"
-                   class="w-full border rounded p-2 text-left" />
-          </div>
+        <!-- Simulasi Pembiayaan Kendaraan -->
+        @if($service->vehicle_simulation)
+        <section class="py-20 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <!-- Form Input -->
+                <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                    <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Kendaraan</h2>
 
-          <div>
-            <label class="block font-semibold">Total Uang Muka</label>
-            <input type="text" id="uangMuka" value="Rp. 0"
-                   class="w-full border rounded p-2 text-left" />
-          </div>
+                    <div class="space-y-4">
+                    <div>
+                        <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                        <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                    </div>
 
-          <div>
-            <label class="block font-semibold">Tenor (Bulan)</label>
-            <select id="tenor" class="w-full border rounded p-2">
-              <option value="" selected disabled>Pilih tenor</option>
-              <option value="12">12</option>
-              <option value="24">24</option>
-              <option value="36">36</option>
-              <option value="48">48</option>
-              <option value="60">60</option>
-            </select>
-          </div>
-        </div>
+                    <div>
+                        <label class="block font-semibold">Total Uang Muka</label>
+                        <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                    </div>
 
-        <!-- Error Alert -->
-        <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
-          <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
-        </div>
+                    <div>
+                        <label class="block font-semibold">Tenor (Bulan)</label>
+                        <select id="tenor" class="w-full border rounded p-2">
+                        <option value="" selected disabled>Pilih tenor</option>
+                        <option value="12">12</option>
+                        <option value="24">24</option>
+                        <option value="36">36</option>
+                        <option value="48">48</option>
+                        <option value="60">60</option>
+                        </select>
+                    </div>
+                    </div>
 
-        <!-- Tombol Submit -->
-        <div class="mt-6">
-          <button type="submit" 
-                  class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-            Hitung Simulasi
-          </button>
-        </div>
-      </form>
+                    <!-- Error Alert -->
+                    <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                    <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                    </div>
 
-      <!-- Ringkasan -->
-      <div class="bg-white shadow-md rounded-xl p-6">
-        <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
-        <ul class="space-y-2 text-gray-700">
-          <li>Harga Mobil (OTR): <span id="outHarga">Rp. 0</span></li>
-          <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
-          <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
-          <li>Tenor: <span id="outTenor">0</span> bulan</li>
-          <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
-        </ul>
+                    <!-- Tombol Submit -->
+                    <div class="mt-6">
+                    <button type="submit" 
+                            class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                        Hitung Simulasi
+                    </button>
+                    </div>
+                </form>
 
-        <h4 class="mt-6 font-semibold">Rincian Biaya</h4>
-        <ul class="space-y-1 text-gray-600">
-          <li>Biaya Asuransi: <span id="outAsuransi">Rp. 0</span></li>
-          <li>Administrasi Bank: <span id="outAdmin">Rp. 0</span></li>
-          <li>Biaya Fiducia Notaris: <span id="outFiducia">Rp. 0</span></li>
-          <li>Biaya BBNKB (5% OTR): <span id="outBbnkb">Rp. 0</span></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-@endif
+                <!-- Ringkasan -->
+                <div class="bg-white shadow-md rounded-xl p-6">
+                    <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                    <ul class="space-y-2 text-gray-700">
+                    <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                    <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                    <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                    <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                    <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                    </ul>
 
+                    <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                    <ul class="space-y-1 text-gray-600">
+                    <li>Asuransi jiwa
+                    <li>Asuransi Kendaraan (TLO)
+                    <li>Biaya Notaris
+                    <li>Biaya Pengecekan Kendaraan
+                    <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                    </ul>
+                </div>
+                </div>
+            </div>
+        </section>
+    @endif
 
-
-<script>
+    <script>
 function formatRupiah(angka) {
   if (!angka) return "Rp. 0";
   return "Rp. " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
@@ -288,15 +286,15 @@ function hitungSimulasi() {
   let tenor = parseInt(document.getElementById("tenor").value);
 
   // biaya tetap
-  let admin = 1010000;
-  let fiducia = 275000;
-  let asuransi = Math.round(harga * 0.026);
-  let bbnkb = Math.round(harga * 0.05);
+  let admin = Math.round(harga * 0.0125); // Biaya administrasi
+  let fiducia = 275000;  // Biaya Fiducia
+  let asuransi = Math.round(harga * 0.026); // Biaya Asuransi
+  let bbnkb = Math.round(harga * 0.05); // Biaya BBNKB
 
   let errors = [];
 
   // validasi DP
-  let minDp = Math.round(harga * 0.15);
+  let minDp = Math.round(harga * 0.05); // Minimum uang muka 15%
   if (dp <= 0) {
     errors.push("Uang muka harus lebih dari 0.");
   } else if (dp < minDp) {
@@ -315,14 +313,22 @@ function hitungSimulasi() {
     document.getElementById("errorBox").classList.add("hidden");
   }
 
-  // hitung hanya jika tidak ada error
-  let uangMukaMurni = dp - (asuransi + admin + fiducia + bbnkb);
-  let plafon = harga - uangMukaMurni;
-  let angsuran = tenor > 0 ? Math.round(plafon / tenor) : 0;
+  // Menghitung Plafon Pembiayaan
+  let plafon = harga - dp;
 
-  // output
+  // Menghitung Angsuran Berdasarkan 1.25% dari Plafon, dikali Tenor
+  let angsuranBerdasarkanPersen = plafon * 0.0125 * tenor;
+
+  // Menambahkan Angsuran Berdasarkan Persen dengan Plafon, dan membaginya dengan tenor yang dipilih
+  let totalAngsuran = angsuranBerdasarkanPersen + plafon;
+  let angsuran = totalAngsuran / tenor; // Pembagian berdasarkan tenor yang dipilih
+
+  // Membulatkan hasil angsuran
+  angsuran = Math.round(angsuran);
+
+  // Output hasil simulasi
   document.getElementById("outHarga").innerText = formatRupiah(harga);
-  document.getElementById("outUangMukaMurni").innerText = formatRupiah(uangMukaMurni);
+  document.getElementById("outUangMukaMurni").innerText = formatRupiah(dp);
   document.getElementById("outPlafon").innerText = formatRupiah(plafon);
   document.getElementById("outTenor").innerText = tenor || 0;
   document.getElementById("outAngsuran").innerText = formatRupiah(angsuran);
@@ -351,6 +357,751 @@ document.getElementById("simulasiForm").addEventListener("submit", function(e) {
 hitungSimulasi();
 </script>
 
+    <!-- Simulasi Pembiayaan Pernikahan -->
+    @if($service->marriage_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Pernikahan </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+<script>
+function formatRupiah(angka) {
+  if (!angka) return "Rp. 0";
+  return "Rp. " + angka.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+function unformatRupiah(str) {
+  return parseInt(str.replace(/[^0-9]/g, "")) || 0;
+}
+
+function hitungSimulasi() {
+  let harga = unformatRupiah(document.getElementById("hargaMobil").value);
+  let dp = unformatRupiah(document.getElementById("uangMuka").value);
+  let tenor = parseInt(document.getElementById("tenor").value);
+
+  // biaya tetap
+  let admin = Math.round(harga * 0.0125); // Biaya administrasi
+  let fiducia = 275000;  // Biaya Fiducia
+  let asuransi = Math.round(harga * 0.026); // Biaya Asuransi
+  let bbnkb = Math.round(harga * 0.05); // Biaya BBNKB
+
+  let errors = [];
+
+  // validasi DP
+  let minDp = Math.round(harga * 0.05); // Minimum uang muka 15%
+  if (dp <= 0) {
+    errors.push("Uang muka harus lebih dari 0.");
+  } else if (dp < minDp) {
+    errors.push("Minimum Total Uang Muka adalah " + formatRupiah(minDp));
+  }
+
+  if (!tenor) {
+    errors.push("Silakan pilih tenor terlebih dahulu.");
+  }
+
+  if (errors.length > 0) {
+    document.getElementById("errorBox").classList.remove("hidden");
+    document.getElementById("errorList").innerHTML = errors.map(e => `<li>${e}</li>`).join("");
+    return; // stop hitung
+  } else {
+    document.getElementById("errorBox").classList.add("hidden");
+  }
+
+  // Menghitung Plafon Pembiayaan
+  let plafon = harga - dp;
+
+  // Menghitung Angsuran Berdasarkan 1.25% dari Plafon, dikali Tenor
+  let angsuranBerdasarkanPersen = plafon * 0.0125 * tenor;
+
+  // Menambahkan Angsuran Berdasarkan Persen dengan Plafon, dan membaginya dengan tenor yang dipilih
+  let totalAngsuran = angsuranBerdasarkanPersen + plafon;
+  let angsuran = totalAngsuran / tenor; // Pembagian berdasarkan tenor yang dipilih
+
+  // Membulatkan hasil angsuran
+  angsuran = Math.round(angsuran);
+
+  // Output hasil simulasi
+  document.getElementById("outHarga").innerText = formatRupiah(harga);
+  document.getElementById("outUangMukaMurni").innerText = formatRupiah(dp);
+  document.getElementById("outPlafon").innerText = formatRupiah(plafon);
+  document.getElementById("outTenor").innerText = tenor || 0;
+  document.getElementById("outAngsuran").innerText = formatRupiah(angsuran);
+  document.getElementById("outAsuransi").innerText = formatRupiah(asuransi);
+  document.getElementById("outAdmin").innerText = formatRupiah(admin);
+  document.getElementById("outFiducia").innerText = formatRupiah(fiducia);
+  document.getElementById("outBbnkb").innerText = formatRupiah(bbnkb);
+}
+
+// auto format input
+document.querySelectorAll("#hargaMobil, #uangMuka").forEach(el => {
+  el.addEventListener("input", e => {
+    let cursor = el.selectionStart;
+    el.value = formatRupiah(unformatRupiah(el.value));
+    el.setSelectionRange(cursor, cursor);
+  });
+});
+
+// submit button action
+document.getElementById("simulasiForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  hitungSimulasi();
+});
+
+// trigger awal
+hitungSimulasi();
+</script>
+
+
+    <!-- Simulasi Biaya Pendidikan -->
+    @if($service->education_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Pendidikan </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+    <!-- Simulasi Pembiayaan Rumah -->
+    @if($service->property_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Rumah </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+    <!-- Simulasi Pembiayaan Haji -->
+    @if($service->hajj_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Haji </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+    <!-- Simulasi Pembiayaan Modal Kerja-->
+    @if($service->working_capital_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Modal Kerja </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+
+<!-- Simulasi Pembiayaan Mesin Usaha -->
+    @if($service->business_machine_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Mesin Usaha </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+<!-- Simulasi Pembiayaan Renovasi Usaha-->
+    @if($service->business_renovation_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Renovasi Usaha</h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+<!-- Simulasi Pembiayaan -->
+    @if($service->deposit_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Deposit </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
+
+<!-- Simulasi Pembiayaan -->
+    @if($service->saving_simulation)
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+              
+              <!-- Form Input -->
+              <form id="simulasiForm" class="bg-white shadow-md rounded-xl p-6">
+                <h2 class="text-xl font-bold mb-6">Simulasi Pembiayaan Tabungan </h2>
+
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-semibold">Harga Kendaraan (OTR)</label>
+                    <input type="text" id="hargaMobil" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Total Uang Muka</label>
+                    <input type="text" id="uangMuka" value="Rp. 0" class="w-full border rounded p-2 text-left" />
+                  </div>
+
+                  <div>
+                    <label class="block font-semibold">Tenor (Bulan)</label>
+                    <select id="tenor" class="w-full border rounded p-2">
+                      <option value="" selected disabled>Pilih tenor</option>
+                      <option value="12">12</option>
+                      <option value="24">24</option>
+                      <option value="36">36</option>
+                      <option value="48">48</option>
+                      <option value="60">60</option>
+                    </select>
+                  </div>
+                </div>
+
+                <!-- Error Alert -->
+                <div id="errorBox" class="hidden mt-6 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+                  <ul id="errorList" class="list-disc pl-5 text-sm"></ul>
+                </div>
+
+                <!-- Tombol Submit -->
+                <div class="mt-6">
+                  <button type="submit" 
+                          class="w-full bg-gradient-to-r from-yellow-600 to-red-600 hover:from-red-700 hover:to-yellow-700 text-white py-2 rounded-lg hover:bg-blue-700 transition">
+                    Hitung Simulasi
+                  </button>
+                </div>
+              </form>
+
+              <!-- Ringkasan -->
+              <div class="bg-white shadow-md rounded-xl p-6">
+                <h3 class="text-lg font-bold mb-4">Ringkasan Pembiayaan</h3>
+                <ul class="space-y-2 text-gray-700">
+                  <li>Harga Kendaraan (OTR): <span id="outHarga">Rp. 0</span></li>
+                  <li>Uang Muka Murni: <span id="outUangMukaMurni">Rp. 0</span></li>
+                  <li>Plafon Pembiayaan: <span id="outPlafon">Rp. 0</span></li>
+                  <li>Tenor: <span id="outTenor">0</span> bulan</li>
+                  <li class="font-bold">Angsuran Perbulan: <span id="outAngsuran" class="text-red-700">Rp. 0</span></li>
+                </ul>
+
+                <h4 class="mt-6 font-bold">Rincian Biaya</h4>
+                <ul class="space-y-1 text-gray-600">
+                  <li>Asuransi jiwa
+                  <li>Asuransi Kendaraan (TLO)
+                  <li>Biaya Notaris
+                  <li>Biaya Pengecekan Kendaraan
+                  <li class="font-bold">Total Estimasi Biaya (±) 3% dari Plafon
+                </ul>
+              </div>
+            </div>
+        </div>
+    </section>
+@endif
 
     <!-- Related Services -->
     @if($relatedServices && $relatedServices->count() > 0)

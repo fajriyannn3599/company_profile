@@ -64,6 +64,11 @@ class ServiceController extends Controller
             'property_simulation' => 'boolean',
             'education_simulation' => 'boolean',
             'hajj_simulation' => 'boolean',
+            'working_capital_simulation' => 'boolean',
+            'business_machine_simulation' => 'boolean',
+            'business_renovation_simulation' => 'boolean',
+            'deposit_simulation' => 'boolean',
+            'saving_simulation' => 'boolean',
         ]);
 
         if (empty($validated['slug'])) {
@@ -90,6 +95,11 @@ class ServiceController extends Controller
         $validated['property_simulation'] = $request->has('property_simulation');
         $validated['education_simulation'] = $request->has('education_simulation');
         $validated['hajj_simulation'] = $request->has('hajj_simulation');
+        $validated['working_capital_simulation'] = $request->has('working_capital_simulation');
+        $validated['business_machine_simulation'] = $request->has('business_machine_simulation');
+        $validated['business_renovation_simulation'] = $request->has('business_renovation_simulation');
+        $validated['deposit_simulation'] = $request->has('deposit_simulation');
+        $validated['saving_simulation'] = $request->has('saving_simulation');
 
         Service::create($validated);
 
@@ -142,6 +152,11 @@ class ServiceController extends Controller
             'property_simulation' => 'boolean',
             'education_simulation' => 'boolean',
             'hajj_simulation' => 'boolean',
+            'working_capital_simulation' => 'boolean',
+            'business_machine_simulation' => 'boolean',
+            'business_renovation_simulation' => 'boolean',
+            'deposit_simulation' => 'boolean',
+            'saving_simulation' => 'boolean',
         ]);
 
         if (empty($validated['slug'])) {
@@ -177,6 +192,11 @@ class ServiceController extends Controller
         $validated['property_simulation'] = $request->has('property_simulation');
         $validated['education_simulation'] = $request->has('education_simulation');
         $validated['hajj_simulation'] = $request->has('hajj_simulation');
+        $validated['working_capital_simulation'] = $request->has('working_capital_simulation');
+        $validated['business_machine_simulation'] = $request->has('business_machine_simulation');
+        $validated['business_renovation_simulation'] = $request->has('business_renovation_simulation');
+        $validated['deposit_simulation'] = $request->has('deposit_simulation');
+        $validated['saving_simulation'] = $request->has('saving_simulation');
 
         $service->update($validated);
 

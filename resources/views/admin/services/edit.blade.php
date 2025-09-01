@@ -168,7 +168,8 @@
             <!-- Settings -->
             <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6">
                 <h3 class="text-lg font-medium text-gray-900 mb-4">Pengaturan</h3>
-                <div class="space-y-4">                    <!-- Icon -->
+                <div class="space-y-4">                    
+                    <!-- Icon -->
                     <div>
                         <label for="icon" class="block text-sm font-medium text-gray-700 mb-2">
                             Icon (FontAwesome)
@@ -231,6 +232,27 @@
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" 
+                                   name="is_active" 
+                                   id="is_active" 
+                                   value="1"
+                                   {{ old('is_active', $service->is_active) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="is_active" class="ml-2 block text-sm text-gray-700">
+                                Aktifkan Layanan
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+            <!-- Settings -->
+            <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Simulasi yang ditampilkan</h3>
+                <div class="space-y-4">
+
+                <div class="flex items-center">
+                            <input type="checkbox" 
                                    name="vehicle_simulation" 
                                    id="vehicle_simulation " 
                                    value="1"
@@ -251,21 +273,97 @@
                                 Layanan Simulasi Pernikahan
                             </label>
                         </div>
-                        
                         <div class="flex items-center">
                             <input type="checkbox" 
-                                   name="is_active" 
-                                   id="is_active" 
+                                   name="education_simulation" 
+                                   id="education_simulation" 
                                    value="1"
-                                   {{ old('is_active', $service->is_active) ? 'checked' : '' }}
+                                   {{ old('education_simulation', $service->education_simulation) ? 'checked' : '' }}
                                    class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
-                            <label for="is_active" class="ml-2 block text-sm text-gray-700">
-                                Aktifkan Layanan
+                            <label for="education_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Pendidikan
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="property_simulation" 
+                                   id="property_simulation" 
+                                   value="1"
+                                   {{ old('property_simulation', $service->property_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="property_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Rumah
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="hajj_simulation" 
+                                   id="hajj_simulation" 
+                                   value="1"
+                                   {{ old('hajj_simulation', $service->hajj_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="hajj_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Haji
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="working_capital_simulation" 
+                                   id="working_capital_simulation" 
+                                   value="1"
+                                   {{ old('working_capital_simulation', $service->working_capital_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="working_capital_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Modal Kerja
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="business_machine_simulation" 
+                                   id="business_machine_simulation" 
+                                   value="1"
+                                   {{ old('business_machine_simulation', $service->business_machine_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="business_machine_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Mesin Usaha
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="business_renovation_simulation" 
+                                   id="business_renovation_simulation" 
+                                   value="1"
+                                   {{ old('business_renovation_simulation', $service->business_renovation_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="business_renovation_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Renovasi Usaha
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="deposit_simulation" 
+                                   id="deposit_simulation" 
+                                   value="1"
+                                   {{ old('deposit_simulation', $service->deposit_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="deposit_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Deposit
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="saving_simulation" 
+                                   id="saving_simulation" 
+                                   value="1"
+                                   {{ old('saving_simulation', $service->saving_simulation) ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="saving_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Tabungan
                             </label>
                         </div>
                     </div>
-                </div>
             </div>
+
             <!-- Image -->
             <div class="bg-white shadow-sm border border-gray-200 rounded-lg p-6">
                 <h3 class="text-lg font-medium text-gray-900 mb-4">Gambar Layanan</h3>

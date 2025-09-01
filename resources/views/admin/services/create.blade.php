@@ -271,6 +271,94 @@
                         </div>
                         <div class="flex items-center">
                             <input type="checkbox" 
+                                   name="education_simulation" 
+                                   id="education_simulation" 
+                                   value="1"
+                                   {{ old('education_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="education_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Pendidikan
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="property_simulation" 
+                                   id="property_simulation" 
+                                   value="1"
+                                   {{ old('property_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="property_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Rumah
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="hajj_simulation" 
+                                   id="hajj_simulation" 
+                                   value="1"
+                                   {{ old('hajj_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="hajj_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Haji
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="working_capital_simulation" 
+                                   id="working_capital_simulation" 
+                                   value="1"
+                                   {{ old('working_capital_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="working_capital_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Modal Kerja
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="business_machine_simulation" 
+                                   id="business_machine_simulation" 
+                                   value="1"
+                                   {{ old('business_machine_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="business_machine_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Mesin Usaha
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="business_renovation_simulation" 
+                                   id="business_renovation_simulation" 
+                                   value="1"
+                                   {{ old('business_renovation_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="business_renovation_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Renovasi Usaha
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="deposit_simulation" 
+                                   id="deposit_simulation" 
+                                   value="1"
+                                   {{ old('deposit_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="deposit_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Deposit
+                            </label>
+                        </div>
+                         <div class="flex items-center">
+                            <input type="checkbox" 
+                                   name="saving_simulation" 
+                                   id="saving_simulation" 
+                                   value="1"
+                                   {{ old('saving_simulation') ? 'checked' : '' }}
+                                   class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="saving_simulation" class="ml-2 block text-sm text-gray-700">
+                                Layanan Simulasi Tabungan
+                            </label>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" 
                                    name="is_active" 
                                    id="is_active" 
                                    value="1"
