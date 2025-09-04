@@ -6,7 +6,7 @@
         <x-info-item icon="🏦" label="Teller" value="08.00 – 15.00" />
         <x-info-item icon="📞" label="Telepon" value="0341 596577" />
         <x-info-item icon="📱" label="Handphone" value="+62 858 1574 4542" />
-        <x-info-item icon="✉️" label="E-mail" value="operasional@arthasinarsejahtera.co.id" />
+        <x-info-item icon="✉️" label="E-mail" value="operasional@arsa.co.id" />
     </div>
     <div>
         <div class="w-full h-[400px]">

@@ -2,7 +2,7 @@
     <div class="space-y-4 text-gray-800">
         <x-info-item icon="📅" label="Jam Operasional" value="Senin – Jumat" />
         <x-info-item icon="📍" label="Alamat" value="GKB 3 Lt 2" />
-        <x-info-item icon="✉️" label="E-mail" value="operasional@arthasinarsejahtera.co.id" />
+        <x-info-item icon="✉️" label="E-mail" value="operasional@arsa.co.id" />
     </div>
     <div>
         <div class="w-full h-96">

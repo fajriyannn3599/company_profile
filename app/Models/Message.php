@@ -19,6 +19,7 @@ class Message extends Model
         'nilai_pembiayaan', // Nilai Pembiayaan (baru)      
         'jenis_produk', // Jenis Produk (baru) 
         'lokasi', // Lokasi (baru)
+        'jenis_kendaraan', // Jenis Kendaraan (baru)
     ];
 
     protected $casts = [
@@ -38,5 +39,10 @@ class Message extends Model
     public function scopeUnread($query)
     {
         return $query->where('is_read', false);
+    }
+
+    public function service()
+    {
+        return $this->belongsTo(Service::class, 'jenis_produk');
     }
 }

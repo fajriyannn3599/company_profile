@@ -26,6 +26,7 @@ class ContactController extends Controller
             'jenis_produk' => 'required|string|max:255',
             'nilai_pembiayaan' => 'required|integer|max:99999999999999',
             'lokasi' => 'required|string|max:255',
+            'jenis_kendaraan' => 'nullable|string|max:255',
         ]);
 
         Message::create($request->all());
