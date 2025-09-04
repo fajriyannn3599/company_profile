@@ -85,19 +85,43 @@
                         <label class="text-sm font-medium text-gray-500">Jenis Produk</label>
                         <p class="mt-1 text-gray-900">{{ $message->service->title ?? '-' }}</p>
                     </div>
-                    @if($message->service->id == 13)
+
+                    @if($message->service->id == 2)
                         <div>
                             <label class="text-sm font-medium text-gray-500">Jenis Kendaraan</label>
                             <p class="mt-1 text-gray-900">{{ $message->jenis_kendaraan ?? '-' }}</p>
                         </div>
+
+                        @if($message->jenis_kendaraan == 'mobil')
+                            <div>
+                                <label class="text-sm font-medium text-gray-500">Merk Mobil</label>
+                                <p class="mt-1 text-gray-900">{{ $message->merk_mobil ?? '-' }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-500">Merk Spesifik Mobil</label>
+                                <p class="mt-1 text-gray-900">{{ $message->merk_spesifik_mobil ?? '-' }}</p>
+                            </div>
+                        @elseif($message->jenis_kendaraan == 'motor')
+                            <div>
+                                <label class="text-sm font-medium text-gray-500">Merk Motor</label>
+                                <p class="mt-1 text-gray-900">{{ $message->merk_motor ?? '-' }}</p>
+                            </div>
+                            <div>
+                                <label class="text-sm font-medium text-gray-500">Merk Spesifik Motor</label>
+                                <p class="mt-1 text-gray-900">{{ $message->merk_spesifik_motor ?? '-' }}</p>
+                            </div>
+                        @endif
                     @endif
+
                     <div>
                         <label class="text-sm font-medium text-gray-500">Lokasi</label>
                         <p class="mt-1 text-gray-900">{{ $message->lokasi }}</p>
                     </div>
                     <div>
                         <label class="text-sm font-medium text-gray-500">Nilai Pembiayaan</label>
-                        <p class="mt-1 text-gray-900">{{ $message->nilai_pembiayaan }}</p>
+                        <p class="mt-1 text-gray-900">
+                            Rp {{ number_format($message->nilai_pembiayaan, 0, ',', '.') }}
+                        </p>
                     </div>
 
                     <div>

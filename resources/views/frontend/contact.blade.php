@@ -92,46 +92,158 @@
     <label for="jenis_kendaraan" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Poppins', sans-serif;">
         Jenis Kendaraan *
     </label>
-    <input type="text" id="jenis_kendaraan" name="jenis_kendaraan" value="{{ old('jenis_kendaraan') }}"
+    <select id="jenis_kendaraan" name="jenis_kendaraan"
         class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+        <option value="">-- Pilih Jenis Kendaraan --</option>
+        <option value="mobil" {{ old('jenis_kendaraan') == 'mobil' ? 'selected' : '' }}>Mobil</option>
+        <option value="motor" {{ old('jenis_kendaraan') == 'motor' ? 'selected' : '' }}>Motor</option>
+    </select>
 </div>
 
+{{-- Wrapper untuk form tambahan jika pilih Mobil --}}
+<div id="mobilWrapper" class="hidden mt-4 space-y-4">
+    <div>
+        <label for="merk_mobil" class="block text-sm font-medium text-gray-700 mb-2">
+            Merk Mobil *
+        </label>
+        <select id="merk_mobil" name="merk_mobil"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="">-- Pilih Merk Mobil --</option>
+            <option value="Honda">Honda</option>
+            <option value="Daihatsu">Daihatsu</option>
+            <option value="Toyota">Toyota</option>
+            <option value="Mazda">Mazda</option>
+            <option value="Mitsubishi">Mitsubishi</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+    </div>
 
+    <div>
+        <label for="merk_spesifik_mobil" class="block text-sm font-medium text-gray-700 mb-2">
+            Merk Spesifik Mobil
+        </label>
+        <input type="text" id="merk_spesifik_mobil" name="merk_spesifik_mobil" value="{{ old('merk_spesifik_mobil') }}"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+    </div>
+</div>
+
+{{-- Wrapper untuk form tambahan jika pilih Motor --}}
+<div id="motorWrapper" class="hidden mt-4 space-y-4">
+    <div>
+        <label for="merk_motor" class="block text-sm font-medium text-gray-700 mb-2">
+            Merk Motor *
+        </label>
+        <select id="merk_motor" name="merk_motor"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+            <option value="">-- Pilih Merk Motor --</option>
+            <option value="Honda">Honda</option>
+            <option value="Yamaha">Yamaha</option>
+            <option value="Suzuki">Suzuki</option>
+            <option value="Kawasaki">Kawasaki</option>
+            <option value="Lainnya">Lainnya</option>
+        </select>
+    </div>
+
+    <div>
+        <label for="merk_spesifik_motor" class="block text-sm font-medium text-gray-700 mb-2">
+            Merk Spesifik Motor
+        </label>
+        <input type="text" id="merk_spesifik_motor" name="merk_spesifik_motor" value="{{ old('merk_spesifik_motor') }}"
+            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+    </div>
+</div>
 
 {{-- Script --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const jenisProduk = document.getElementById("jenis_produk");
         const jenisKendaraanWrapper = document.getElementById("jenisKendaraanWrapper");
-        
+        const jenisKendaraan = document.getElementById("jenis_kendaraan");
+
+        const mobilWrapper = document.getElementById("mobilWrapper");
+        const motorWrapper = document.getElementById("motorWrapper");
+
         // ganti sesuai ID "kendaraan" dari database
-        const kendaraanId = 13;
+        const kendaraanId = 2;
 
         function toggleJenisKendaraan() {
             if (jenisProduk.value == kendaraanId) {
                 jenisKendaraanWrapper.classList.remove("hidden");
             } else {
                 jenisKendaraanWrapper.classList.add("hidden");
-                document.getElementById("jenis_kendaraan").value = ""; // reset
+                mobilWrapper.classList.add("hidden");
+                motorWrapper.classList.add("hidden");
+                jenisKendaraan.value = "";
+            }
+        }
+
+        function toggleKendaraanDetail() {
+            if (jenisKendaraan.value === "mobil") {
+                mobilWrapper.classList.remove("hidden");
+                motorWrapper.classList.add("hidden");
+            } else if (jenisKendaraan.value === "motor") {
+                motorWrapper.classList.remove("hidden");
+                mobilWrapper.classList.add("hidden");
+            } else {
+                mobilWrapper.classList.add("hidden");
+                motorWrapper.classList.add("hidden");
             }
         }
 
         // Jalankan saat halaman load
         toggleJenisKendaraan();
+        toggleKendaraanDetail();
 
-        // Jalankan setiap kali ada perubahan
+        // Event listener
         jenisProduk.addEventListener("change", toggleJenisKendaraan);
+        jenisKendaraan.addEventListener("change", toggleKendaraanDetail);
     });
 </script>
 
 
-                            <div>
-                                <label for="nilai_pembiayaan" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Poppins', sans-serif;">Nilai
-                                    Pembiayaan *</label>
-                                <input type="text" id="nilai_pembiayaan" name="nilai_pembiayaan"
-                                    value="{{ old('nilai_pembiayaan') }}"
-                                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
-                            </div>
+<div>
+    <label for="nilai_pembiayaan"
+        class="block text-sm font-medium text-gray-700 mb-2"
+        style="font-family: 'Poppins', sans-serif;">
+        Nilai Pembiayaan *
+    </label>
+    <input type="text" id="nilai_pembiayaan" name="nilai_pembiayaan"
+        value="{{ old('nilai_pembiayaan') }}"
+        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        oninput="formatRupiah(this)">
+</div>
+
+@push('scripts')
+<script>
+    function formatRupiah(input) {
+        let value = input.value.replace(/[^,\d]/g, ''); // hanya angka & koma
+        if (!value) {
+            input.value = '';
+            return;
+        }
+
+        let split = value.split(',');
+        let sisa = split[0].length % 3;
+        let rupiah = split[0].substr(0, sisa);
+        let ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+        if (ribuan) {
+            let separator = sisa ? '.' : '';
+            rupiah += separator + ribuan.join('.');
+        }
+
+        rupiah = split[1] !== undefined ? rupiah + ',' + split[1] : rupiah;
+        input.value = 'Rp ' + rupiah;
+    }
+
+    // sebelum form dikirim, hapus "Rp" & titik supaya hanya angka yang masuk ke DB
+    document.querySelector("form").addEventListener("submit", function() {
+        let input = document.getElementById("nilai_pembiayaan");
+        input.value = input.value.replace(/[^0-9]/g, ''); 
+    });
+</script>
+@endpush
 
                             <div>
                                 <label for="lokasi" class="block text-sm font-medium text-gray-700 mb-2" style="font-family: 'Poppins', sans-serif;">Lokasi *</label>
@@ -150,7 +262,7 @@
                                 class="w-full bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors"
                                 style="font-family: 'Poppins', sans-serif;">
                                 <i class="fas fa-paper-plane mr-2"></i>
-                                Submit Form Pengajuan Pembiayaan
+                                Ajukan Pembiayaan
                             </button>
                         </form>
                     </div>

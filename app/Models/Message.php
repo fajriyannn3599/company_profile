@@ -20,6 +20,10 @@ class Message extends Model
         'jenis_produk', // Jenis Produk (baru) 
         'lokasi', // Lokasi (baru)
         'jenis_kendaraan', // Jenis Kendaraan (baru)
+        'merk_mobil', // Merk Mobil (baru)
+        'merk_spesifik_mobil', // Merk Spesifik Mobil (baru)
+        'merk_motor', // Merk Motor (baru)
+        'merk_spesifik_motor', // Merk Spesifik Motor (baru)
     ];
 
     protected $casts = [

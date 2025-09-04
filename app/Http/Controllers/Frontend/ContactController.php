@@ -27,6 +27,10 @@ class ContactController extends Controller
             'nilai_pembiayaan' => 'required|integer|max:99999999999999',
             'lokasi' => 'required|string|max:255',
             'jenis_kendaraan' => 'nullable|string|max:255',
+            'merk_mobil' => 'nullable|string|max:255',
+            'merk_spesifik_mobil' => 'nullable|string|max:255',
+            'merk_motor' => 'nullable|string|max:255',
+            'merk_spesifik_motor' => 'nullable|string|max:255',
         ]);
 
         Message::create($request->all());
