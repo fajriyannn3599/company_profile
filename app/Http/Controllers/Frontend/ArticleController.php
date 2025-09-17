@@ -55,7 +55,17 @@ class ArticleController extends Controller
 
     public function show($slug)
     {
-        $article = Article::where('slug', $slug)->where('is_published', true)->with(['category', 'author'])->firstOrFail();
+        $article = Article::where('slug', $slug)
+            ->where('is_published', true)
+            ->with(['category', 'author'])
+            ->firstOrFail();
+
+        // Cegah spam view (hanya tambah sekali per session per artikel)
+        $sessionKey = 'article_viewed_' . $article->id;
+        if (!session()->has($sessionKey)) {
+            $article->increment('views');
+            session()->put($sessionKey, true);
+        }
 
         $relatedArticles = Article::published()
             ->where('article_category_id', $article->article_category_id)
