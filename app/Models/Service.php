@@ -35,7 +35,8 @@ class Service extends Model
         'business_machine_simulation',
         'business_renovation_simulation',
         'deposit_simulation',
-        'saving_simulation'
+        'saving_simulation',
+        'views',
 
 
     ];
@@ -124,6 +125,11 @@ class Service extends Model
     public function scopeSaving($query)
     {
         return $query->where('saving_simulation', true);
+    }
+
+    public function incrementViews()
+    {
+        $this->increment('views');
     }
 
 }

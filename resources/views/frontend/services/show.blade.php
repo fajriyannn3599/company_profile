@@ -22,17 +22,25 @@
 
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center text-white">
                 <div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-6" style="font-family: 'Poppins', sans-serif;">{{ $service->title }}</h1>
-                    <p class="text-xl opacity-90 leading-relaxed" style="font-family: 'Poppins', sans-serif;">{{ $service->short_description }}</p>
-
-                    @if($service->serviceCategory)
-                        <div class="mt-6">
-                            <span class="bg-blue-500 text-white text-sm font-semibold px-4 py-2 rounded-full">
+                  @if($service->serviceCategory)
+                        <div class="mb-6">
+                            <span class="bg-orange-700 text-white text-sm font-semibold px-4 py-2 rounded-full">
                                 <i class="fas fa-star mr-1"></i>
                                 {{ $service->serviceCategory->name }}
                             </span>
                         </div>
                     @endif
+                    <h1 class="text-4xl md:text-5xl font-bold mb-6" style="font-family: 'Poppins', sans-serif;">{{ $service->title }}</h1>
+                    <p class="text-xl opacity-90 leading-relaxed" style="font-family: 'Poppins', sans-serif;">{{ $service->short_description }}</p>
+
+                    
+
+                    <div class="flex items-center text-xs text-white-500 mb-2 mt-2">
+                      <i class="fas fa-eye mr-1"></i>
+                      <span>Visited</span>
+                      <span class="mx-1">:</span>
+                      <span>{{ $service->views }}</span>
+                    </div>
                 </div>
 
                 <div class="text-center">

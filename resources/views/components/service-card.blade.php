@@ -122,15 +122,22 @@
     <!-- Konten atas: judul, deskripsi, dsb -->
     <div class="p-6">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
-        <h3
-            class="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300 line-clamp-2"
+        <!-- Meta -->
+        <div class="flex items-center text-xs text-gray-500 mb-2 mt-2">
+            <i class="fas fa-eye mr-1"></i>
+            <span>Visited</span>
+            <span class="mx-1">:</span>
+            <span>{{ $service->views }}</span>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-red-600 transition-colors duration-300 line-clamp-2"
             style="font-family: 'Poppins', sans-serif;">
             {{ $service->title }}
         </h3>
-        <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3"
-            style="font-family: 'Poppins', sans-serif;">
+        <p class="text-gray-600 mb-6 leading-relaxed line-clamp-3" style="font-family: 'Poppins', sans-serif;">
             {{ $service->short_description }}
         </p>
+        
     </div>
 
     <!-- Tombol di bagian bawah -->
@@ -150,6 +157,7 @@
                 </path>
             </svg>
         </a>
+        
     </div>
 
 </div>

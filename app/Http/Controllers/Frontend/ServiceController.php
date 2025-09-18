@@ -18,7 +18,7 @@ class ServiceController extends Controller
             ->with(['serviceCategory']);
 
         if ($request->service_category) {
-            $query->whereHas('serviceCategory', function($q) use ($request) {
+            $query->whereHas('serviceCategory', function ($q) use ($request) {
                 $q->where('slug', $request->service_category);
             });
         }
@@ -34,10 +34,10 @@ class ServiceController extends Controller
         }
 
         if ($request->filled('servicecategory')) {
-        $query->whereHas('category', function ($q) use ($request) {
-            $q->where('slug', $request->servicecategory);
-        });
-    }
+            $query->whereHas('category', function ($q) use ($request) {
+                $q->where('slug', $request->servicecategory);
+            });
+        }
         // Ambil data layanan
         $services = $query->paginate(12)->withQueryString();
         // Ambil data kenapa memilih kami
@@ -59,6 +59,13 @@ class ServiceController extends Controller
             ->orderBy('sort_order')
             ->take(3)
             ->get();
+
+        // Cegah spam view (hanya tambah sekali per session per artikel)
+        $sessionKey = 'service_viewed_' . $service->id;
+        if (!session()->has($sessionKey)) {
+            $service->increment('views');
+            session()->put($sessionKey, true);
+        }
 
         return view('frontend.services.show', compact('service', 'relatedServices'));
     }
