@@ -8,7 +8,7 @@
 @section('content')
     <!-- Hero Section -->
     <!-- <x-hero page-identifier="financial-reports" fallback-title="Laporan Keuangan"
-                                fallback-subtitle="Akses laporan keuangan resmi untuk transparansi dan informasi yang akurat" /> -->
+                                    fallback-subtitle="Akses laporan keuangan resmi untuk transparansi dan informasi yang akurat" /> -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
     <section class="py-16 bg-gray-50">
@@ -61,14 +61,7 @@
                         </div>
                     @endif
 
-                    <!-- Views Counter -->
-                    <div class="flex items-center justify-end text-sm text-gray-600 mt-8"
-                        style="font-family: 'Poppins', sans-serif;">
-                        <i class="fas fa-eye mr-2 text-gray-500"></i>                        
-                        <span>Visited</span>
-                        <span class="mx-1">:</span>
-                        <span class="ml-1 font-semibold">{{ number_format($views) }}</span>
-                    </div>
+
                 @else
                     <div class="text-center py-20">
                         <svg class="w-16 h-16 text-gray-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -81,6 +74,14 @@
                         </p>
                     </div>
                 @endif
+                <!-- Views Counter -->
+                <div class="flex items-center justify-end text-sm text-gray-600 mt-8"
+                    style="font-family: 'Poppins', sans-serif;">
+                    <i class="fas fa-eye mr-2 text-gray-500"></i>
+                    <span>Visited</span>
+                    <span class="mx-1">:</span>
+                    <span class="ml-1 font-semibold">{{ number_format($views) }}</span>
+                </div>
             </div>
         </div>
     </section>
