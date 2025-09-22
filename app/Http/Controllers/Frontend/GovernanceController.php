@@ -16,40 +16,43 @@ class GovernanceController extends Controller
      */
     public function index(): View
     {
-        // Ambil semua governance dengan pagination
+        // Ambil governance (dengan pagination)
         $governances = Governance::latest()->paginate(6);
 
-        // Ambil governance pertama sebagai counter global
-        $governanceCounter = Governance::first();
+        // Cari governance pertama untuk dijadikan counter, 
+        // jika tidak ada maka buat dengan file_path kosong
+        $governanceCounter = Governance::firstOrCreate(
+            ['title' => 'Governance Counter'], // kunci unik
+            [
+                'views' => 0,
+                'file_path' => '', // default supaya tidak error
+            ]
+        );
 
-        if ($governanceCounter) {
-            $lastViewed = session('governance_viewed');
-
-            if (!$lastViewed) {
-                // Jika belum ada session -> tambahkan views
-                $governanceCounter->increment('views');
-                session(['governance_viewed' => now()]);
-            } else {
-                // Konversi session ke Carbon
-                $lastViewedTime = Carbon::parse($lastViewed);
-
-                // Jika sudah lebih dari 10 menit -> tambahkan views lagi
-                if ($lastViewedTime->diffInMinutes(now()) >= 10) {
-                    $governanceCounter->increment('views');
-                    session(['governance_viewed' => now()]);
-                }
-            }
-
-            $views = $governanceCounter->views;
+        if (!session()->has('governance_viewed')) {
+            // Tambah views pertama kali user buka halaman
+            $governanceCounter->increment('views');
+            session(['governance_viewed' => now()->toDateTimeString()]);
         } else {
-            $views = 0;
+            $lastViewed = session('governance_viewed');
+            $lastViewedTime = \Carbon\Carbon::parse($lastViewed);
+
+            // Cegah spam, hanya tambah view kalau sudah lewat 10 menit
+            if (now()->diffInMinutes($lastViewedTime) >= 10) {
+                $governanceCounter->increment('views');
+                session(['governance_viewed' => now()->toDateTimeString()]);
+            }
         }
+
+        $views = $governanceCounter->views;
 
         return view('frontend.governances.index', [
             'governances' => $governances,
             'views' => $views,
         ]);
     }
+
+
 
 
 
