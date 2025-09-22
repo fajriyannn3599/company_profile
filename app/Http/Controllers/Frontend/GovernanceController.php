@@ -7,6 +7,7 @@ use App\Models\Governance;
 use Illuminate\Http\Request;
 use App\Models\PageView;
 use Illuminate\View\View;
+use Carbon\Carbon;
 
 class GovernanceController extends Controller
 {
@@ -15,27 +16,42 @@ class GovernanceController extends Controller
      */
     public function index(): View
     {
-        // Ambil governance (tanpa named argument)
+        // Ambil semua governance dengan pagination
         $governances = Governance::latest()->paginate(6);
 
-        // Ambil atau buat record counter untuk halaman 'governance'
-        $pageView = PageView::firstOrCreate(
-            ['page' => 'governance'], // attributes
-            ['views' => 0]            // values
-        );
+        // Ambil governance pertama sebagai counter global
+        $governanceCounter = Governance::first();
 
-        // Anti-spam dengan session: hanya tambah sekali per session
-        if (!session()->has('governance_viewed')) {
-            $pageView->increment('views');
-            session(['governance_viewed' => true]);
+        if ($governanceCounter) {
+            $lastViewed = session('governance_viewed');
+
+            if (!$lastViewed) {
+                // Jika belum ada session -> tambahkan views
+                $governanceCounter->increment('views');
+                session(['governance_viewed' => now()]);
+            } else {
+                // Konversi session ke Carbon
+                $lastViewedTime = Carbon::parse($lastViewed);
+
+                // Jika sudah lebih dari 10 menit -> tambahkan views lagi
+                if ($lastViewedTime->diffInMinutes(now()) >= 10) {
+                    $governanceCounter->increment('views');
+                    session(['governance_viewed' => now()]);
+                }
+            }
+
+            $views = $governanceCounter->views;
+        } else {
+            $views = 0;
         }
 
-        // Kembalikan view (argumen biasa)
         return view('frontend.governances.index', [
             'governances' => $governances,
-            'views' => $pageView->views,
+            'views' => $views,
         ]);
     }
+
+
 
 
 
