@@ -11,6 +11,7 @@ class Governance extends Model
         'title',
         'description',
         'file_path',
+        'views',
     ];
 
     protected $casts = [
@@ -20,5 +21,10 @@ class Governance extends Model
     public function getFileUrlAttribute()
     {
         return Storage::url($this->file_path);
+    }
+
+    public function incrementViews()
+    {
+        $this->increment('views');
     }
 }
