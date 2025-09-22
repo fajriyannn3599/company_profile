@@ -16,43 +16,38 @@ class GovernanceController extends Controller
      */
     public function index(): View
     {
-        // Ambil governance (dengan pagination)
+        // Ambil governance (pagination)
         $governances = Governance::latest()->paginate(6);
 
-        // Cari governance pertama untuk dijadikan counter, 
-        // jika tidak ada maka buat dengan file_path kosong
+        // Ambil atau buat counter governance
         $governanceCounter = Governance::firstOrCreate(
-            ['title' => 'Governance Counter'], // kunci unik
-            [
-                'views' => 0,
-                'file_path' => '', // default supaya tidak error
-            ]
+            ['title' => 'Governance Counter'],
+            ['views' => 0]
         );
 
-        if (!session()->has('governance_viewed')) {
-            // Tambah views pertama kali user buka halaman
+        // Cek session untuk anti spam
+        $lastViewed = session('governance_viewed');
+
+        if (!$lastViewed) {
+            // Pertama kali buka → tambah views
             $governanceCounter->increment('views');
             session(['governance_viewed' => now()->toDateTimeString()]);
         } else {
-            $lastViewed = session('governance_viewed');
-            $lastViewedTime = \Carbon\Carbon::parse($lastViewed);
+            // Konversi ke Carbon
+            $lastViewedTime = Carbon::parse($lastViewed);
 
-            // Cegah spam, hanya tambah view kalau sudah lewat 10 menit
-            if (now()->diffInMinutes($lastViewedTime) >= 10) {
+            // Tambah views lagi hanya kalau sudah lebih dari 10 menit
+            if ($lastViewedTime->diffInMinutes(now()) >= 10) {
                 $governanceCounter->increment('views');
                 session(['governance_viewed' => now()->toDateTimeString()]);
             }
         }
 
-        $views = $governanceCounter->views;
-
         return view('frontend.governances.index', [
             'governances' => $governances,
-            'views' => $views,
+            'views' => $governanceCounter->views,
         ]);
     }
-
-
 
 
 
