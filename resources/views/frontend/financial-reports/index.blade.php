@@ -55,6 +55,14 @@
                             nanti.</p>
                     </div>
                 @endif
+                <!-- Views Counter -->
+                <div class="flex items-center justify-end text-sm text-gray-600 mt-8"
+                    style="font-family: 'Poppins', sans-serif;">
+                    <i class="fas fa-eye mr-2 text-gray-500"></i>
+                    <span>Visited</span>
+                    <span class="mx-1">:</span>
+                    <span class="ml-1 font-semibold">{{ number_format($views) }}</span>
+                </div>
             </div>
         </div>
     </section>

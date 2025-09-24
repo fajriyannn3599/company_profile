@@ -26,7 +26,8 @@ class JobListing extends Model
         'is_active',
         'deadline',
         'meta_title',
-        'meta_description'
+        'meta_description',
+        'views',
     ];
 
     protected $casts = [

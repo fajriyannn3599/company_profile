@@ -10,15 +10,11 @@
     </div>
     <div>
         <div class="w-full h-[400px]">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.01545439672645!2d112.534986!3d-7.882131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7881ab08941ce7%3A0x4ca162d72c8eae61!2sBPR%20Syariah%20Arsa%20Sejahtera!5e0!3m2!1sen!2sid!4v1751523405076!5m2!1sen!2sid"
-            width="100%"
-            height="400"
-            style="border:0;"
-            allowfullscreen=""
-            loading="lazy">
-            referrerpolicy="no-referrer-when-downgrade"
-        </iframe>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d494.01545439672645!2d112.534986!3d-7.882131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7881ab08941ce7%3A0x4ca162d72c8eae61!2sBPR%20Syariah%20Arsa%20Sejahtera!5e0!3m2!1sen!2sid!4v1751523405076!5m2!1sen!2sid"
+                width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                referrerpolicy="no-referrer-when-downgrade"
+            </iframe>
         </div>
     </div>
 </div>
