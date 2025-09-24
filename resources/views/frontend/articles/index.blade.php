@@ -90,6 +90,9 @@
                                     <span class="text-sm text-gray-500"
                                         style="font-family: 'Poppins', sans-serif;">
                                         {{ $featuredArticle->created_at->format('d M Y') }}
+                                        <span class="mx-1">•</span>
+                                        <i class="fas fa-eye mr-1"></i>
+                                        <span>{{ $featuredArticle->views }}</span>
                                     </span>
                                 </div>
 
@@ -128,6 +131,8 @@
                                             style="font-family: 'Poppins', sans-serif;">{{ $featuredArticle->read_time ?? '5' }} min
                                             baca</span>
                                     </div>
+
+                                    
                                 </div>
 
                                 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
@@ -182,6 +187,8 @@
                                     <div class="aspect-video overflow-hidden">
                                         <img src="{{ Storage::url($article->featured_image) }}" alt="{{ $article->title }}"
                                             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+
+                                            
                                     </div>
                                 @endif
 
@@ -196,6 +203,9 @@
                                         <span class="text-sm text-gray-500"
                                             style="font-family: 'Poppins', sans-serif;">
                                             {{ $article->created_at ? $article->created_at->format('d M Y') : '-' }}
+                                            <span class="mx-1">•</span>
+                                            <i class="fas fa-eye mr-1"></i>
+                                            <span>{{ $article->views }}</span>
                                         </span>
                                     </div>
 
